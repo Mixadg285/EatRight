@@ -1,0 +1,651 @@
+Food_name,Calories,Protein,Carbohydrates,Fats,Meal_type,is_vegan,is_vegetarian
+Oatmeal with berries and nuts,320.0,15.0,48.0,12.0,Breakfast,True,True
+Tofu scramble with veggies,189.0,36.0,15.0,3.5,Breakfast,True,True
+Tofu and veggie breakfast burrito,226.0,20.0,70.0,4.0,Breakfast,True,True
+Greek yogurt with granola and fruit,283.0,14.0,44.0,20.0,Breakfast,True,True
+Scrambled eggs with whole wheat toast and avocado,133.0,12.0,22.0,1.0,Breakfast,False,True
+Protein pancakes with fruit and nuts,296.0,27.0,29.0,24.0,Breakfast,True,True
+Tofu and chickpea scramble,289.0,20.0,42.0,25.0,Breakfast,True,True
+Overnight oats with fruit and chia seeds,561.0,11.0,53.0,7.0,Breakfast,True,True
+Tofu scramble with vegetables,219.0,21.0,25.0,3.0,Breakfast,True,True
+Wholegrain toast with avocado,285.0,8.5,47.0,24.0,Breakfast,False,False
+Greek yogurt with granola,308.0,19.0,40.0,3.0,Breakfast,False,True
+Tofu and vegetable stir-fry,374.0,7.9,9.0,3.4,Breakfast,True,True
+Oatmeal with protein powder and fruit,250.0,34.0,49.0,25.0,Breakfast,True,True
+Eggs with wholegrain toast,304.0,14.0,39.0,50.0,Breakfast,False,True
+Greek yogurt with berries and granola,465.0,24.1,16.8,39.0,Breakfast,False,True
+Eggs with whole wheat toast and avocado,250.0,27.0,16.0,15.6,Breakfast,False,True
+Tofu scramble with vegetables and avocado,240.0,18.0,28.0,4.0,Breakfast,True,True
+Greek yogurt with fruit and granola,273.0,26.9,40.0,1.6,Breakfast,True,True
+Tofu scramble with spinach and avocado,300.0,18.0,45.0,13.0,Breakfast,True,True
+Scrambled eggs with whole wheat toast and fruit,169.0,27.0,17.0,6.0,Breakfast,True,True
+Oatmeal with berries and plant-based milk,380.0,19.0,42.0,11.0,Breakfast,True,True
+Oatmeal with fruit and nuts,199.0,39.0,19.0,19.0,Breakfast,True,True
+Tofu scramble with whole-wheat toast,1740.0,14.0,24.0,18.0,Breakfast,True,True
+Tofu and vegetable breakfast burrito,260.0,15.0,34.0,3.0,Breakfast,True,True
+Scrambled eggs with avocado and whole-wheat toast,423.0,29.0,24.0,26.0,Breakfast,False,True
+Overnight oats with chia seeds and fruit,260.0,7.0,25.0,10.0,Breakfast,True,True
+Pancakes with fruit and syrup,220.0,13.9,20.0,5.0,Breakfast,True,True
+Scrambled eggs with whole-wheat toast,465.0,35.0,55.0,19.0,Breakfast,False,True
+Tofu scramble with spinach and avocado toast,481.0,17.0,24.0,19.0,Breakfast,True,True
+Eggs with whole-wheat toast,263.0,13.0,46.0,20.0,Breakfast,False,True
+Quinoa porridge with fruit and nuts,442.0,20.1,62.0,19.0,Breakfast,True,True
+Tofu scramble with vegetables and whole-wheat toast,276.0,20.8,26.0,14.0,Breakfast,True,True
+Scrambled eggs with bacon and whole-wheat toast,560.0,31.0,40.0,14.0,Breakfast,False,True
+Oatmeal with protein powder and berries,222.0,25.0,48.0,29.0,Breakfast,True,True
+Eggs with whole-wheat toast and avocado,278.0,25.6,10.8,11.2,Breakfast,False,True
+Scrambled eggs with vegetables and whole-wheat toast,257.0,13.4,56.0,15.4,Breakfast,True,True
+Scrambled eggs with whole-wheat toast and avocado,375.0,11.5,43.0,27.0,Breakfast,False,True
+Tofu scramble with veggies and whole-wheat toast,300.0,27.0,34.0,32.0,Breakfast,True,True
+Overnight oats with fruit and nuts,425.0,16.0,87.0,10.0,Breakfast,True,True
+Greek yogurt with berries and nuts,389.0,13.0,44.0,21.0,Breakfast,True,True
+Tofu scramble with whole wheat toast and avocado,300.0,6.3,45.0,16.5,Breakfast,True,True
+Yogurt with fruit and granola,380.0,18.0,33.0,15.0,Breakfast,True,True
+Greek yogurt with berries and almonds,315.0,35.0,20.0,15.0,Breakfast,False,True
+Eggs with whole-wheat toast and bacon,355.0,19.0,42.0,9.0,Breakfast,False,True
+Scrambled tofu with whole-wheat toast and avocado,200.0,11.0,40.0,14.0,Breakfast,True,True
+Tofu and vegetable stir-fry with brown rice,1245.0,19.0,59.0,17.0,Breakfast,True,True
+Scrambled eggs with whole wheat toast,370.0,15.0,34.0,9.0,Breakfast,False,True
+Tofu and vegetable scramble with whole wheat toast,190.0,10.0,47.0,2.0,Breakfast,True,True
+Greek Yogurt with berries and granola,466.0,41.0,59.0,15.0,Breakfast,False,True
+Tofu omelet with spinach,547.0,35.0,55.0,9.0,Breakfast,True,True
+Greek yogurt with protein powder and fruit,320.0,21.0,34.0,14.0,Breakfast,True,True
+Tofu breakfast burrito with whole-wheat tortilla,320.0,14.6,25.0,12.0,Breakfast,True,True
+Protein pancakes with fruit and syrup,551.0,41.0,67.0,29.0,Breakfast,True,True
+Scrambled tofu with spinach and tomato,160.0,16.0,16.0,12.0,Breakfast,True,True
+Tofu scramble with vegetables and whole wheat toast,200.0,34.0,50.0,16.0,Breakfast,True,True
+Vegan overnight oats with berries,369.0,28.0,55.0,17.0,Breakfast,True,True
+Scrambled eggs with spinach and whole wheat toast,282.0,18.6,19.0,11.0,Breakfast,False,True
+Vegan overnight oats with chia seeds and berries,398.0,14.0,28.0,2.0,Breakfast,True,True
+Protein smoothie with fruit and spinach,256.0,29.0,31.0,16.0,Breakfast,True,True
+Yogurt parfait with granola and fruit,298.0,19.0,24.0,34.0,Breakfast,True,True
+1 cup oatmeal with berries and nuts,210.0,15.0,40.0,1.7,Breakfast,True,True
+Tofu scramble with whole-wheat toast and vegetables,346.0,24.2,54.0,15.0,Breakfast,True,True
+3 eggs with whole-wheat toast and avocado,334.0,15.5,46.0,20.0,Breakfast,False,True
+Yogurt with berries and granola,279.0,10.0,69.0,5.2,Breakfast,False,True
+Tofu scramble with avocado and whole-wheat toast,220.0,15.0,24.0,15.0,Breakfast,True,True
+Oatmeal with plant-based milk and fruit,486.0,33.0,23.0,7.0,Breakfast,True,True
+Yogurt with granola and fruit,353.0,55.0,45.0,5.0,Breakfast,True,True
+Protein pancakes with fruit,341.0,160.0,300.0,13.0,Breakfast,True,True
+Tofu scramble with whole-wheat toast and avocado,183.0,22.9,49.0,7.0,Breakfast,True,True
+Quinoa porridge with berries and nuts,362.0,16.0,36.0,12.0,Breakfast,True,True
+Overnight oats with berries and nuts,418.0,17.0,53.0,26.0,Breakfast,True,True
+Tofu scramble with whole wheat toast,290.0,31.0,39.0,27.0,Breakfast,True,True
+Vegan breakfast burrito with tofu and vegetables,526.0,25.4,72.0,14.0,Breakfast,True,True
+Tofu scramble with avocado and whole wheat toast,316.0,14.0,21.0,13.0,Breakfast,True,True
+Breakfast burrito with eggs and vegetables,255.0,52.0,38.0,8.0,Breakfast,True,True
+Oatmeal with protein powder,640.0,52.0,58.0,19.0,Breakfast,True,True
+Overnight oats with berries and chia seeds,240.0,5.0,54.0,5.0,Breakfast,False,False
+Smoothie with fruit and protein powder,255.0,53.0,55.0,29.0,Breakfast,True,True
+Tofu scramble with whole wheat toast and fruit,175.0,19.0,31.0,7.0,Breakfast,True,True
+Tofu and vegetable scramble with whole-wheat toast,441.0,29.0,45.0,35.0,Breakfast,True,True
+Tofu and vegetable scramble with wholegrain toast,383.0,27.0,39.0,34.0,Breakfast,True,True
+Oatmeal with berries and flax seeds,333.0,33.0,44.0,16.0,Breakfast,True,True
+Eggs with wholegrain toast and avocado,394.0,19.0,91.0,61.0,Breakfast,False,True
+Breakfast burrito with beans and vegetables,117.0,24.0,45.0,2.0,Breakfast,True,True
+Oatmeal with protein powder and banana,294.0,26.0,61.0,20.0,Breakfast,True,True
+Tofu and vegetable scramble with avocado toast,264.0,30.0,22.0,28.0,Breakfast,True,True
+Scrambled eggs with whole wheat toast and smoked salmon,389.0,38.0,39.7,10.0,Breakfast,False,False
+Tofu scramble with vegetables and avocado toast,277.0,59.7,42.0,2.3,Breakfast,True,True
+Fruit and yogurt parfait,154.0,7.0,16.0,8.0,Breakfast,True,True
+Pancakes with fruit and nuts,162.0,24.0,84.0,10.0,Breakfast,True,True
+Tofu and vegetable scramble,205.0,11.5,40.0,11.5,Breakfast,True,True
+Eggs with whole wheat toast,249.0,12.8,89.0,14.0,Breakfast,False,True
+Greek yogurt with granola and berries,247.0,18.0,46.0,2.0,Breakfast,False,True
+Whole-wheat toast with egg and avocado,276.0,14.9,29.0,14.2,Breakfast,False,True
+Tofu scramble with spinach and mushrooms,243.0,32.0,29.0,7.0,Breakfast,True,True
+Quinoa breakfast bowl with berries and nuts,292.0,12.0,38.0,10.0,Breakfast,True,True
+Tofu and vegetable stir-fry with quinoa,400.0,45.0,43.0,26.0,Breakfast,True,True
+Eggs with whole-wheat toast and fruit,268.0,13.0,40.0,10.0,Breakfast,True,True
+Quinoa porridge with berries,275.0,14.0,27.0,14.0,Breakfast,False,False
+Tofu breakfast burrito with avocado,300.0,24.0,38.0,21.0,Breakfast,True,True
+Tofu scramble with avocado toast,271.0,25.2,43.0,26.0,Breakfast,True,True
+Scrambled eggs with whole grain toast,403.0,25.5,79.0,17.6,Breakfast,False,True
+Greek Yogurt with Berries and Nuts,253.0,17.0,25.0,1.2,Breakfast,True,True
+Tofu Scramble with Avocado Toast,369.0,23.0,44.0,10.0,Breakfast,True,True
+Oatmeal with Protein Powder and Berries,360.0,16.0,30.0,4.0,Breakfast,True,True
+Tofu Scramble with Whole Wheat Toast,212.0,10.0,30.0,4.0,Breakfast,True,True
+Eggs with Whole Wheat Toast and Avocado,340.0,29.0,57.0,30.0,Breakfast,False,True
+Tofu scramble with whole grain toast and avocado,301.0,36.7,29.0,8.0,Breakfast,True,True
+Eggs with whole wheat toast and fruit,233.0,18.0,35.0,12.0,Breakfast,True,True
+Tofu scramble with vegan toast and avocado,136.0,18.0,53.0,5.0,Breakfast,True,True
+Fruit salad with yogurt,232.0,1.0,36.0,16.0,Breakfast,True,True
+Scrambled eggs with whole wheat toast and spinach,393.0,13.0,20.0,14.0,Breakfast,False,True
+Tofu breakfast burrito,1360.0,19.0,180.0,40.0,Breakfast,True,True
+Tofu scramble with veggies and avocado toast,260.0,24.0,58.0,34.0,Breakfast,True,True
+Scrambled eggs with whole-wheat toast and fruit,403.0,28.1,46.0,14.0,Breakfast,True,True
+Breakfast burrito with beans and veggies,267.0,14.0,78.0,14.0,Breakfast,True,True
+Eggs with whole grain toast,303.0,13.3,47.0,27.0,Breakfast,False,True
+Vegan pancakes with syrup,280.0,38.0,28.0,28.0,Breakfast,True,True
+Oatmeal with berries,153.0,22.0,17.0,11.0,Breakfast,True,True
+Egg and spinach wrap,323.0,57.74,60.8,10.8,Breakfast,False,True
+Smoothie with protein powder,226.0,16.0,34.0,15.0,Breakfast,False,False
+Grilled chicken salad with mixed greens,250.0,26.0,26.0,12.0,Lunch,False,False
+Lentil soup with whole wheat bread,269.0,36.0,9.0,8.0,Lunch,True,True
+Black bean burger on a whole wheat bun,171.0,57.0,32.0,15.0,Lunch,False,False
+Chicken and vegetable stir-fry,578.0,43.0,62.0,10.0,Lunch,False,False
+Quinoa salad with chickpeas and vegetables,492.0,10.0,47.0,9.0,Lunch,True,True
+Lentil pasta with vegetables,502.0,34.0,22.0,7.0,Lunch,True,True
+Chicken breast with brown rice and vegetables,270.0,24.0,19.0,11.0,Lunch,False,False
+Lentil burger with sweet potato fries,670.0,50.0,45.0,14.0,Lunch,True,True
+Lentil soup with wholegrain bread,137.0,4.0,72.0,8.0,Lunch,True,True
+Black bean salad,535.0,22.0,35.0,6.0,Lunch,False,False
+Tuna salad sandwich on wholegrain bread,570.0,31.0,25.0,13.0,Lunch,False,False
+Lentil and vegetable stew,316.0,30.0,68.0,9.0,Lunch,True,True
+Black bean burger on a wholegrain bun,395.0,32.0,60.0,15.0,Lunch,False,False
+Grilled chicken breast with brown rice,735.0,79.0,328.0,10.0,Lunch,False,False
+Chicken breast with brown rice,667.0,62.0,64.0,10.0,Lunch,False,False
+Salmon salad with mixed greens and avocado,440.0,39.0,45.0,18.0,Lunch,False,False
+Chicken breast with sweet potato and broccoli,550.0,25.0,25.0,12.0,Lunch,False,False
+Turkey sandwich on whole wheat bread with vegetables,690.0,57.3,41.0,11.0,Lunch,True,True
+Vegan lentil stew with whole wheat bread,440.0,19.0,44.0,7.0,Lunch,True,True
+Tuna salad with whole wheat bread,398.0,17.2,120.0,12.0,Lunch,False,False
+Lentil and vegetable curry with brown rice,638.0,37.9,37.9,10.0,Lunch,True,True
+Tuna salad sandwich on whole wheat bread,840.0,57.0,52.0,13.0,Lunch,False,False
+Vegetarian chili with whole wheat bread,462.0,43.0,43.0,8.0,Lunch,False,True
+Chicken salad sandwich on whole wheat bread,470.0,42.0,55.0,11.0,Lunch,False,False
+Tofu scramble with spinach and avocado,611.0,32.0,10.0,14.0,Lunch,True,True
+Chicken breast salad with vegetables,328.0,32.0,31.0,10.0,Lunch,False,False
+Lentil soup with whole-wheat bread,700.0,13.0,24.0,8.0,Lunch,True,True
+Black bean burger on a whole-wheat bun,560.0,37.0,48.0,15.0,Lunch,False,False
+Chicken breast salad with mixed greens,421.0,28.0,17.0,10.0,Lunch,False,False
+Tofu and vegetable stir-fry with brown rice,454.0,6.0,8.0,12.0,Lunch,True,True
+Grilled chicken sandwich with whole-wheat bread,300.0,19.0,272.0,13.0,Lunch,False,False
+Tuna salad sandwich with whole-wheat bread,670.0,43.0,78.0,13.0,Lunch,False,False
+Lentil and quinoa salad,498.0,25.0,40.0,9.0,Lunch,True,True
+Chicken salad sandwich with mixed greens,520.0,13.0,48.0,11.0,Lunch,False,False
+Chickpea and vegetable curry,854.0,29.0,68.0,10.0,Lunch,True,True
+Black bean burgers with sweet potato fries,2065.0,40.0,206.5,16.0,Lunch,False,False
+Chicken Caesar salad,581.0,28.0,39.0,14.0,Lunch,False,False
+Chickpea salad sandwich with whole-wheat bread,471.0,28.0,32.0,10.0,Lunch,True,True
+Vegetarian chili with a side salad,670.0,29.0,27.0,8.0,Lunch,False,True
+Black bean burger with sweet potato fries,658.0,20.0,229.0,16.0,Lunch,False,False
+Grilled salmon with roasted vegetables,590.0,13.0,90.0,20.0,Lunch,False,False
+Chicken stir-fry with brown rice,567.7,42.0,75.0,11.0,Lunch,False,False
+Tuna salad sandwich on whole-wheat bread with a side of mixed greens,520.0,27.0,29.0,14.0,Lunch,False,False
+Chicken breast with quinoa and steamed vegetables,909.0,45.0,36.0,11.0,Lunch,False,False
+Vegetable stir-fry with brown rice,480.0,21.0,220.0,9.0,Lunch,True,True
+Chicken breast with brown rice and steamed vegetables,751.0,53.0,35.0,11.0,Lunch,False,False
+Black bean burger with whole-wheat bun and salad,525.0,34.0,80.0,15.0,Lunch,False,False
+Chicken salad sandwich on whole-wheat bread with a side of mixed greens,230.0,13.2,92.0,12.0,Lunch,False,False
+Lentil soup with whole grain bread,443.0,28.7,38.0,8.0,Lunch,True,True
+Lentil salad with quinoa and mixed greens,480.0,20.0,52.0,9.0,Lunch,True,True
+Turkey sandwich on whole grain bread,580.0,29.0,42.0,11.0,Lunch,False,False
+Bean burrito with brown rice,387.0,40.4,25.2,14.0,Lunch,False,False
+Tuna salad with whole grain bread,510.0,23.0,23.0,12.0,Lunch,False,False
+Black bean soup with whole wheat bread,335.0,19.0,61.0,7.0,Lunch,False,False
+Lentil stew with brown rice and quinoa,195.0,18.0,48.5,9.0,Lunch,True,True
+Chicken breast with roasted vegetables,507.0,123.0,44.0,12.0,Lunch,False,False
+Lentil and vegetable soup with whole-wheat bread,300.0,25.0,50.0,8.0,Lunch,True,True
+Black bean burgers on whole-wheat buns with salad,689.0,11.0,47.0,15.0,Lunch,False,False
+Lentil and vegetable curry with brown rice and quinoa,260.0,19.0,36.0,10.0,Lunch,True,True
+Chickpea salad sandwich on whole wheat bread,330.0,10.0,56.0,10.0,Lunch,True,True
+Chicken breast with brown rice and roasted vegetables,530.0,72.0,60.0,12.0,Lunch,False,False
+Black bean burger with whole wheat bun,190.0,12.0,27.0,15.0,Lunch,False,False
+Quinoa salad with chicken and vegetables,459.0,20.0,38.5,10.0,Lunch,False,False
+Tuna salad sandwich on whole-wheat bread,318.0,31.7,12.0,13.0,Lunch,False,False
+Chickpea salad with mixed greens,611.0,5.7,5.7,9.0,Lunch,True,True
+Vegan lentil stew with brown rice,850.0,23.0,31.0,7.0,Lunch,True,True
+Vegetarian chili with whole-wheat bread,307.0,11.0,68.6,8.0,Lunch,False,True
+Chicken salad sandwich on whole-wheat bread,162.0,25.0,90.0,11.0,Lunch,False,False
+Grilled chicken salad with mixed greens and avocado,260.0,42.0,24.0,14.0,Lunch,False,False
+Chicken and vegetable stir-fry with brown rice,732.0,77.0,300.0,11.0,Lunch,False,False
+Vegan pasta salad with vegetables,1430.0,42.0,180.0,8.0,Lunch,True,True
+Vegetarian chili with brown rice,563.0,42.0,12.0,8.0,Lunch,False,True
+Lentil and vegetable soup with whole wheat bread,344.0,3.7,130.0,8.0,Lunch,True,True
+Chicken breast and brown rice with vegetables,400.0,44.0,44.0,11.0,Lunch,False,False
+Tofu stir-fry with brown rice,323.0,48.0,131.0,12.0,Lunch,True,True
+Salmon with roasted vegetables,580.0,42.0,58.0,20.0,Lunch,False,False
+Lentil and vegetable curry with rice,367.0,20.8,43.0,10.0,Lunch,True,True
+Tuna salad sandwich on whole-wheat bread with a side salad,580.0,27.0,196.0,14.0,Lunch,False,False
+Lentil soup with a side of whole-wheat bread,362.0,33.0,12.0,8.0,Lunch,True,True
+Chicken breast with brown rice and broccoli,374.0,43.0,37.0,11.0,Lunch,False,False
+Lentil stew with a side of whole-wheat bread,225.0,12.0,77.0,8.0,Lunch,True,True
+Vegetarian chili with a side of whole-wheat bread,310.0,30.0,107.0,8.0,Lunch,False,True
+Grilled chicken breast salad with mixed greens and avocado,220.0,14.0,22.0,14.0,Lunch,False,False
+Turkey sandwich on whole-wheat bread with vegetables,365.0,31.0,91.0,11.0,Lunch,True,True
+Black bean burger with a side salad,520.0,20.0,115.0,15.0,Lunch,False,False
+Lentil and vegetable curry,506.0,22.1,105.0,10.0,Lunch,True,True
+Chicken breast with quinoa and roasted vegetables,410.0,53.0,40.0,12.0,Lunch,False,False
+Quinoa salad with grilled chicken and vegetables,661.0,29.0,28.0,10.0,Lunch,False,False
+Lentil soup with whole-grain bread,340.0,7.0,34.0,8.0,Lunch,True,True
+Lentil stew with whole-grain bread,225.0,26.0,240.7,8.0,Lunch,True,True
+Black bean soup with whole grain bread,330.0,25.0,2.0,7.0,Lunch,False,False
+Black bean burger on a whole grain bun,460.0,24.0,46.0,15.0,Lunch,False,False
+Chicken and vegetable fajitas,310.0,160.0,20.0,12.0,Lunch,False,False
+Lentil salad with mixed greens,425.0,18.0,425.0,9.0,Lunch,True,True
+Chicken breast salad with mixed greens and vegetables,412.0,24.0,68.0,10.0,Lunch,False,False
+Black bean salad with mixed greens,342.0,26.0,342.0,6.0,Lunch,False,False
+Chickpea salad with whole-wheat bread,797.0,49.0,312.0,9.0,Lunch,True,True
+Vegan lentil soup with whole wheat bread,360.0,4.0,46.0,7.0,Lunch,True,True
+Vegetarian burrito bowl with brown rice,410.0,16.0,31.0,14.0,Lunch,False,True
+Vegan chili with brown rice,496.0,31.8,140.0,8.0,Lunch,True,True
+Vegetarian pasta with marinara sauce,590.0,26.0,247.0,7.0,Lunch,False,True
+Chicken breast with quinoa and vegetables,431.0,50.0,45.0,11.0,Lunch,False,False
+Turkey sandwich on whole-wheat bread,630.0,45.0,68.0,11.0,Lunch,False,False
+Chicken stir fry with brown rice and vegetables,525.0,116.0,75.0,11.0,Lunch,False,False
+Lentil soup with whole-wheat bread and salad,477.0,47.0,227.0,8.0,Lunch,True,True
+Tuna salad sandwich on whole-wheat bread with salad,289.0,21.0,26.0,14.0,Lunch,False,False
+Black bean burger on whole-wheat bun with salad,450.0,22.0,45.0,15.0,Lunch,False,False
+Turkey sandwich on whole-wheat bread with salad,268.0,28.0,27.0,11.0,Lunch,False,False
+Bean burrito with brown rice and salsa,430.0,25.0,28.0,14.0,Lunch,False,False
+Vegetable stir fry with brown rice,378.0,12.0,63.0,9.0,Lunch,True,True
+Tuna salad sandwich on whole-grain bread,430.0,10.0,27.0,13.0,Lunch,False,False
+Turkey breast sandwich on whole-grain bread,211.0,15.0,21.0,11.0,Lunch,False,False
+Chickpea pasta with marinara sauce,495.0,22.3,127.0,7.0,Lunch,True,True
+Chicken salad sandwich on whole-grain bread,300.0,25.0,25.0,11.0,Lunch,False,False
+Chickpea pasta salad with vegetables,550.0,14.0,11.0,8.0,Lunch,True,True
+Black bean and sweet potato burrito,212.0,12.0,49.0,16.0,Lunch,False,False
+Chicken and vegetable skewers,480.0,25.0,10.0,12.0,Lunch,False,False
+Grilled chicken salad with quinoa,1070.0,54.0,110.0,12.0,Lunch,False,False
+Lentil and vegetable soup,80.0,4.0,17.0,8.0,Lunch,True,True
+Chicken and vegetable soup,420.5,26.33,26.33,7.0,Lunch,False,False
+Lentil pasta with vegan cheese,448.0,31.0,45.0,8.0,Lunch,True,True
+Quinoa salad with grilled tofu,450.0,27.7,70.0,9.0,Lunch,True,True
+Lentil stew with whole wheat bread,230.0,37.0,37.0,8.0,Lunch,True,True
+Lentil and vegetable stew with brown rice,401.0,30.0,20.0,9.0,Lunch,True,True
+Grilled chicken salad with mixed greens and vegetables,560.0,20.0,48.0,12.0,Lunch,False,False
+Lentil stew with brown rice,1300.0,29.0,110.0,9.0,Lunch,True,True
+Chickpea salad sandwich on wholegrain bread,255.0,12.2,24.0,10.0,Lunch,True,True
+Black bean burger on whole-wheat bun,860.0,18.0,180.0,15.0,Lunch,False,False
+Chicken breast with brown rice and quinoa,477.0,46.0,46.0,11.0,Lunch,False,False
+Vegetable stir-fry with rice noodles,383.0,22.0,94.0,9.0,Lunch,True,True
+Chicken and vegetable wrap,500.0,28.0,92.0,11.0,Lunch,False,False
+Chickpea pasta with vegetable sauce,290.0,29.0,71.0,8.0,Lunch,True,True
+Chicken breast with mixed greens salad,800.0,56.0,110.0,10.0,Lunch,False,False
+Chicken breast salad with mixed greens and avocado,740.0,33.0,20.0,14.0,Lunch,False,False
+Lentil and chickpea salad with whole grain pita,390.0,73.0,73.0,9.0,Lunch,True,True
+Lentil and vegetable soup with whole grain bread,480.0,16.5,14.0,8.0,Lunch,True,True
+Lentil and vegetable curry with brown rice and naan bread,639.0,7.0,35.0,10.0,Lunch,True,True
+Chickpea pasta salad with roasted vegetables,211.0,17.0,29.0,8.0,Lunch,True,True
+Turkey breast sandwich with mixed greens,450.0,27.1,25.5,11.0,Lunch,False,False
+Black bean burger on whole wheat bun with salad,450.0,4.0,37.0,15.0,Lunch,False,False
+Mixed greens salad with chickpeas and tahini dressing,500.0,26.0,12.0,9.0,Lunch,True,True
+Chicken and rice bowl with vegetables,1010.0,70.0,367.0,11.0,Lunch,False,False
+Lentil salad with quinoa and avocado,120.0,18.0,9.0,9.0,Lunch,True,True
+Quinoa salad with chickpeas and avocado,422.0,11.6,30.0,9.0,Lunch,True,True
+Chicken salad with whole grain bread,487.0,33.0,240.0,11.0,Lunch,False,False
+Black bean burger on a whole-wheat bun with salad,453.0,46.0,46.0,15.0,Lunch,False,False
+Chicken breast with sweet potato and roasted vegetables,453.0,43.0,18.0,12.0,Lunch,False,False
+Quinoa salad with vegetables,430.0,34.0,45.0,9.0,Lunch,True,True
+Chickpea pasta with vegetables and vegan cheese,450.0,20.0,60.0,8.0,Lunch,True,True
+Chicken breast with roasted vegetables and quinoa,440.0,52.0,57.0,12.0,Lunch,False,False
+Vegetable soup with whole-wheat bread,350.0,22.0,35.0,7.0,Lunch,True,True
+Chickpea and vegetable stew,327.0,15.0,35.0,9.0,Lunch,True,True
+Lentil soup with a side salad,400.0,12.5,200.0,8.0,Lunch,True,True
+Lentil stew with whole-wheat bread,125.0,39.0,35.0,8.0,Lunch,True,True
+Black bean burgers on whole-wheat buns with a side salad,1030.0,39.0,179.0,15.0,Lunch,False,False
+Chicken salad sandwich on whole-wheat bread with a side salad,374.0,33.0,48.0,12.0,Lunch,False,False
+Chickpea salad sandwich on whole-wheat bread with a side salad,533.0,15.0,107.0,10.0,Lunch,True,True
+Chicken salad with whole-wheat bread,250.0,16.0,25.0,11.0,Lunch,False,False
+Tuna salad with whole-wheat bread,570.0,28.0,11.0,12.0,Lunch,False,False
+Turkey sandwich with whole-wheat bread,581.0,53.0,50.0,11.0,Lunch,False,False
+Chicken salad sandwich on whole-wheat bread with a side of fruit,360.0,23.0,36.0,12.0,Lunch,False,False
+Black bean burger on a whole-wheat bun with a side salad,414.0,29.0,74.0,15.0,Lunch,False,False
+Tuna salad sandwich on whole-wheat bread with a side of fruit,494.0,27.0,48.0,14.0,Lunch,True,True
+Chickpea salad sandwich on whole-wheat bread with a side of fruit,472.0,20.0,27.0,10.0,Lunch,True,True
+Black bean burger on a whole wheat bun with salad,494.0,22.0,128.0,15.0,Lunch,False,False
+Black bean burger on a whole-grain bun,240.0,24.0,24.0,15.0,Lunch,False,False
+Grilled chicken salad with whole grain bread,385.0,35.0,250.0,12.0,Lunch,False,False
+Quinoa bowl with roasted vegetables and chickpeas,335.0,28.0,73.0,9.0,Lunch,True,True
+Chickpea and vegetable curry with brown rice,551.0,10.0,351.0,10.0,Lunch,True,True
+Quinoa salad with roasted vegetables and chickpeas,170.0,6.0,26.0,9.0,Lunch,True,True
+Tuna Salad Sandwich on Whole Wheat Bread,261.0,4.7,59.0,13.0,Lunch,False,False
+Quinoa Salad with Grilled Vegetables,650.0,24.0,25.0,9.0,Lunch,True,True
+Chicken Breast with Brown Rice and Steamed Vegetables,550.0,36.0,36.0,11.0,Lunch,False,False
+Lentil and Vegetable Curry with Brown Rice,544.0,20.0,10.0,10.0,Lunch,True,True
+Chicken and Vegetable Wrap on Whole Wheat Tortilla,410.0,29.0,18.0,11.0,Lunch,False,False
+Tuna salad sandwich on whole grain bread,671.0,26.0,16.0,13.0,Lunch,False,False
+Chicken salad sandwich on whole grain bread with a side of fruit,282.8,34.0,36.0,12.0,Lunch,False,False
+Tuna salad sandwich on whole grain bread with a side of salad,502.0,22.0,108.0,14.0,Lunch,False,False
+Chickpea salad sandwich on whole grain bread,286.0,12.0,24.0,10.0,Lunch,True,True
+Vegan lentil burger with sweet potato fries,551.0,14.3,34.8,14.0,Lunch,True,True
+Vegan chili with whole wheat bread,432.0,41.0,37.0,8.0,Lunch,True,True
+Chicken breast salad with whole-wheat bread,330.0,27.0,275.0,10.0,Lunch,False,False
+Lentil and veggie stir-fry with brown rice,305.0,8.7,23.0,10.0,Lunch,True,True
+Turkey and veggie wrap with whole-wheat tortilla,590.0,31.0,69.0,11.0,Lunch,False,True
+Vegetarian chili with whole grain bread,270.0,14.0,57.0,8.0,Lunch,False,True
+Veggie stir-fry,171.0,36.0,46.0,9.0,Lunch,False,True
+Lentil soup with bread,115.0,21.0,75.0,8.0,Lunch,True,True
+Grilled chicken salad,308.0,34.0,32.0,12.0,Lunch,False,False
+Turkey sandwich,820.0,42.0,142.0,11.0,Lunch,False,False
+Avocado and chickpea salad,483.0,3.6,40.0,9.0,Lunch,True,True
+Salmon with roasted vegetables,2020.0,60.0,250.0,60.0,Dinner,False,False
+Vegetable stir-fry with brown rice,10.0,5.0,31.0,27.0,Dinner,True,True
+Lentil and vegetable curry,326.0,55.0,150.0,15.0,Dinner,True,True
+Turkey chili with brown rice,278.0,20.0,163.0,27.0,Dinner,False,False
+Vegetarian chili with cornbread,186.0,6.3,186.0,22.0,Dinner,False,True
+Vegan stir-fry with brown rice,17.0,5.0,22.0,43.0,Dinner,True,True
+Steak with sweet potato and broccoli,730.0,21.0,72.0,54.0,Dinner,False,False
+Quinoa and vegetable bowl,294.0,27.0,30.0,11.0,Dinner,True,True
+Vegan chili with cornbread,390.0,4.0,45.0,8.0,Dinner,True,True
+Vegan pasta with vegetables and sauce,1670.0,40.4,47.5,50.0,Dinner,True,True
+Chickpea and vegetable curry,710.0,28.0,300.0,29.0,Dinner,True,True
+Vegetable stir-fry with tofu,597.0,3.4,59.0,25.0,Dinner,True,True
+Chicken breast with steamed vegetables,100.0,31.0,28.0,31.0,Dinner,False,False
+Vegan chili,500.0,28.0,140.0,7.0,Dinner,True,True
+Lentil pasta with vegetables,715.0,19.0,11.0,44.0,Dinner,True,True
+Steak with roasted vegetables,1507.0,93.1,196.0,93.1,Dinner,True,True
+Chicken stir-fry with brown rice,510.0,26.0,52.0,52.0,Dinner,False,False
+Vegetarian chili with brown rice,219.0,22.0,23.6,11.0,Dinner,False,True
+Chicken and vegetable stir-fry with brown rice,670.0,57.3,98.0,26.0,Dinner,False,False
+Tofu stir-fry with brown rice and vegetables,411.0,28.0,44.0,17.0,Dinner,True,True
+Chicken breast with sweet potato and green beans,72.0,28.0,25.0,1.6,Dinner,False,False
+Vegan pasta with vegetables and tomato sauce,440.0,28.0,44.0,22.0,Dinner,True,True
+Black bean burgers with sweet potato fries,1021.0,87.0,254.0,82.0,Dinner,False,False
+Tofu stir-fry with brown rice noodles,663.0,2.5,43.3,19.3,Dinner,True,True
+Steak with sweet potato and asparagus,409.0,11.0,30.0,10.0,Dinner,False,False
+Vegetable stir-fry with tofu and brown rice,780.0,61.0,15.0,22.0,Dinner,True,True
+Chicken breast with brown rice and vegetables,760.0,76.0,17.0,35.2,Dinner,False,False
+Black bean burgers with salad,468.0,38.0,61.0,21.0,Dinner,False,False
+Lentil and vegetable curry with brown rice,395.0,30.0,70.0,16.0,Dinner,True,True
+Lentil pasta with marinara sauce,206.0,25.0,206.0,16.0,Dinner,True,True
+Turkey meatballs with steamed vegetables,480.0,47.0,18.0,20.0,Dinner,False,False
+Steak with sweet potato fries,741.0,80.0,38.0,42.0,Dinner,False,False
+Lentil soup with whole-wheat bread,1160.0,41.0,140.0,28.0,Dinner,True,True
+Chickpea curry with brown rice,440.0,27.0,44.0,5.0,Dinner,True,True
+Lentil stew with whole-wheat bread,784.0,58.0,104.0,50.0,Dinner,True,True
+Chicken breast with roasted vegetables,422.0,42.0,42.0,10.0,Dinner,False,False
+Tofu stir-fry with brown rice,1140.0,11.0,10.0,31.0,Dinner,True,True
+Beef stew with brown rice,773.0,7.2,35.0,43.0,Dinner,False,False
+Vegan chili with brown rice,666.0,30.0,216.0,34.0,Dinner,True,True
+Vegan pasta with marinara sauce,729.0,20.0,70.0,43.0,Dinner,True,True
+Fish with roasted vegetables,541.0,53.0,541.0,10.0,Dinner,False,False
+Black bean burgers on whole-wheat buns,989.0,10.8,27.0,10.0,Dinner,False,False
+Grilled salmon with roasted vegetables,708.0,50.0,45.0,26.0,Dinner,False,False
+Lentil stew with brown rice,690.0,44.0,20.5,16.0,Dinner,True,True
+Salmon with sweet potato and broccoli,534.0,55.0,40.0,40.0,Dinner,False,False
+Tuna with quinoa and roasted vegetables,1759.0,165.0,184.5,63.6,Dinner,True,True
+Steak with baked potato and green beans,489.0,22.0,52.0,42.0,Dinner,True,True
+Vegetarian lasagna with salad,871.0,67.0,110.0,33.0,Dinner,False,True
+Salmon with roasted vegetables and quinoa,600.0,28.0,25.0,40.0,Dinner,False,False
+Steak with baked potato and broccoli,709.0,71.0,10.8,53.0,Dinner,False,False
+Lentil and vegetable stew,352.0,7.0,42.0,19.0,Dinner,True,True
+Beef stir-fry with brown rice,909.0,66.0,57.0,122.0,Dinner,False,False
+Beef stew with whole grain bread,140.0,11.0,56.0,21.0,Dinner,False,False
+Chickpea and vegetable pasta,180.0,42.0,76.0,70.0,Dinner,True,True
+Salmon with steamed vegetables,1191.0,63.2,1191.0,44.0,Dinner,False,False
+Steak with sweet potato and green beans,460.0,27.0,46.0,12.0,Dinner,True,True
+Salmon with roasted sweet potatoes,482.0,48.0,482.0,48.0,Dinner,False,False
+Chickpea and vegetable curry with brown rice,1080.0,30.0,78.0,45.5,Dinner,True,True
+Steak with mashed potatoes and green beans,2310.0,61.0,280.0,70.0,Dinner,True,True
+Lentil and vegetable soup with whole-wheat bread,14.0,14.0,60.05,4.0,Dinner,True,True
+Lentil soup with whole wheat bread,950.0,3.0,45.0,6.0,Dinner,True,True
+Quinoa salad with roasted vegetables,1044.0,25.0,66.0,66.0,Dinner,True,True
+Lentil and vegetable stew with brown rice,520.0,21.0,115.0,30.0,Dinner,True,True
+Tuna salad sandwich on whole-wheat bread,40.0,40.0,20.0,40.0,Dinner,False,False
+Chicken breast with roasted vegetables and sweet potato,443.0,17.0,443.0,44.0,Dinner,False,False
+Grilled chicken with roasted vegetables,215.0,85.0,45.0,28.0,Dinner,False,False
+Quinoa bowl with roasted chickpeas and vegetables,165.0,21.0,21.0,21.0,Dinner,True,True
+Lentil pasta with tomato sauce,1220.0,2.1,1220.0,29.0,Dinner,True,True
+Turkey chili with sweet potato,1430.0,143.0,40.0,50.0,Dinner,False,False
+Chicken breast with sweet potato and broccoli,154.0,45.0,54.0,45.0,Dinner,False,False
+Quinoa bowl with roasted vegetables and chickpeas,1046.0,27.0,76.0,28.0,Dinner,True,True
+Black bean burger on whole-wheat bun with avocado,1220.0,21.0,87.0,50.0,Dinner,False,False
+Tofu stir-fry with vegetables,379.0,10.0,18.0,22.0,Dinner,True,True
+Chickpea and vegetable pasta bake,760.0,28.0,260.0,48.0,Dinner,True,True
+Tofu and vegetable stir-fry,573.0,34.3,130.0,17.0,Dinner,True,True
+Lentil and vegetable curry with rice,486.0,36.0,86.0,22.0,Dinner,True,True
+Chickpea and vegetable stew,376.0,28.0,44.0,30.0,Dinner,True,True
+Black bean burgers with avocado,523.0,42.0,17.0,24.8,Dinner,False,False
+Grilled chicken breast with quinoa and steamed vegetables,626.0,65.0,20.0,32.0,Dinner,False,False
+Black bean burgers with roasted sweet potatoes and a green salad,691.0,35.0,250.0,13.0,Dinner,False,False
+Vegan pasta with marinara sauce and a side salad,210.0,14.0,20.0,33.0,Dinner,True,True
+Lentil soup with a side of whole-wheat bread,190.0,19.0,120.0,19.0,Dinner,True,True
+Vegetable frittata,482.0,28.3,110.0,23.0,Dinner,True,True
+Chickpea pasta with tomato sauce and spinach,539.0,40.0,52.0,42.0,Dinner,True,True
+Vegetable curry with brown rice,358.0,28.0,62.0,4.0,Dinner,True,True
+Fish with steamed broccoli,240.0,56.0,98.0,14.0,Dinner,False,False
+Salmon with roasted vegetables and brown rice,420.0,48.0,32.0,16.0,Dinner,False,False
+Lentil pasta with tomato sauce and vegetables,1068.0,4.0,180.0,15.0,Dinner,True,True
+Steak with sweet potato fries and a side salad,527.0,27.0,30.0,26.0,Dinner,False,False
+Chickpea pasta with marinara sauce and vegetables,565.0,42.0,200.0,28.0,Dinner,True,True
+Salmon with roasted vegetables and sweet potato,562.96,28.46,28.46,23.8,Dinner,False,False
+Turkey meatballs with whole-wheat pasta,687.0,46.2,202.0,23.6,Dinner,False,False
+Lentil and vegetable stew with whole-wheat bread,450.0,3.6,18.0,16.5,Dinner,True,True
+Steak with roasted vegetables and brown rice,639.0,4.0,100.0,4.0,Dinner,True,True
+Chicken breast with steamed vegetables and brown rice,452.0,28.0,45.0,17.9,Dinner,False,False
+Grilled salmon with quinoa and roasted vegetables,1190.0,36.0,74.0,47.0,Dinner,False,False
+Vegan black bean burgers on whole wheat buns,820.0,38.0,64.0,40.0,Dinner,True,True
+Grilled chicken with sweet potato and broccoli,819.0,27.0,400.0,68.0,Dinner,False,False
+Lentil stew with whole wheat bread,403.0,18.0,23.0,2.8,Dinner,True,True
+Baked chicken with roasted vegetables,700.0,55.0,64.0,27.0,Dinner,False,False
+Steak with sweet potatoes and broccoli,1202.0,273.0,30.0,49.0,Dinner,False,False
+Tuna salad with whole-wheat bread,141.0,16.0,91.0,7.0,Dinner,False,False
+Lentil stew with whole-grain bread,440.0,19.0,20.0,40.0,Dinner,True,True
+Steak with roasted vegetables and sweet potato,292.0,47.0,270.0,32.0,Dinner,True,True
+Chickpea pasta with vegetable sauce,660.0,40.0,115.0,46.0,Dinner,True,True
+Chicken stir fry with brown rice and vegetables,491.0,28.0,491.0,50.0,Dinner,False,False
+Black bean soup with whole-grain bread,140.0,28.0,40.0,11.0,Dinner,False,False
+Lentil soup with whole-grain bread,1770.0,17.0,220.0,50.0,Dinner,True,True
+Vegan lentil stew,885.0,22.0,188.0,50.0,Dinner,True,True
+Salmon with vegetables,590.0,59.0,59.0,59.0,Dinner,False,False
+Chickpea pasta with marinara sauce,760.0,30.0,85.0,18.0,Dinner,True,True
+Quinoa salad with grilled chicken,503.0,22.0,219.0,21.0,Dinner,False,False
+Tofu and vegetable stir-fry with brown rice,293.0,10.0,69.0,61.0,Dinner,True,True
+Grilled chicken salad with quinoa,514.0,39.0,170.0,47.0,Dinner,False,False
+Steak with baked potato and salad,420.0,60.0,42.0,42.0,Dinner,False,False
+Vegetable lasagna with salad,1246.0,28.2,1246.0,12.0,Dinner,True,True
+Chickpea pasta with tomato sauce and vegetables,834.0,28.0,155.0,16.0,Dinner,True,True
+Salmon with quinoa and steamed vegetables,1023.0,102.0,95.0,8.0,Dinner,False,False
+Chicken breast with roasted vegetables and quinoa,192.0,52.0,24.0,39.0,Dinner,False,False
+Roast beef with mashed potatoes and peas,451.0,45.0,70.0,24.0,Dinner,False,False
+Black bean burgers on wholegrain buns,847.0,21.0,94.0,55.0,Dinner,False,False
+Chicken breast with vegetables,565.0,47.0,220.0,55.0,Dinner,False,False
+Beef and vegetable skewers with sweet potato fries,105.0,8.9,36.0,31.0,Dinner,False,False
+Vegan chili with whole grain bread,420.0,12.0,81.0,5.0,Dinner,True,True
+Vegan pasta with vegetables and cashew cream sauce,425.0,52.0,150.0,30.0,Dinner,True,True
+Quinoa salad with grilled vegetables,500.0,1.0,14.0,14.0,Dinner,True,True
+Vegan pizza with vegetables and cashew cheese,711.0,43.0,356.0,22.0,Dinner,True,True
+Fish with roasted vegetables and quinoa,513.0,54.0,67.0,38.0,Dinner,False,False
+Chicken and vegetable stir-fry,420.0,23.1,43.0,32.0,Dinner,False,False
+Lentil and vegetable stew with whole wheat bread,580.0,20.6,98.0,16.0,Dinner,True,True
+Tempeh stir-fry with brown rice,767.0,52.0,304.0,11.0,Dinner,False,False
+Black bean burger with sweet potato fries,540.0,46.0,40.0,23.0,Dinner,False,False
+Chicken breast with baked potato,803.0,27.4,270.0,31.0,Dinner,False,False
+Salmon with quinoa and steamed broccoli,120.0,20.0,12.0,42.0,Dinner,False,False
+Baked chicken with sweet potato and green beans,1040.0,104.0,249.0,60.0,Dinner,False,False
+Steak with quinoa and steamed broccoli,680.0,90.0,48.0,18.0,Dinner,False,False
+Baked fish with steamed vegetables,678.0,29.0,23.0,5.0,Dinner,False,False
+Vegetarian chili,660.0,20.0,72.0,19.0,Dinner,False,True
+Vegan lasagna,1079.0,13.1,54.0,13.0,Dinner,True,True
+Turkey chili with cornbread,496.0,79.0,37.0,49.0,Dinner,False,False
+Turkey meatballs with spaghetti squash,340.0,66.0,34.0,21.0,Dinner,False,False
+Salmon with asparagus and sweet potato,392.0,47.0,46.0,4.0,Dinner,False,False
+Bean and vegetable burrito,10.0,1.6,15.4,10.0,Dinner,True,True
+Bean burgers with sweet potato fries,540.0,28.0,41.0,43.0,Dinner,False,False
+Black bean burgers with brown rice and roasted vegetables,441.0,45.0,37.0,42.0,Dinner,True,True
+Vegetable stir-fry with quinoa,702.0,17.0,30.0,5.0,Dinner,True,True
+Turkey chili with whole-wheat bread,330.0,23.0,25.0,23.0,Dinner,False,False
+Lentil loaf with roasted vegetables,160.0,4.0,32.0,4.0,Dinner,True,True
+Vegetarian lasagna with a side salad,14.0,14.0,31.0,14.0,Dinner,False,True
+Vegan pasta with marinara sauce and vegetables,12.0,17.0,132.0,25.0,Dinner,True,True
+Chickpea pasta with tomato sauce,170.0,20.0,24.0,5.0,Dinner,True,True
+Bean burrito with brown rice,250.0,16.5,30.0,21.0,Dinner,False,False
+Lentil soup with whole grain bread,55.0,28.0,57.0,28.0,Dinner,True,True
+Lentil stew with whole grain bread,421.0,2.3,67.0,17.7,Dinner,True,True
+Lentil and vegetable soup with whole grain bread,346.0,2.0,59.0,52.0,Dinner,True,True
+Lentil stew with vegetables and brown rice,302.0,23.4,11.2,16.0,Dinner,True,True
+Bean and vegetable stir-fry with brown rice,180.0,6.0,180.0,9.0,Dinner,True,True
+Turkey chili with whole grain bread,50.0,23.0,16.0,14.0,Dinner,False,False
+Chicken Stir-Fry with Brown Rice,238.0,16.5,156.0,3.0,Dinner,False,False
+Lentil Soup with Whole Wheat Bread,640.0,50.0,18.0,7.0,Dinner,True,True
+Salmon with Roasted Sweet Potatoes,710.0,16.3,72.0,19.0,Dinner,False,False
+Black Bean Burgers on Whole Wheat Buns,560.0,21.9,55.0,10.0,Dinner,False,False
+Grilled Steak with Sweet Potato Fries,1440.0,4.0,56.0,37.0,Dinner,False,False
+Salmon with roasted sweet potatoes and broccoli,500.0,42.0,42.0,27.0,Dinner,False,False
+Steak with sweet potato fries and mixed greens,2168.0,120.0,269.0,120.0,Dinner,False,False
+Beef with sweet potato and green beans,491.0,2.0,245.0,5.0,Dinner,False,False
+Lentil pasta with vegan pesto sauce,188.0,18.0,19.0,13.0,Dinner,True,True
+Chicken breast with quinoa and vegetables,623.0,65.0,100.0,46.0,Dinner,False,False
+Vegan burgers with sweet potato fries,412.0,28.0,41.0,15.0,Dinner,True,True
+Steak with baked potato,365.0,85.0,510.0,51.0,Dinner,False,False
+Chicken breast with broccoli and sweet potato,516.0,64.0,150.0,15.0,Dinner,False,False
+Tofu and quinoa bowl,439.0,10.5,194.0,72.0,Dinner,True,True
+Vegetable curry,297.0,24.1,24.0,9.1,Dinner,True,True
+Beef and broccoli stir-fry,436.0,6.1,41.0,15.8,Dinner,False,False
+Baked salmon with veggies,290.0,29.0,17.0,37.0,Dinner,False,False
+Pasta with marinara sauce,788.0,28.0,78.0,28.0,Dinner,False,False
+Pasta with marinara sauce and veggies,835.0,120.0,250.0,34.0,Dinner,False,True
+Greek yogurt with fruit,150.0,10.0,20.0,5.0,Snack,True,True
+Apple with almond butter,180.0,4.0,30.0,8.0,Snack,False,False
+Trail mix,300.0,8.0,34.0,20.0,Snack,False,False
+Banana with peanut butter,210.0,5.0,30.0,9.0,Snack,True,True
+Fruit and nut mix,250.0,6.0,28.0,15.0,Snack,True,True
+Hummus and veggie wrap,200.0,7.0,25.0,10.0,Snack,False,True
+Protein shake,200.0,20.0,10.0,5.0,Snack,False,False
+Cottage cheese with fruit,160.0,14.0,12.0,5.0,Snack,True,True
+Energy bar,220.0,10.0,25.0,8.0,Snack,False,False
+Fruit and veggie sticks,100.0,2.0,20.0,1.0,Snack,True,True
+Trail mix with nuts and seeds,350.0,10.0,40.0,25.0,Snack,True,True
+Fruit salad with yogurt,150.0,4.0,25.0,7.0,Snack,True,True
+Popcorn,100.0,3.0,15.0,5.0,Snack,False,False
+Smoothie with protein powder,200.0,20.0,30.0,2.0,Snack,False,False
+Fruit and nuts,180.0,6.0,30.0,8.0,Snack,True,True
+Protein bar,250.0,8.0,30.0,12.0,Snack,False,False
+Apple with peanut butter,180.0,4.0,30.0,8.0,Snack,True,True
+Trail mix with nuts and dried fruit,350.0,10.0,40.0,25.0,Snack,True,True
+Greek yogurt with fruit and granola,200.0,12.0,30.0,6.0,Snack,True,True
+Banana with almond butter,210.0,5.0,30.0,9.0,Snack,False,False
+Mixed nuts and seeds,200.0,6.0,20.0,15.0,Snack,True,True
+Apple slices with peanut butter,180.0,4.0,30.0,8.0,Snack,True,True
+Fruit smoothie,150.0,2.0,35.0,1.0,Snack,True,True
+Apple slices with almond butter,180.0,6.0,30.0,8.0,Snack,False,False
+Fruit and cheese,200.0,10.0,15.0,10.0,Snack,True,True
+Fruit and yogurt,150.0,10.0,20.0,5.0,Snack,True,True
+Fruit salad with nuts,150.0,4.0,25.0,7.0,Snack,True,True
+Protein shake with banana,200.0,20.0,30.0,2.0,Snack,False,False
+Energy bar with nuts and seeds,250.0,8.0,30.0,12.0,Snack,True,True
+Smoothie with protein powder and fruit,180.0,6.0,30.0,8.0,Snack,True,True
+Mixed nuts,180.0,6.0,30.0,8.0,Snack,True,True
+Greek yogurt with nuts and seeds,180.0,6.0,30.0,8.0,Snack,True,True
+Trail mix with almonds and dried fruit,350.0,10.0,40.0,25.0,Snack,True,True
+Fruit salad with nuts and seeds,150.0,4.0,25.0,7.0,Snack,True,True
+Protein shake with fruit,200.0,20.0,10.0,5.0,Snack,True,True
+Trail mix with dried fruit and nuts,180.0,6.0,30.0,8.0,Snack,True,True
+Vegetable sticks with hummus,180.0,6.0,30.0,8.0,Snack,True,True
+Greek yogurt with fruit and nuts,180.0,6.0,30.0,8.0,Snack,True,True
+Hummus with vegetables,180.0,6.0,30.0,8.0,Snack,True,True
+Trail mix with nuts and dried fruits,180.0,6.0,30.0,8.0,Snack,True,True
+Greek yogurt with berries,150.0,10.0,20.0,5.0,Snack,False,True
+Low-fat Greek yogurt with berries,180.0,6.0,30.0,8.0,Snack,False,True
+Raw vegetables and hummus,180.0,6.0,30.0,8.0,Snack,True,True
+Celery sticks with peanut butter,180.0,6.0,30.0,8.0,Snack,True,True
+Fruit salad,150.0,4.0,25.0,7.0,Snack,True,True
+Trail mix with almonds and dried cranberries,180.0,6.0,30.0,8.0,Snack,False,False
+Protein bar with nuts,180.0,6.0,30.0,8.0,Snack,True,True
+Carrot sticks with hummus,180.0,6.0,30.0,8.0,Snack,False,False
+Greek yogurt with berries and granola,180.0,6.0,30.0,8.0,Snack,False,True
+String cheese with crackers,180.0,6.0,30.0,8.0,Snack,False,True
+Protein shake with milk and banana,180.0,6.0,30.0,8.0,Snack,False,False
+Fruit smoothie with almond milk,180.0,6.0,30.0,8.0,Snack,True,True
+Greek yogurt with granola,180.0,6.0,30.0,8.0,Snack,False,True
+Protein shake with almond butter,180.0,6.0,30.0,8.0,Snack,False,False
+Peanut butter and banana sandwich,180.0,6.0,30.0,8.0,Snack,True,True
+Popcorn with a sprinkle of cinnamon,180.0,6.0,30.0,8.0,Snack,False,False
+Fruit and nut smoothie,200.0,8.0,35.0,5.0,Snack,True,True
+Protein shake with fruit and spinach,180.0,6.0,30.0,8.0,Snack,True,True
+Protein smoothie with almond milk and banana,200.0,20.0,30.0,2.0,Snack,False,False
+Nuts and seeds,180.0,6.0,30.0,8.0,Snack,True,True
+Mixed nuts and dried fruit,180.0,6.0,30.0,8.0,Snack,True,True
+Fruit and vegetable smoothie,180.0,6.0,30.0,8.0,Snack,True,True
+Whole-grain crackers with hummus,180.0,6.0,30.0,8.0,Snack,False,False
+Hummus with carrots and cucumber,180.0,6.0,30.0,8.0,Snack,False,False
+Fruit smoothie with plant-based milk,180.0,6.0,30.0,8.0,Snack,True,True
+Fruit with yogurt,150.0,10.0,20.0,5.0,Snack,True,True
+Almonds,180.0,6.0,30.0,8.0,Snack,False,False
+Yogurt with fruit and granola,180.0,6.0,30.0,8.0,Snack,True,True
+Fruit and vegetable salad,180.0,6.0,30.0,8.0,Snack,True,True
+Fruit with nut butter,180.0,4.0,30.0,8.0,Snack,True,True
+Banana,180.0,6.0,30.0,8.0,Snack,False,False
+Rice cakes with peanut butter,180.0,6.0,30.0,8.0,Snack,True,True
+Trail mix ,180.0,6.0,30.0,8.0,Snack,False,False
+Popcorn with a touch of olive oil,180.0,6.0,30.0,8.0,Snack,False,False
+Almond milk with banana and chia seeds,180.0,6.0,30.0,8.0,Snack,False,False
+Hummus with wholegrain crackers,180.0,6.0,30.0,8.0,Snack,False,False
+Yogurt with fruit,180.0,6.0,30.0,8.0,Snack,True,True
+Yogurt parfait with granola,180.0,6.0,30.0,8.0,Snack,False,True
+Fruit with nuts,180.0,6.0,30.0,8.0,Snack,True,True
+Fruit with cottage cheese,160.0,14.0,12.0,5.0,Snack,True,True
+Almonds with dried fruit,180.0,6.0,30.0,8.0,Snack,True,True
+Protein shake with fruit and greens,180.0,6.0,30.0,8.0,Snack,True,True
+Dark chocolate with almonds,180.0,6.0,30.0,8.0,Snack,False,False
+Yogurt with granola,180.0,6.0,30.0,8.0,Snack,False,True
+Protein smoothie,180.0,6.0,30.0,8.0,Snack,False,False
+Protein smoothie with fruit,180.0,6.0,30.0,8.0,Snack,True,True
+Fruit with almonds,200.0,6.0,20.0,15.0,Snack,True,True
+Popcorn with a sprinkle of parmesan cheese,180.0,6.0,30.0,8.0,Snack,False,True
+Protein shake with fruit ,180.0,6.0,30.0,8.0,Snack,True,True
+Fruit and yogurt ,180.0,6.0,30.0,8.0,Snack,True,True
+Protein shake with fruit and nuts,180.0,6.0,30.0,8.0,Snack,True,True
+Protein shake with fruit and nuts ,180.0,6.0,30.0,8.0,Snack,True,True
+Popcorn with nutritional yeast,180.0,6.0,30.0,8.0,Snack,True,True
+Greek yogurt with protein powder,180.0,6.0,30.0,8.0,Snack,False,True
+Protein smoothie with banana and spinach,180.0,6.0,30.0,8.0,Snack,False,False
+Hummus and veggie wraps,180.0,6.0,30.0,8.0,Snack,False,True
+Fruit and vegetables,180.0,6.0,30.0,8.0,Snack,True,True
+Fruit salad with Greek yogurt,180.0,6.0,30.0,8.0,Snack,True,True
+Fruit with almond butter,180.0,6.0,30.0,8.0,Snack,True,True
+Fruit with nuts and seeds,200.0,6.0,20.0,15.0,Snack,True,True
+Popcorn with a sprinkle of nutritional yeast,100.0,3.0,15.0,5.0,Snack,True,True
+Apple with Peanut Butter,180.0,6.0,30.0,8.0,Snack,True,True
+Mixed Nuts and Dried Fruits,180.0,6.0,30.0,8.0,Snack,True,True
+Yogurt Parfait with Granola,180.0,6.0,30.0,8.0,Snack,False,True
+Fruit Salad with Coconut Yogurt,180.0,6.0,30.0,8.0,Snack,True,True
+Protein Shake with Banana,180.0,6.0,30.0,8.0,Snack,False,False
+Greek yogurt with almonds and fruit,180.0,6.0,30.0,8.0,Snack,True,True
+Hummus and veggie sticks,180.0,6.0,30.0,8.0,Snack,False,True
+Trail mix with dried fruit,180.0,6.0,30.0,8.0,Snack,True,True
+Hummus and vegetable sticks,180.0,6.0,30.0,8.0,Snack,True,True
+Hummus and veggies,180.0,6.0,30.0,8.0,Snack,False,True
+Greek yogurt with nuts,180.0,6.0,30.0,8.0,Snack,True,True
+Capati,300.0,9.0,46.6,8.6,General,False,False
+Dosai,147.0,4.8,27.36,2.08,General,False,False
+ Kuih-Teow Bandung,540.0,17.1,57.6,27.0,General,False,False
+Kuih-Teow Goreng,321.0,9.35,36.21,15.47,General,False,False
+Mee Bandung,549.0,20.25,54.45,27.9,General,False,False
+Mee Kari,529.0,11.89,36.9,36.9,General,False,False
+Mee Goreng,281.0,9.31,40.63,9.01,General,False,False
+Mee Sup,383.0,20.27,42.23,14.64,General,False,False
+Mee-Hoon Bandung,491.0,13.95,56.7,22.95,General,False,False
+Mee-Hoon Goreng,294.0,7.31,40.63,11.39,General,False,False
+Nasi Ayam,278.0,16.1,46.0,3.22,General,False,False
+Nasi Lemak,389.0,9.66,58.19,13.11,General,False,False
+Nasi Dagang,507.0,8.0,91.5,12.25,General,False,False
+Nasi Goreng,637.0,16.17,86.79,25.08,General,False,False
+Nasi Minyak,436.0,7.6,73.75,12.25,General,False,False
+Roti Canai,307.0,6.65,45.5,10.26,General,False,False
+Roti Telur,356.0,12.42,46.17,13.5,General,False,False
+Goreng Daging Lembu (4 pcs),576.0,52.87,31.96,26.35,General,False,False
+Daging Lembu Masak Merah (4pcs),265.0,17.34,23.8,11.22,General,False,False
+Kari Daging Lembu,259.0,26.28,15.48,10.26,General,False,False
+Rendang Daging Lembu,253.0,18.2,7.8,16.5,General,False,False
+Satay Daging Lembu (10 stick),360.0,30.6,33.15,11.7,General,False,False
+Ayam Goreng,283.0,22.4,3.6,19.9,General,False,False
+Kari Ayam,203.0,17.0,2.9,13.7,General,False,False
+Ayam Kurma,175.0,12.4,1.2,13.4,General,False,False
+Satay Ayam (10 stick),365.0,28.35,19.05,19.35,General,False,False
+Kari Kambing,185.0,15.5,0.6,13.4,General,False,False
+Ikan Tilapia Goreng Berlada,294.0,23.9,9.0,18.0,General,False,False
+Ikan Tilapia Masak Lemak,190.0,14.5,0.9,14.3,General,False,False
+Ikan Bawal Hitam Goreng,225.0,31.5,1.6,10.3,General,False,False
+Ikan Bawal Hitam Goreng Berlada,242.0,24.3,3.4,14.6,General,False,False
+Ikan Sembilang Goreng,254.0,28.7,2.8,14.2,General,False,False
+Sotong Kecil Sambal,148.0,13.3,6.3,7.7,General,False,False
+Ikan Cincaru Masak Cuka,193.0,26.3,1.4,9.1,General,False,False
+Ikan Cincaru Goreng Berlada,215.0,18.3,7.1,12.6,General,False,False
+Ikan Kembong Goreng,274.0,31.0,5.4,14.3,General,False,False
+Ikan Kembong Masak Kicap,261.0,17.8,10.6,16.4,General,False,False
+Ikan Kembong Goreng Berlada,336.0,19.4,1.2,28.2,General,False,False
+Ikan Merah Masak Asam,230.0,21.0,8.0,12.7,General,False,False
+Ikan Merah Goreng Berlada,260.0,33.5,1.2,13.5,General,False,False
+Ikan Merah Masak Lemak,251.0,19.0,2.8,18.2,General,False,False
+Udang Kecil Sambal,200.0,16.2,1.1,14.5,General,False,False
+Ikan Haruan Kering Goreng,408.0,46.4,25.4,13.4,General,False,False
+Ikan Tenggiri Goreng,331.0,39.3,3.5,17.7,General,False,False
+Ikan tenggiri Goreng Berlada,286.0,22.4,1.4,21.2,General,False,False
+Ikan Pari Masak Asam Pedas,245.0,26.6,3.6,13.8,General,False,False
+Ikan Kerisi Goreng Berlada,339.0,26.5,5.3,23.5,General,False,False
+Ikan Kerisi Masak Kicap,231.0,25.2,3.6,12.9,General,False,False
+Ikan Tongkol Masak Lemak,119.0,15.7,6.1,3.5,General,False,False
+Ikan Selar Kuning Masak Asam Pedas,265.0,18.6,6.3,18.4,General,False,False
