@@ -1,4 +1,4 @@
-<img width="590" height="1280" alt="input2" src="https://github.com/user-attachments/assets/0a9a3c6b-b685-47f1-af85-229eddc760ce" /># Welcome to your Expo app 👋
+# Welcome to MY EatRight App
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
