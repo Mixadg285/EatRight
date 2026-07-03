@@ -47,6 +47,17 @@ This command will move the starter code to the **app-example** directory and cre
 <img width="280" height="630" alt="input2" src="https://github.com/user-attachments/assets/316b2cc8-775b-4c38-9eda-57579bf01395" />
 <img width="280" height="630" alt="input3" src="https://github.com/user-attachments/assets/9487d0fb-3d92-46cb-8ac0-1a9df007355f" />
 
+## RESULT PAGE
+<img width="280" height="630" alt="result1" src="https://github.com/user-attachments/assets/137efd97-74d0-43c1-85bf-134e8f17c0dd" />
+<img width="280" height="630" alt="result2" src="https://github.com/user-attachments/assets/a9d7f11d-f228-4648-a92c-e969efdfd51d" />
+<img width="280" height="630" alt="result3" src="https://github.com/user-attachments/assets/d7a541ee-b264-4715-826e-e6414c5cdeed" />
+
+## INSIGHT PAGE
+
+<img width="280" height="630" alt="in1" src="https://github.com/user-attachments/assets/0d4b57b3-843e-4629-bc4b-2d9802bd3b2f" />
+
+
+
 
 
 
