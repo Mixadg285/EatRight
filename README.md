@@ -37,9 +37,11 @@ This command will move the starter code to the **app-example** directory and cre
 
 ## ONBOARDING SCREENS
 
-[26/6/2026 8:30 PM] Mizan: 
-[26/6/2026 8:30 PM] Mizan: 
-[26/6/2026 8:30 PM] Mizan: 
+<img width="590" height="1280" alt="image" src="https://github.com/user-attachments/assets/044e9d6d-006f-4060-8cd2-21ef99808e28" />
+<img width="590" height="1280" alt="image" src="https://github.com/user-attachments/assets/741e95b7-8fde-45a3-ae01-ed5d1c7a1f3a" />
+<img width="590" height="1280" alt="image" src="https://github.com/user-attachments/assets/35cbfac3-350b-49b3-bb7f-5602a09fc8f5" />
+
+
 
 
 
