@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field, root_validator
 
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_DIR = BASE_DIR / "models"
-DATA_PATH = BASE_DIR / "dataset" / "combined_food_data.csv"
+DATA_PATH = BASE_DIR / "dataset" / "combined_food.csv"
 
 app = FastAPI(title="EatRight Machine Learning API")
 app.add_middleware(
@@ -40,6 +40,7 @@ def load_food_catalog() -> pd.DataFrame:
     df["Meal_type"] = df["Meal_type"].astype(str).str.strip().str.title()
     df["is_vegan"] = df["is_vegan"].astype(str).str.strip().str.lower() == "true"
     df["is_vegetarian"] = df["is_vegetarian"].astype(str).str.strip().str.lower() == "true"
+    df["Food_type"] = df["Food_type"].astype(str).str.strip()
 
     def meal_one_hot(meal_type: str) -> dict:
         meal_type = meal_type.strip().lower()
@@ -79,7 +80,7 @@ class ActivityLevel(str, Enum):
 
 
 class DietaryPreference(str, Enum):
-    omnivore = "omnivore"
+    Normal = "Normal"
     vegetarian = "vegetarian"
     vegan = "vegan"
     pescatarian = "pescatarian"
@@ -99,6 +100,11 @@ class MealType(str, Enum):
     general = "General"
 
 
+class FoodType(str, Enum):
+    global_food = "Global"
+    local_food = "Local"
+
+
 class CaloriesRequest(BaseModel):
     age: int = Field(..., ge=1)
     gender: Gender
@@ -113,6 +119,7 @@ class MealRecommendationRequest(BaseModel):
     calories: Optional[float] = Field(None, ge=0)
     protein: Optional[float] = Field(None, ge=0)
     carbohydrates: Optional[float] = Field(None, ge=0)
+    prefer_local_food: bool = False
     fats: Optional[float] = Field(None, ge=0)
     is_vegan: bool = False
     is_vegetarian: bool = False
@@ -145,6 +152,7 @@ class MealRecommendation(BaseModel):
     Protein: float
     Carbohydrates: float
     Fats: float
+    Food_type: str
     Meal_type: str
 
 
@@ -161,6 +169,7 @@ class UserProfile(BaseModel):
     activity_level: ActivityLevel
     dietary_preference: DietaryPreference
     weight_goal: WeightGoal = WeightGoal.maintain
+    prefer_local_food: bool = False
 
 
 def map_gender(value: Gender) -> int:
@@ -180,7 +189,7 @@ def map_activity_level(value: ActivityLevel) -> int:
 
 def map_dietary_preference(value: DietaryPreference) -> int:
     mapping = {
-        DietaryPreference.omnivore: 0,
+        DietaryPreference.Normal: 0,
         DietaryPreference.vegetarian: 1,
         DietaryPreference.vegan: 2,
         DietaryPreference.pescatarian: 3,
@@ -270,11 +279,13 @@ def recommend_food_items_by_calories(
     meal_type: str,
     dietary_preference: DietaryPreference,
     num_recommendations: int = 1,
+    prefer_local_food: bool = False,
 ) -> List[dict]:
     """
     Recommend foods within a calorie range using weighted random sampling.
     Uses 15% tolerance around target calories.
     Foods closer to target have higher probability of being selected.
+    If prefer_local_food is True, prioritizes Local Food items.
     """
     tolerance = 0.15
     # defensive: ensure target is a finite number
@@ -297,6 +308,13 @@ def recommend_food_items_by_calories(
 
     if catalog.empty:
         return []
+
+    # If user prefers Local Food, prioritize it
+    if prefer_local_food:
+        local_foods = catalog[catalog["Food_type"] == "Local"]
+        if not local_foods.empty:
+            catalog = local_foods
+        # else: use all available foods if no Local foods match
 
     distances = (catalog["Calories"] - target_calories).abs()
     max_distance = distances.max()
@@ -332,16 +350,19 @@ def recommend_food_items_by_calories(
             "Carbohydrates": float(row["Carbohydrates"]),
             "Fats": float(row["Fats"]),
             "Meal_type": str(row["Meal_type"]),
+            "Food_type": str(row["Food_type"]),
         }
         results.append(result)
 
     return results
 
 
-def get_recommendation_rows(query_vector: np.ndarray, top_n: int, ignore_name: Optional[str] = None) -> List[dict]:
+def get_recommendation_rows(query_vector: np.ndarray, top_n: int, ignore_name: Optional[str] = None, prefer_local_food: bool = False) -> List[dict]:
     neighbors = meal_knn_model.kneighbors(query_vector, n_neighbors=min(top_n + 1, len(food_catalog)), return_distance=True)
     distances, indices = neighbors
     recommendations: List[dict] = []
+    
+    # First pass: collect recommendations, prioritizing Local food if requested
     for distance, index in zip(distances[0], indices[0]):
         row = food_catalog.iloc[int(index)]
         if ignore_name and row["Food_name"].strip().lower() == ignore_name.strip().lower():
@@ -356,11 +377,19 @@ def get_recommendation_rows(query_vector: np.ndarray, top_n: int, ignore_name: O
                 "meal_type": str(row["Meal_type"]),
                 "is_vegan": bool(row["is_vegan"]),
                 "is_vegetarian": bool(row["is_vegetarian"]),
+                "food_type": str(row["Food_type"]),
                 "distance": float(distance),
             }
         )
         if len(recommendations) >= top_n:
             break
+    
+    # If prefer_local_food is True, sort to prioritize Local food items first
+    if prefer_local_food and recommendations:
+        local_foods = [r for r in recommendations if r["food_type"] == "Local"]
+        global_foods = [r for r in recommendations if r["food_type"] == "Global"]
+        recommendations = local_foods + global_foods
+    
     return recommendations
 
 
@@ -434,6 +463,7 @@ async def predict_and_recommend(user: UserProfile) -> MealPlanResponse:
                 meal_type=meal_type_obj.value,
                 dietary_preference=user.dietary_preference,
                 num_recommendations=1,
+                prefer_local_food=user.prefer_local_food,
             )
             meal_plan[meal_name] = recommendations
 
@@ -471,13 +501,13 @@ def recommend_meals(request: MealRecommendationRequest) -> dict:
             int(row["Meal_type"] == "Snack"),
         ], dtype=float).reshape(1, -1)
         predicted_meal_type = row["Meal_type"]
-        recommendations = get_recommendation_rows(query_vector, request.top_n, ignore_name=request.food_name)
+        recommendations = get_recommendation_rows(query_vector, request.top_n, ignore_name=request.food_name, prefer_local_food=request.prefer_local_food)
     else:
         if request.meal_type == MealType.general and request.calories is not None:
             predicted_meal_type = infer_meal_type_by_calories(request.calories).value
         else:
             predicted_meal_type = request.meal_type.value
-        recommendations = get_recommendation_rows(build_meal_feature_vector(request), request.top_n)
+        recommendations = get_recommendation_rows(build_meal_feature_vector(request), request.top_n, prefer_local_food=request.prefer_local_food)
 
     return {
         "predicted_meal_type": predicted_meal_type,

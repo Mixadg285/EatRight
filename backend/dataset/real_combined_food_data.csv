@@ -1,0 +1,651 @@
+Food_name,Calories,Protein,Carbohydrates,Fats,Meal_type,is_vegan,is_vegetarian,Food_type
+Oatmeal with berries and nuts,320,15,48,12,Breakfast,TRUE,TRUE,Global
+Tofu scramble with veggies,189,36,15,3.5,Breakfast,TRUE,TRUE,Global
+Tofu and veggie breakfast burrito,226,20,70,4,Breakfast,TRUE,TRUE,Global
+Greek yogurt with granola and fruit,283,14,44,20,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with whole wheat toast and avocado,133,12,22,1,Breakfast,FALSE,TRUE,Global
+Protein pancakes with fruit and nuts,296,27,29,24,Breakfast,TRUE,TRUE,Global
+Tofu and chickpea scramble,289,20,42,25,Breakfast,TRUE,TRUE,Global
+Overnight oats with fruit and chia seeds,561,11,53,7,Breakfast,TRUE,TRUE,Global
+Tofu scramble with vegetables,219,21,25,3,Breakfast,TRUE,TRUE,Global
+Wholegrain toast with avocado,285,8.5,47,24,Breakfast,FALSE,FALSE,Global
+Greek yogurt with granola,308,19,40,3,Breakfast,FALSE,TRUE,Global
+Tofu and vegetable stir-fry,374,7.9,9,3.4,Breakfast,TRUE,TRUE,Global
+Oatmeal with protein powder and fruit,250,34,49,25,Breakfast,TRUE,TRUE,Global
+Eggs with wholegrain toast,304,14,39,50,Breakfast,FALSE,TRUE,Global
+Greek yogurt with berries and granola,465,24.1,16.8,39,Breakfast,FALSE,TRUE,Global
+Eggs with whole wheat toast and avocado,250,27,16,15.6,Breakfast,FALSE,TRUE,Global
+Tofu scramble with vegetables and avocado,240,18,28,4,Breakfast,TRUE,TRUE,Global
+Greek yogurt with fruit and granola,273,26.9,40,1.6,Breakfast,TRUE,TRUE,Global
+Tofu scramble with spinach and avocado,300,18,45,13,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with whole wheat toast and fruit,169,27,17,6,Breakfast,TRUE,TRUE,Global
+Oatmeal with berries and plant-based milk,380,19,42,11,Breakfast,TRUE,TRUE,Global
+Oatmeal with fruit and nuts,199,39,19,19,Breakfast,TRUE,TRUE,Global
+Tofu scramble with whole-wheat toast,1740,14,24,18,Breakfast,TRUE,TRUE,Global
+Tofu and vegetable breakfast burrito,260,15,34,3,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with avocado and whole-wheat toast,423,29,24,26,Breakfast,FALSE,TRUE,Global
+Overnight oats with chia seeds and fruit,260,7,25,10,Breakfast,TRUE,TRUE,Global
+Pancakes with fruit and syrup,220,13.9,20,5,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with whole-wheat toast,465,35,55,19,Breakfast,FALSE,TRUE,Global
+Tofu scramble with spinach and avocado toast,481,17,24,19,Breakfast,TRUE,TRUE,Global
+Eggs with whole-wheat toast,263,13,46,20,Breakfast,FALSE,TRUE,Global
+Quinoa porridge with fruit and nuts,442,20.1,62,19,Breakfast,TRUE,TRUE,Global
+Tofu scramble with vegetables and whole-wheat toast,276,20.8,26,14,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with bacon and whole-wheat toast,560,31,40,14,Breakfast,FALSE,TRUE,Global
+Oatmeal with protein powder and berries,222,25,48,29,Breakfast,TRUE,TRUE,Global
+Eggs with whole-wheat toast and avocado,278,25.6,10.8,11.2,Breakfast,FALSE,TRUE,Global
+Scrambled eggs with vegetables and whole-wheat toast,257,13.4,56,15.4,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with whole-wheat toast and avocado,375,11.5,43,27,Breakfast,FALSE,TRUE,Global
+Tofu scramble with veggies and whole-wheat toast,300,27,34,32,Breakfast,TRUE,TRUE,Global
+Overnight oats with fruit and nuts,425,16,87,10,Breakfast,TRUE,TRUE,Global
+Greek yogurt with berries and nuts,389,13,44,21,Breakfast,TRUE,TRUE,Global
+Tofu scramble with whole wheat toast and avocado,300,6.3,45,16.5,Breakfast,TRUE,TRUE,Global
+Yogurt with fruit and granola,380,18,33,15,Breakfast,TRUE,TRUE,Global
+Greek yogurt with berries and almonds,315,35,20,15,Breakfast,FALSE,TRUE,Global
+Eggs with whole-wheat toast and bacon,355,19,42,9,Breakfast,FALSE,TRUE,Global
+Scrambled tofu with whole-wheat toast and avocado,200,11,40,14,Breakfast,TRUE,TRUE,Global
+Tofu and vegetable stir-fry with brown rice,1245,19,59,17,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with whole wheat toast,370,15,34,9,Breakfast,FALSE,TRUE,Global
+Tofu and vegetable scramble with whole wheat toast,190,10,47,2,Breakfast,TRUE,TRUE,Global
+Greek Yogurt with berries and granola,466,41,59,15,Breakfast,FALSE,TRUE,Global
+Tofu omelet with spinach,547,35,55,9,Breakfast,TRUE,TRUE,Global
+Greek yogurt with protein powder and fruit,320,21,34,14,Breakfast,TRUE,TRUE,Global
+Tofu breakfast burrito with whole-wheat tortilla,320,14.6,25,12,Breakfast,TRUE,TRUE,Global
+Protein pancakes with fruit and syrup,551,41,67,29,Breakfast,TRUE,TRUE,Global
+Scrambled tofu with spinach and tomato,160,16,16,12,Breakfast,TRUE,TRUE,Global
+Tofu scramble with vegetables and whole wheat toast,200,34,50,16,Breakfast,TRUE,TRUE,Global
+Vegan overnight oats with berries,369,28,55,17,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with spinach and whole wheat toast,282,18.6,19,11,Breakfast,FALSE,TRUE,Global
+Vegan overnight oats with chia seeds and berries,398,14,28,2,Breakfast,TRUE,TRUE,Global
+Protein smoothie with fruit and spinach,256,29,31,16,Breakfast,TRUE,TRUE,Global
+Yogurt parfait with granola and fruit,298,19,24,34,Breakfast,TRUE,TRUE,Global
+1 cup oatmeal with berries and nuts,210,15,40,1.7,Breakfast,TRUE,TRUE,Global
+Tofu scramble with whole-wheat toast and vegetables,346,24.2,54,15,Breakfast,TRUE,TRUE,Global
+3 eggs with whole-wheat toast and avocado,334,15.5,46,20,Breakfast,FALSE,TRUE,Global
+Yogurt with berries and granola,279,10,69,5.2,Breakfast,FALSE,TRUE,Global
+Tofu scramble with avocado and whole-wheat toast,220,15,24,15,Breakfast,TRUE,TRUE,Global
+Oatmeal with plant-based milk and fruit,486,33,23,7,Breakfast,TRUE,TRUE,Global
+Yogurt with granola and fruit,353,55,45,5,Breakfast,TRUE,TRUE,Global
+Protein pancakes with fruit,341,160,300,13,Breakfast,TRUE,TRUE,Global
+Tofu scramble with whole-wheat toast and avocado,183,22.9,49,7,Breakfast,TRUE,TRUE,Global
+Quinoa porridge with berries and nuts,362,16,36,12,Breakfast,TRUE,TRUE,Global
+Overnight oats with berries and nuts,418,17,53,26,Breakfast,TRUE,TRUE,Global
+Tofu scramble with whole wheat toast,290,31,39,27,Breakfast,TRUE,TRUE,Global
+Vegan breakfast burrito with tofu and vegetables,526,25.4,72,14,Breakfast,TRUE,TRUE,Global
+Tofu scramble with avocado and whole wheat toast,316,14,21,13,Breakfast,TRUE,TRUE,Global
+Breakfast burrito with eggs and vegetables,255,52,38,8,Breakfast,TRUE,TRUE,Global
+Oatmeal with protein powder,640,52,58,19,Breakfast,TRUE,TRUE,Global
+Overnight oats with berries and chia seeds,240,5,54,5,Breakfast,FALSE,FALSE,Global
+Smoothie with fruit and protein powder,255,53,55,29,Breakfast,TRUE,TRUE,Global
+Tofu scramble with whole wheat toast and fruit,175,19,31,7,Breakfast,TRUE,TRUE,Global
+Tofu and vegetable scramble with whole-wheat toast,441,29,45,35,Breakfast,TRUE,TRUE,Global
+Tofu and vegetable scramble with wholegrain toast,383,27,39,34,Breakfast,TRUE,TRUE,Global
+Oatmeal with berries and flax seeds,333,33,44,16,Breakfast,TRUE,TRUE,Global
+Eggs with wholegrain toast and avocado,394,19,91,61,Breakfast,FALSE,TRUE,Global
+Breakfast burrito with beans and vegetables,117,24,45,2,Breakfast,TRUE,TRUE,Global
+Oatmeal with protein powder and banana,294,26,61,20,Breakfast,TRUE,TRUE,Global
+Tofu and vegetable scramble with avocado toast,264,30,22,28,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with whole wheat toast and smoked salmon,389,38,39.7,10,Breakfast,FALSE,FALSE,Global
+Tofu scramble with vegetables and avocado toast,277,59.7,42,2.3,Breakfast,TRUE,TRUE,Global
+Fruit and yogurt parfait,154,7,16,8,Breakfast,TRUE,TRUE,Global
+Pancakes with fruit and nuts,162,24,84,10,Breakfast,TRUE,TRUE,Global
+Tofu and vegetable scramble,205,11.5,40,11.5,Breakfast,TRUE,TRUE,Global
+Eggs with whole wheat toast,249,12.8,89,14,Breakfast,FALSE,TRUE,Global
+Greek yogurt with granola and berries,247,18,46,2,Breakfast,FALSE,TRUE,Global
+Whole-wheat toast with egg and avocado,276,14.9,29,14.2,Breakfast,FALSE,TRUE,Global
+Tofu scramble with spinach and mushrooms,243,32,29,7,Breakfast,TRUE,TRUE,Global
+Quinoa breakfast bowl with berries and nuts,292,12,38,10,Breakfast,TRUE,TRUE,Global
+Tofu and vegetable stir-fry with quinoa,400,45,43,26,Breakfast,TRUE,TRUE,Global
+Eggs with whole-wheat toast and fruit,268,13,40,10,Breakfast,TRUE,TRUE,Global
+Quinoa porridge with berries,275,14,27,14,Breakfast,FALSE,FALSE,Global
+Tofu breakfast burrito with avocado,300,24,38,21,Breakfast,TRUE,TRUE,Global
+Tofu scramble with avocado toast,271,25.2,43,26,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with whole grain toast,403,25.5,79,17.6,Breakfast,FALSE,TRUE,Global
+Greek Yogurt with Berries and Nuts,253,17,25,1.2,Breakfast,TRUE,TRUE,Global
+Tofu Scramble with Avocado Toast,369,23,44,10,Breakfast,TRUE,TRUE,Global
+Oatmeal with Protein Powder and Berries,360,16,30,4,Breakfast,TRUE,TRUE,Global
+Tofu Scramble with Whole Wheat Toast,212,10,30,4,Breakfast,TRUE,TRUE,Global
+Eggs with Whole Wheat Toast and Avocado,340,29,57,30,Breakfast,FALSE,TRUE,Global
+Tofu scramble with whole grain toast and avocado,301,36.7,29,8,Breakfast,TRUE,TRUE,Global
+Eggs with whole wheat toast and fruit,233,18,35,12,Breakfast,TRUE,TRUE,Global
+Tofu scramble with vegan toast and avocado,136,18,53,5,Breakfast,TRUE,TRUE,Global
+Fruit salad with yogurt,232,1,36,16,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with whole wheat toast and spinach,393,13,20,14,Breakfast,FALSE,TRUE,Global
+Tofu breakfast burrito,1360,19,180,40,Breakfast,TRUE,TRUE,Global
+Tofu scramble with veggies and avocado toast,260,24,58,34,Breakfast,TRUE,TRUE,Global
+Scrambled eggs with whole-wheat toast and fruit,403,28.1,46,14,Breakfast,TRUE,TRUE,Global
+Breakfast burrito with beans and veggies,267,14,78,14,Breakfast,TRUE,TRUE,Global
+Eggs with whole grain toast,303,13.3,47,27,Breakfast,FALSE,TRUE,Global
+Vegan pancakes with syrup,280,38,28,28,Breakfast,TRUE,TRUE,Global
+Oatmeal with berries,153,22,17,11,Breakfast,TRUE,TRUE,Global
+Egg and spinach wrap,323,57.74,60.8,10.8,Breakfast,FALSE,TRUE,Global
+Smoothie with protein powder,226,16,34,15,Breakfast,FALSE,FALSE,Global
+Grilled chicken salad with mixed greens,250,26,26,12,Lunch,FALSE,FALSE,Global
+Lentil soup with whole wheat bread,269,36,9,8,Lunch,TRUE,TRUE,Global
+Black bean burger on a whole wheat bun,171,57,32,15,Lunch,FALSE,FALSE,Global
+Chicken and vegetable stir-fry,578,43,62,10,Lunch,FALSE,FALSE,Global
+Quinoa salad with chickpeas and vegetables,492,10,47,9,Lunch,TRUE,TRUE,Global
+Lentil pasta with vegetables,502,34,22,7,Lunch,TRUE,TRUE,Global
+Chicken breast with brown rice and vegetables,270,24,19,11,Lunch,FALSE,FALSE,Global
+Lentil burger with sweet potato fries,670,50,45,14,Lunch,TRUE,TRUE,Global
+Lentil soup with wholegrain bread,137,4,72,8,Lunch,TRUE,TRUE,Global
+Black bean salad,535,22,35,6,Lunch,FALSE,FALSE,Global
+Tuna salad sandwich on wholegrain bread,570,31,25,13,Lunch,FALSE,FALSE,Global
+Lentil and vegetable stew,316,30,68,9,Lunch,TRUE,TRUE,Global
+Black bean burger on a wholegrain bun,395,32,60,15,Lunch,FALSE,FALSE,Global
+Grilled chicken breast with brown rice,735,79,328,10,Lunch,FALSE,FALSE,Global
+Chicken breast with brown rice,667,62,64,10,Lunch,FALSE,FALSE,Global
+Salmon salad with mixed greens and avocado,440,39,45,18,Lunch,FALSE,FALSE,Global
+Chicken breast with sweet potato and broccoli,550,25,25,12,Lunch,FALSE,FALSE,Global
+Turkey sandwich on whole wheat bread with vegetables,690,57.3,41,11,Lunch,TRUE,TRUE,Global
+Vegan lentil stew with whole wheat bread,440,19,44,7,Lunch,TRUE,TRUE,Global
+Tuna salad with whole wheat bread,398,17.2,120,12,Lunch,FALSE,FALSE,Global
+Lentil and vegetable curry with brown rice,638,37.9,37.9,10,Lunch,TRUE,TRUE,Global
+Tuna salad sandwich on whole wheat bread,840,57,52,13,Lunch,FALSE,FALSE,Global
+Vegetarian chili with whole wheat bread,462,43,43,8,Lunch,FALSE,TRUE,Global
+Chicken salad sandwich on whole wheat bread,470,42,55,11,Lunch,FALSE,FALSE,Global
+Tofu scramble with spinach and avocado,611,32,10,14,Lunch,TRUE,TRUE,Global
+Chicken breast salad with vegetables,328,32,31,10,Lunch,FALSE,FALSE,Global
+Lentil soup with whole-wheat bread,700,13,24,8,Lunch,TRUE,TRUE,Global
+Black bean burger on a whole-wheat bun,560,37,48,15,Lunch,FALSE,FALSE,Global
+Chicken breast salad with mixed greens,421,28,17,10,Lunch,FALSE,FALSE,Global
+Tofu and vegetable stir-fry with brown rice,454,6,8,12,Lunch,TRUE,TRUE,Global
+Grilled chicken sandwich with whole-wheat bread,300,19,272,13,Lunch,FALSE,FALSE,Global
+Tuna salad sandwich with whole-wheat bread,670,43,78,13,Lunch,FALSE,FALSE,Global
+Lentil and quinoa salad,498,25,40,9,Lunch,TRUE,TRUE,Global
+Chicken salad sandwich with mixed greens,520,13,48,11,Lunch,FALSE,FALSE,Global
+Chickpea and vegetable curry,854,29,68,10,Lunch,TRUE,TRUE,Global
+Black bean burgers with sweet potato fries,2065,40,206.5,16,Lunch,FALSE,FALSE,Global
+Chicken Caesar salad,581,28,39,14,Lunch,FALSE,FALSE,Global
+Chickpea salad sandwich with whole-wheat bread,471,28,32,10,Lunch,TRUE,TRUE,Global
+Vegetarian chili with a side salad,670,29,27,8,Lunch,FALSE,TRUE,Global
+Black bean burger with sweet potato fries,658,20,229,16,Lunch,FALSE,FALSE,Global
+Grilled salmon with roasted vegetables,590,13,90,20,Lunch,FALSE,FALSE,Global
+Chicken stir-fry with brown rice,567.7,42,75,11,Lunch,FALSE,FALSE,Global
+Tuna salad sandwich on whole-wheat bread with a side of mixed greens,520,27,29,14,Lunch,FALSE,FALSE,Global
+Chicken breast with quinoa and steamed vegetables,909,45,36,11,Lunch,FALSE,FALSE,Global
+Vegetable stir-fry with brown rice,480,21,220,9,Lunch,TRUE,TRUE,Global
+Chicken breast with brown rice and steamed vegetables,751,53,35,11,Lunch,FALSE,FALSE,Global
+Black bean burger with whole-wheat bun and salad,525,34,80,15,Lunch,FALSE,FALSE,Global
+Chicken salad sandwich on whole-wheat bread with a side of mixed greens,230,13.2,92,12,Lunch,FALSE,FALSE,Global
+Lentil soup with whole grain bread,443,28.7,38,8,Lunch,TRUE,TRUE,Global
+Lentil salad with quinoa and mixed greens,480,20,52,9,Lunch,TRUE,TRUE,Global
+Turkey sandwich on whole grain bread,580,29,42,11,Lunch,FALSE,FALSE,Global
+Bean burrito with brown rice,387,40.4,25.2,14,Lunch,FALSE,FALSE,Global
+Tuna salad with whole grain bread,510,23,23,12,Lunch,FALSE,FALSE,Global
+Black bean soup with whole wheat bread,335,19,61,7,Lunch,FALSE,FALSE,Global
+Lentil stew with brown rice and quinoa,195,18,48.5,9,Lunch,TRUE,TRUE,Global
+Chicken breast with roasted vegetables,507,123,44,12,Lunch,FALSE,FALSE,Global
+Lentil and vegetable soup with whole-wheat bread,300,25,50,8,Lunch,TRUE,TRUE,Global
+Black bean burgers on whole-wheat buns with salad,689,11,47,15,Lunch,FALSE,FALSE,Global
+Lentil and vegetable curry with brown rice and quinoa,260,19,36,10,Lunch,TRUE,TRUE,Global
+Chickpea salad sandwich on whole wheat bread,330,10,56,10,Lunch,TRUE,TRUE,Global
+Chicken breast with brown rice and roasted vegetables,530,72,60,12,Lunch,FALSE,FALSE,Global
+Black bean burger with whole wheat bun,190,12,27,15,Lunch,FALSE,FALSE,Global
+Quinoa salad with chicken and vegetables,459,20,38.5,10,Lunch,FALSE,FALSE,Global
+Tuna salad sandwich on whole-wheat bread,318,31.7,12,13,Lunch,FALSE,FALSE,Global
+Chickpea salad with mixed greens,611,5.7,5.7,9,Lunch,TRUE,TRUE,Global
+Vegan lentil stew with brown rice,850,23,31,7,Lunch,TRUE,TRUE,Global
+Vegetarian chili with whole-wheat bread,307,11,68.6,8,Lunch,FALSE,TRUE,Global
+Chicken salad sandwich on whole-wheat bread,162,25,90,11,Lunch,FALSE,FALSE,Global
+Grilled chicken salad with mixed greens and avocado,260,42,24,14,Lunch,FALSE,FALSE,Global
+Chicken and vegetable stir-fry with brown rice,732,77,300,11,Lunch,FALSE,FALSE,Global
+Vegan pasta salad with vegetables,1430,42,180,8,Lunch,TRUE,TRUE,Global
+Vegetarian chili with brown rice,563,42,12,8,Lunch,FALSE,TRUE,Global
+Lentil and vegetable soup with whole wheat bread,344,3.7,130,8,Lunch,TRUE,TRUE,Global
+Chicken breast and brown rice with vegetables,400,44,44,11,Lunch,FALSE,FALSE,Global
+Tofu stir-fry with brown rice,323,48,131,12,Lunch,TRUE,TRUE,Global
+Salmon with roasted vegetables,580,42,58,20,Lunch,FALSE,FALSE,Global
+Lentil and vegetable curry with rice,367,20.8,43,10,Lunch,TRUE,TRUE,Global
+Tuna salad sandwich on whole-wheat bread with a side salad,580,27,196,14,Lunch,FALSE,FALSE,Global
+Lentil soup with a side of whole-wheat bread,362,33,12,8,Lunch,TRUE,TRUE,Global
+Chicken breast with brown rice and broccoli,374,43,37,11,Lunch,FALSE,FALSE,Global
+Lentil stew with a side of whole-wheat bread,225,12,77,8,Lunch,TRUE,TRUE,Global
+Vegetarian chili with a side of whole-wheat bread,310,30,107,8,Lunch,FALSE,TRUE,Global
+Grilled chicken breast salad with mixed greens and avocado,220,14,22,14,Lunch,FALSE,FALSE,Global
+Turkey sandwich on whole-wheat bread with vegetables,365,31,91,11,Lunch,TRUE,TRUE,Global
+Black bean burger with a side salad,520,20,115,15,Lunch,FALSE,FALSE,Global
+Lentil and vegetable curry,506,22.1,105,10,Lunch,TRUE,TRUE,Global
+Chicken breast with quinoa and roasted vegetables,410,53,40,12,Lunch,FALSE,FALSE,Global
+Quinoa salad with grilled chicken and vegetables,661,29,28,10,Lunch,FALSE,FALSE,Global
+Lentil soup with whole-grain bread,340,7,34,8,Lunch,TRUE,TRUE,Global
+Lentil stew with whole-grain bread,225,26,240.7,8,Lunch,TRUE,TRUE,Global
+Black bean soup with whole grain bread,330,25,2,7,Lunch,FALSE,FALSE,Global
+Black bean burger on a whole grain bun,460,24,46,15,Lunch,FALSE,FALSE,Global
+Chicken and vegetable fajitas,310,160,20,12,Lunch,FALSE,FALSE,Global
+Lentil salad with mixed greens,425,18,425,9,Lunch,TRUE,TRUE,Global
+Chicken breast salad with mixed greens and vegetables,412,24,68,10,Lunch,FALSE,FALSE,Global
+Black bean salad with mixed greens,342,26,342,6,Lunch,FALSE,FALSE,Global
+Chickpea salad with whole-wheat bread,797,49,312,9,Lunch,TRUE,TRUE,Global
+Vegan lentil soup with whole wheat bread,360,4,46,7,Lunch,TRUE,TRUE,Global
+Vegetarian burrito bowl with brown rice,410,16,31,14,Lunch,FALSE,TRUE,Global
+Vegan chili with brown rice,496,31.8,140,8,Lunch,TRUE,TRUE,Global
+Vegetarian pasta with marinara sauce,590,26,247,7,Lunch,FALSE,TRUE,Global
+Chicken breast with quinoa and vegetables,431,50,45,11,Lunch,FALSE,FALSE,Global
+Turkey sandwich on whole-wheat bread,630,45,68,11,Lunch,FALSE,FALSE,Global
+Chicken stir fry with brown rice and vegetables,525,116,75,11,Lunch,FALSE,FALSE,Global
+Lentil soup with whole-wheat bread and salad,477,47,227,8,Lunch,TRUE,TRUE,Global
+Tuna salad sandwich on whole-wheat bread with salad,289,21,26,14,Lunch,FALSE,FALSE,Global
+Black bean burger on whole-wheat bun with salad,450,22,45,15,Lunch,FALSE,FALSE,Global
+Turkey sandwich on whole-wheat bread with salad,268,28,27,11,Lunch,FALSE,FALSE,Global
+Bean burrito with brown rice and salsa,430,25,28,14,Lunch,FALSE,FALSE,Global
+Vegetable stir fry with brown rice,378,12,63,9,Lunch,TRUE,TRUE,Global
+Tuna salad sandwich on whole-grain bread,430,10,27,13,Lunch,FALSE,FALSE,Global
+Turkey breast sandwich on whole-grain bread,211,15,21,11,Lunch,FALSE,FALSE,Global
+Chickpea pasta with marinara sauce,495,22.3,127,7,Lunch,TRUE,TRUE,Global
+Chicken salad sandwich on whole-grain bread,300,25,25,11,Lunch,FALSE,FALSE,Global
+Chickpea pasta salad with vegetables,550,14,11,8,Lunch,TRUE,TRUE,Global
+Black bean and sweet potato burrito,212,12,49,16,Lunch,FALSE,FALSE,Global
+Chicken and vegetable skewers,480,25,10,12,Lunch,FALSE,FALSE,Global
+Grilled chicken salad with quinoa,1070,54,110,12,Lunch,FALSE,FALSE,Global
+Lentil and vegetable soup,80,4,17,8,Lunch,TRUE,TRUE,Global
+Chicken and vegetable soup,420.5,26.33,26.33,7,Lunch,FALSE,FALSE,Global
+Lentil pasta with vegan cheese,448,31,45,8,Lunch,TRUE,TRUE,Global
+Quinoa salad with grilled tofu,450,27.7,70,9,Lunch,TRUE,TRUE,Global
+Lentil stew with whole wheat bread,230,37,37,8,Lunch,TRUE,TRUE,Global
+Lentil and vegetable stew with brown rice,401,30,20,9,Lunch,TRUE,TRUE,Global
+Grilled chicken salad with mixed greens and vegetables,560,20,48,12,Lunch,FALSE,FALSE,Global
+Lentil stew with brown rice,1300,29,110,9,Lunch,TRUE,TRUE,Global
+Chickpea salad sandwich on wholegrain bread,255,12.2,24,10,Lunch,TRUE,TRUE,Global
+Black bean burger on whole-wheat bun,860,18,180,15,Lunch,FALSE,FALSE,Global
+Chicken breast with brown rice and quinoa,477,46,46,11,Lunch,FALSE,FALSE,Global
+Vegetable stir-fry with rice noodles,383,22,94,9,Lunch,TRUE,TRUE,Global
+Chicken and vegetable wrap,500,28,92,11,Lunch,FALSE,FALSE,Global
+Chickpea pasta with vegetable sauce,290,29,71,8,Lunch,TRUE,TRUE,Global
+Chicken breast with mixed greens salad,800,56,110,10,Lunch,FALSE,FALSE,Global
+Chicken breast salad with mixed greens and avocado,740,33,20,14,Lunch,FALSE,FALSE,Global
+Lentil and chickpea salad with whole grain pita,390,73,73,9,Lunch,TRUE,TRUE,Global
+Lentil and vegetable soup with whole grain bread,480,16.5,14,8,Lunch,TRUE,TRUE,Global
+Lentil and vegetable curry with brown rice and naan bread,639,7,35,10,Lunch,TRUE,TRUE,Global
+Chickpea pasta salad with roasted vegetables,211,17,29,8,Lunch,TRUE,TRUE,Global
+Turkey breast sandwich with mixed greens,450,27.1,25.5,11,Lunch,FALSE,FALSE,Global
+Black bean burger on whole wheat bun with salad,450,4,37,15,Lunch,FALSE,FALSE,Global
+Mixed greens salad with chickpeas and tahini dressing,500,26,12,9,Lunch,TRUE,TRUE,Global
+Chicken and rice bowl with vegetables,1010,70,367,11,Lunch,FALSE,FALSE,Global
+Lentil salad with quinoa and avocado,120,18,9,9,Lunch,TRUE,TRUE,Global
+Quinoa salad with chickpeas and avocado,422,11.6,30,9,Lunch,TRUE,TRUE,Global
+Chicken salad with whole grain bread,487,33,240,11,Lunch,FALSE,FALSE,Global
+Black bean burger on a whole-wheat bun with salad,453,46,46,15,Lunch,FALSE,FALSE,Global
+Chicken breast with sweet potato and roasted vegetables,453,43,18,12,Lunch,FALSE,FALSE,Global
+Quinoa salad with vegetables,430,34,45,9,Lunch,TRUE,TRUE,Global
+Chickpea pasta with vegetables and vegan cheese,450,20,60,8,Lunch,TRUE,TRUE,Global
+Chicken breast with roasted vegetables and quinoa,440,52,57,12,Lunch,FALSE,FALSE,Global
+Vegetable soup with whole-wheat bread,350,22,35,7,Lunch,TRUE,TRUE,Global
+Chickpea and vegetable stew,327,15,35,9,Lunch,TRUE,TRUE,Global
+Lentil soup with a side salad,400,12.5,200,8,Lunch,TRUE,TRUE,Global
+Lentil stew with whole-wheat bread,125,39,35,8,Lunch,TRUE,TRUE,Global
+Black bean burgers on whole-wheat buns with a side salad,1030,39,179,15,Lunch,FALSE,FALSE,Global
+Chicken salad sandwich on whole-wheat bread with a side salad,374,33,48,12,Lunch,FALSE,FALSE,Global
+Chickpea salad sandwich on whole-wheat bread with a side salad,533,15,107,10,Lunch,TRUE,TRUE,Global
+Chicken salad with whole-wheat bread,250,16,25,11,Lunch,FALSE,FALSE,Global
+Tuna salad with whole-wheat bread,570,28,11,12,Lunch,FALSE,FALSE,Global
+Turkey sandwich with whole-wheat bread,581,53,50,11,Lunch,FALSE,FALSE,Global
+Chicken salad sandwich on whole-wheat bread with a side of fruit,360,23,36,12,Lunch,FALSE,FALSE,Global
+Black bean burger on a whole-wheat bun with a side salad,414,29,74,15,Lunch,FALSE,FALSE,Global
+Tuna salad sandwich on whole-wheat bread with a side of fruit,494,27,48,14,Lunch,TRUE,TRUE,Global
+Chickpea salad sandwich on whole-wheat bread with a side of fruit,472,20,27,10,Lunch,TRUE,TRUE,Global
+Black bean burger on a whole wheat bun with salad,494,22,128,15,Lunch,FALSE,FALSE,Global
+Black bean burger on a whole-grain bun,240,24,24,15,Lunch,FALSE,FALSE,Global
+Grilled chicken salad with whole grain bread,385,35,250,12,Lunch,FALSE,FALSE,Global
+Quinoa bowl with roasted vegetables and chickpeas,335,28,73,9,Lunch,TRUE,TRUE,Global
+Chickpea and vegetable curry with brown rice,551,10,351,10,Lunch,TRUE,TRUE,Global
+Quinoa salad with roasted vegetables and chickpeas,170,6,26,9,Lunch,TRUE,TRUE,Global
+Tuna Salad Sandwich on Whole Wheat Bread,261,4.7,59,13,Lunch,FALSE,FALSE,Global
+Quinoa Salad with Grilled Vegetables,650,24,25,9,Lunch,TRUE,TRUE,Global
+Chicken Breast with Brown Rice and Steamed Vegetables,550,36,36,11,Lunch,FALSE,FALSE,Global
+Lentil and Vegetable Curry with Brown Rice,544,20,10,10,Lunch,TRUE,TRUE,Global
+Chicken and Vegetable Wrap on Whole Wheat Tortilla,410,29,18,11,Lunch,FALSE,FALSE,Global
+Tuna salad sandwich on whole grain bread,671,26,16,13,Lunch,FALSE,FALSE,Global
+Chicken salad sandwich on whole grain bread with a side of fruit,282.8,34,36,12,Lunch,FALSE,FALSE,Global
+Tuna salad sandwich on whole grain bread with a side of salad,502,22,108,14,Lunch,FALSE,FALSE,Global
+Chickpea salad sandwich on whole grain bread,286,12,24,10,Lunch,TRUE,TRUE,Global
+Vegan lentil burger with sweet potato fries,551,14.3,34.8,14,Lunch,TRUE,TRUE,Global
+Vegan chili with whole wheat bread,432,41,37,8,Lunch,TRUE,TRUE,Global
+Chicken breast salad with whole-wheat bread,330,27,275,10,Lunch,FALSE,FALSE,Global
+Lentil and veggie stir-fry with brown rice,305,8.7,23,10,Lunch,TRUE,TRUE,Global
+Turkey and veggie wrap with whole-wheat tortilla,590,31,69,11,Lunch,FALSE,TRUE,Global
+Vegetarian chili with whole grain bread,270,14,57,8,Lunch,FALSE,TRUE,Global
+Veggie stir-fry,171,36,46,9,Lunch,FALSE,TRUE,Global
+Lentil soup with bread,115,21,75,8,Lunch,TRUE,TRUE,Global
+Grilled chicken salad,308,34,32,12,Lunch,FALSE,FALSE,Global
+Turkey sandwich,820,42,142,11,Lunch,FALSE,FALSE,Global
+Avocado and chickpea salad,483,3.6,40,9,Lunch,TRUE,TRUE,Global
+Salmon with roasted vegetables,2020,60,250,60,Dinner,FALSE,FALSE,Global
+Vegetable stir-fry with brown rice,10,5,31,27,Dinner,TRUE,TRUE,Global
+Lentil and vegetable curry,326,55,150,15,Dinner,TRUE,TRUE,Global
+Turkey chili with brown rice,278,20,163,27,Dinner,FALSE,FALSE,Global
+Vegetarian chili with cornbread,186,6.3,186,22,Dinner,FALSE,TRUE,Global
+Vegan stir-fry with brown rice,17,5,22,43,Dinner,TRUE,TRUE,Global
+Steak with sweet potato and broccoli,730,21,72,54,Dinner,FALSE,FALSE,Global
+Quinoa and vegetable bowl,294,27,30,11,Dinner,TRUE,TRUE,Global
+Vegan chili with cornbread,390,4,45,8,Dinner,TRUE,TRUE,Global
+Vegan pasta with vegetables and sauce,1670,40.4,47.5,50,Dinner,TRUE,TRUE,Global
+Chickpea and vegetable curry,710,28,300,29,Dinner,TRUE,TRUE,Global
+Vegetable stir-fry with tofu,597,3.4,59,25,Dinner,TRUE,TRUE,Global
+Chicken breast with steamed vegetables,100,31,28,31,Dinner,FALSE,FALSE,Global
+Vegan chili,500,28,140,7,Dinner,TRUE,TRUE,Global
+Lentil pasta with vegetables,715,19,11,44,Dinner,TRUE,TRUE,Global
+Steak with roasted vegetables,1507,93.1,196,93.1,Dinner,TRUE,TRUE,Global
+Chicken stir-fry with brown rice,510,26,52,52,Dinner,FALSE,FALSE,Global
+Vegetarian chili with brown rice,219,22,23.6,11,Dinner,FALSE,TRUE,Global
+Chicken and vegetable stir-fry with brown rice,670,57.3,98,26,Dinner,FALSE,FALSE,Global
+Tofu stir-fry with brown rice and vegetables,411,28,44,17,Dinner,TRUE,TRUE,Global
+Chicken breast with sweet potato and green beans,72,28,25,1.6,Dinner,FALSE,FALSE,Global
+Vegan pasta with vegetables and tomato sauce,440,28,44,22,Dinner,TRUE,TRUE,Global
+Black bean burgers with sweet potato fries,1021,87,254,82,Dinner,FALSE,FALSE,Global
+Tofu stir-fry with brown rice noodles,663,2.5,43.3,19.3,Dinner,TRUE,TRUE,Global
+Steak with sweet potato and asparagus,409,11,30,10,Dinner,FALSE,FALSE,Global
+Vegetable stir-fry with tofu and brown rice,780,61,15,22,Dinner,TRUE,TRUE,Global
+Chicken breast with brown rice and vegetables,760,76,17,35.2,Dinner,FALSE,FALSE,Global
+Black bean burgers with salad,468,38,61,21,Dinner,FALSE,FALSE,Global
+Lentil and vegetable curry with brown rice,395,30,70,16,Dinner,TRUE,TRUE,Global
+Lentil pasta with marinara sauce,206,25,206,16,Dinner,TRUE,TRUE,Global
+Turkey meatballs with steamed vegetables,480,47,18,20,Dinner,FALSE,FALSE,Global
+Steak with sweet potato fries,741,80,38,42,Dinner,FALSE,FALSE,Global
+Lentil soup with whole-wheat bread,1160,41,140,28,Dinner,TRUE,TRUE,Global
+Chickpea curry with brown rice,440,27,44,5,Dinner,TRUE,TRUE,Global
+Lentil stew with whole-wheat bread,784,58,104,50,Dinner,TRUE,TRUE,Global
+Chicken breast with roasted vegetables,422,42,42,10,Dinner,FALSE,FALSE,Global
+Tofu stir-fry with brown rice,1140,11,10,31,Dinner,TRUE,TRUE,Global
+Beef stew with brown rice,773,7.2,35,43,Dinner,FALSE,FALSE,Global
+Vegan chili with brown rice,666,30,216,34,Dinner,TRUE,TRUE,Global
+Vegan pasta with marinara sauce,729,20,70,43,Dinner,TRUE,TRUE,Global
+Fish with roasted vegetables,541,53,541,10,Dinner,FALSE,FALSE,Global
+Black bean burgers on whole-wheat buns,989,10.8,27,10,Dinner,FALSE,FALSE,Global
+Grilled salmon with roasted vegetables,708,50,45,26,Dinner,FALSE,FALSE,Global
+Lentil stew with brown rice,690,44,20.5,16,Dinner,TRUE,TRUE,Global
+Salmon with sweet potato and broccoli,534,55,40,40,Dinner,FALSE,FALSE,Global
+Tuna with quinoa and roasted vegetables,1759,165,184.5,63.6,Dinner,TRUE,TRUE,Global
+Steak with baked potato and green beans,489,22,52,42,Dinner,TRUE,TRUE,Global
+Vegetarian lasagna with salad,871,67,110,33,Dinner,FALSE,TRUE,Global
+Salmon with roasted vegetables and quinoa,600,28,25,40,Dinner,FALSE,FALSE,Global
+Steak with baked potato and broccoli,709,71,10.8,53,Dinner,FALSE,FALSE,Global
+Lentil and vegetable stew,352,7,42,19,Dinner,TRUE,TRUE,Global
+Beef stir-fry with brown rice,909,66,57,122,Dinner,FALSE,FALSE,Global
+Beef stew with whole grain bread,140,11,56,21,Dinner,FALSE,FALSE,Global
+Chickpea and vegetable pasta,180,42,76,70,Dinner,TRUE,TRUE,Global
+Salmon with steamed vegetables,1191,63.2,1191,44,Dinner,FALSE,FALSE,Global
+Steak with sweet potato and green beans,460,27,46,12,Dinner,TRUE,TRUE,Global
+Salmon with roasted sweet potatoes,482,48,482,48,Dinner,FALSE,FALSE,Global
+Chickpea and vegetable curry with brown rice,1080,30,78,45.5,Dinner,TRUE,TRUE,Global
+Steak with mashed potatoes and green beans,2310,61,280,70,Dinner,TRUE,TRUE,Global
+Lentil and vegetable soup with whole-wheat bread,14,14,60.05,4,Dinner,TRUE,TRUE,Global
+Lentil soup with whole wheat bread,950,3,45,6,Dinner,TRUE,TRUE,Global
+Quinoa salad with roasted vegetables,1044,25,66,66,Dinner,TRUE,TRUE,Global
+Lentil and vegetable stew with brown rice,520,21,115,30,Dinner,TRUE,TRUE,Global
+Tuna salad sandwich on whole-wheat bread,40,40,20,40,Dinner,FALSE,FALSE,Global
+Chicken breast with roasted vegetables and sweet potato,443,17,443,44,Dinner,FALSE,FALSE,Global
+Grilled chicken with roasted vegetables,215,85,45,28,Dinner,FALSE,FALSE,Global
+Quinoa bowl with roasted chickpeas and vegetables,165,21,21,21,Dinner,TRUE,TRUE,Global
+Lentil pasta with tomato sauce,1220,2.1,1220,29,Dinner,TRUE,TRUE,Global
+Turkey chili with sweet potato,1430,143,40,50,Dinner,FALSE,FALSE,Global
+Chicken breast with sweet potato and broccoli,154,45,54,45,Dinner,FALSE,FALSE,Global
+Quinoa bowl with roasted vegetables and chickpeas,1046,27,76,28,Dinner,TRUE,TRUE,Global
+Black bean burger on whole-wheat bun with avocado,1220,21,87,50,Dinner,FALSE,FALSE,Global
+Tofu stir-fry with vegetables,379,10,18,22,Dinner,TRUE,TRUE,Global
+Chickpea and vegetable pasta bake,760,28,260,48,Dinner,TRUE,TRUE,Global
+Tofu and vegetable stir-fry,573,34.3,130,17,Dinner,TRUE,TRUE,Global
+Lentil and vegetable curry with rice,486,36,86,22,Dinner,TRUE,TRUE,Global
+Chickpea and vegetable stew,376,28,44,30,Dinner,TRUE,TRUE,Global
+Black bean burgers with avocado,523,42,17,24.8,Dinner,FALSE,FALSE,Global
+Grilled chicken breast with quinoa and steamed vegetables,626,65,20,32,Dinner,FALSE,FALSE,Global
+Black bean burgers with roasted sweet potatoes and a green salad,691,35,250,13,Dinner,FALSE,FALSE,Global
+Vegan pasta with marinara sauce and a side salad,210,14,20,33,Dinner,TRUE,TRUE,Global
+Lentil soup with a side of whole-wheat bread,190,19,120,19,Dinner,TRUE,TRUE,Global
+Vegetable frittata,482,28.3,110,23,Dinner,TRUE,TRUE,Global
+Chickpea pasta with tomato sauce and spinach,539,40,52,42,Dinner,TRUE,TRUE,Global
+Vegetable curry with brown rice,358,28,62,4,Dinner,TRUE,TRUE,Global
+Fish with steamed broccoli,240,56,98,14,Dinner,FALSE,FALSE,Global
+Salmon with roasted vegetables and brown rice,420,48,32,16,Dinner,FALSE,FALSE,Global
+Lentil pasta with tomato sauce and vegetables,1068,4,180,15,Dinner,TRUE,TRUE,Global
+Steak with sweet potato fries and a side salad,527,27,30,26,Dinner,FALSE,FALSE,Global
+Chickpea pasta with marinara sauce and vegetables,565,42,200,28,Dinner,TRUE,TRUE,Global
+Salmon with roasted vegetables and sweet potato,562.96,28.46,28.46,23.8,Dinner,FALSE,FALSE,Global
+Turkey meatballs with whole-wheat pasta,687,46.2,202,23.6,Dinner,FALSE,FALSE,Global
+Lentil and vegetable stew with whole-wheat bread,450,3.6,18,16.5,Dinner,TRUE,TRUE,Global
+Steak with roasted vegetables and brown rice,639,4,100,4,Dinner,TRUE,TRUE,Global
+Chicken breast with steamed vegetables and brown rice,452,28,45,17.9,Dinner,FALSE,FALSE,Global
+Grilled salmon with quinoa and roasted vegetables,1190,36,74,47,Dinner,FALSE,FALSE,Global
+Vegan black bean burgers on whole wheat buns,820,38,64,40,Dinner,TRUE,TRUE,Global
+Grilled chicken with sweet potato and broccoli,819,27,400,68,Dinner,FALSE,FALSE,Global
+Lentil stew with whole wheat bread,403,18,23,2.8,Dinner,TRUE,TRUE,Global
+Baked chicken with roasted vegetables,700,55,64,27,Dinner,FALSE,FALSE,Global
+Steak with sweet potatoes and broccoli,1202,273,30,49,Dinner,FALSE,FALSE,Global
+Tuna salad with whole-wheat bread,141,16,91,7,Dinner,FALSE,FALSE,Global
+Lentil stew with whole-grain bread,440,19,20,40,Dinner,TRUE,TRUE,Global
+Steak with roasted vegetables and sweet potato,292,47,270,32,Dinner,TRUE,TRUE,Global
+Chickpea pasta with vegetable sauce,660,40,115,46,Dinner,TRUE,TRUE,Global
+Chicken stir fry with brown rice and vegetables,491,28,491,50,Dinner,FALSE,FALSE,Global
+Black bean soup with whole-grain bread,140,28,40,11,Dinner,FALSE,FALSE,Global
+Lentil soup with whole-grain bread,1770,17,220,50,Dinner,TRUE,TRUE,Global
+Vegan lentil stew,885,22,188,50,Dinner,TRUE,TRUE,Global
+Salmon with vegetables,590,59,59,59,Dinner,FALSE,FALSE,Global
+Chickpea pasta with marinara sauce,760,30,85,18,Dinner,TRUE,TRUE,Global
+Quinoa salad with grilled chicken,503,22,219,21,Dinner,FALSE,FALSE,Global
+Tofu and vegetable stir-fry with brown rice,293,10,69,61,Dinner,TRUE,TRUE,Global
+Grilled chicken salad with quinoa,514,39,170,47,Dinner,FALSE,FALSE,Global
+Steak with baked potato and salad,420,60,42,42,Dinner,FALSE,FALSE,Global
+Vegetable lasagna with salad,1246,28.2,1246,12,Dinner,TRUE,TRUE,Global
+Chickpea pasta with tomato sauce and vegetables,834,28,155,16,Dinner,TRUE,TRUE,Global
+Salmon with quinoa and steamed vegetables,1023,102,95,8,Dinner,FALSE,FALSE,Global
+Chicken breast with roasted vegetables and quinoa,192,52,24,39,Dinner,FALSE,FALSE,Global
+Roast beef with mashed potatoes and peas,451,45,70,24,Dinner,FALSE,FALSE,Global
+Black bean burgers on wholegrain buns,847,21,94,55,Dinner,FALSE,FALSE,Global
+Chicken breast with vegetables,565,47,220,55,Dinner,FALSE,FALSE,Global
+Beef and vegetable skewers with sweet potato fries,105,8.9,36,31,Dinner,FALSE,FALSE,Global
+Vegan chili with whole grain bread,420,12,81,5,Dinner,TRUE,TRUE,Global
+Vegan pasta with vegetables and cashew cream sauce,425,52,150,30,Dinner,TRUE,TRUE,Global
+Quinoa salad with grilled vegetables,500,1,14,14,Dinner,TRUE,TRUE,Global
+Vegan pizza with vegetables and cashew cheese,711,43,356,22,Dinner,TRUE,TRUE,Global
+Fish with roasted vegetables and quinoa,513,54,67,38,Dinner,FALSE,FALSE,Global
+Chicken and vegetable stir-fry,420,23.1,43,32,Dinner,FALSE,FALSE,Global
+Lentil and vegetable stew with whole wheat bread,580,20.6,98,16,Dinner,TRUE,TRUE,Global
+Tempeh stir-fry with brown rice,767,52,304,11,Dinner,FALSE,FALSE,Global
+Black bean burger with sweet potato fries,540,46,40,23,Dinner,FALSE,FALSE,Global
+Chicken breast with baked potato,803,27.4,270,31,Dinner,FALSE,FALSE,Global
+Salmon with quinoa and steamed broccoli,120,20,12,42,Dinner,FALSE,FALSE,Global
+Baked chicken with sweet potato and green beans,1040,104,249,60,Dinner,FALSE,FALSE,Global
+Steak with quinoa and steamed broccoli,680,90,48,18,Dinner,FALSE,FALSE,Global
+Baked fish with steamed vegetables,678,29,23,5,Dinner,FALSE,FALSE,Global
+Vegetarian chili,660,20,72,19,Dinner,FALSE,TRUE,Global
+Vegan lasagna,1079,13.1,54,13,Dinner,TRUE,TRUE,Global
+Turkey chili with cornbread,496,79,37,49,Dinner,FALSE,FALSE,Global
+Turkey meatballs with spaghetti squash,340,66,34,21,Dinner,FALSE,FALSE,Global
+Salmon with asparagus and sweet potato,392,47,46,4,Dinner,FALSE,FALSE,Global
+Bean and vegetable burrito,10,1.6,15.4,10,Dinner,TRUE,TRUE,Global
+Bean burgers with sweet potato fries,540,28,41,43,Dinner,FALSE,FALSE,Global
+Black bean burgers with brown rice and roasted vegetables,441,45,37,42,Dinner,TRUE,TRUE,Global
+Vegetable stir-fry with quinoa,702,17,30,5,Dinner,TRUE,TRUE,Global
+Turkey chili with whole-wheat bread,330,23,25,23,Dinner,FALSE,FALSE,Global
+Lentil loaf with roasted vegetables,160,4,32,4,Dinner,TRUE,TRUE,Global
+Vegetarian lasagna with a side salad,14,14,31,14,Dinner,FALSE,TRUE,Global
+Vegan pasta with marinara sauce and vegetables,12,17,132,25,Dinner,TRUE,TRUE,Global
+Chickpea pasta with tomato sauce,170,20,24,5,Dinner,TRUE,TRUE,Global
+Bean burrito with brown rice,250,16.5,30,21,Dinner,FALSE,FALSE,Global
+Lentil soup with whole grain bread,55,28,57,28,Dinner,TRUE,TRUE,Global
+Lentil stew with whole grain bread,421,2.3,67,17.7,Dinner,TRUE,TRUE,Global
+Lentil and vegetable soup with whole grain bread,346,2,59,52,Dinner,TRUE,TRUE,Global
+Lentil stew with vegetables and brown rice,302,23.4,11.2,16,Dinner,TRUE,TRUE,Global
+Bean and vegetable stir-fry with brown rice,180,6,180,9,Dinner,TRUE,TRUE,Global
+Turkey chili with whole grain bread,50,23,16,14,Dinner,FALSE,FALSE,Global
+Chicken Stir-Fry with Brown Rice,238,16.5,156,3,Dinner,FALSE,FALSE,Global
+Lentil Soup with Whole Wheat Bread,640,50,18,7,Dinner,TRUE,TRUE,Global
+Salmon with Roasted Sweet Potatoes,710,16.3,72,19,Dinner,FALSE,FALSE,Global
+Black Bean Burgers on Whole Wheat Buns,560,21.9,55,10,Dinner,FALSE,FALSE,Global
+Grilled Steak with Sweet Potato Fries,1440,4,56,37,Dinner,FALSE,FALSE,Global
+Salmon with roasted sweet potatoes and broccoli,500,42,42,27,Dinner,FALSE,FALSE,Global
+Steak with sweet potato fries and mixed greens,2168,120,269,120,Dinner,FALSE,FALSE,Global
+Beef with sweet potato and green beans,491,2,245,5,Dinner,FALSE,FALSE,Global
+Lentil pasta with vegan pesto sauce,188,18,19,13,Dinner,TRUE,TRUE,Global
+Chicken breast with quinoa and vegetables,623,65,100,46,Dinner,FALSE,FALSE,Global
+Vegan burgers with sweet potato fries,412,28,41,15,Dinner,TRUE,TRUE,Global
+Steak with baked potato,365,85,510,51,Dinner,FALSE,FALSE,Global
+Chicken breast with broccoli and sweet potato,516,64,150,15,Dinner,FALSE,FALSE,Global
+Tofu and quinoa bowl,439,10.5,194,72,Dinner,TRUE,TRUE,Global
+Vegetable curry,297,24.1,24,9.1,Dinner,TRUE,TRUE,Global
+Beef and broccoli stir-fry,436,6.1,41,15.8,Dinner,FALSE,FALSE,Global
+Baked salmon with veggies,290,29,17,37,Dinner,FALSE,FALSE,Global
+Pasta with marinara sauce,788,28,78,28,Dinner,FALSE,FALSE,Global
+Pasta with marinara sauce and veggies,835,120,250,34,Dinner,FALSE,TRUE,Global
+Greek yogurt with fruit,150,10,20,5,Snack,TRUE,TRUE,Global
+Apple with almond butter,180,4,30,8,Snack,FALSE,FALSE,Global
+Trail mix,300,8,34,20,Snack,FALSE,FALSE,Global
+Banana with peanut butter,210,5,30,9,Snack,TRUE,TRUE,Global
+Fruit and nut mix,250,6,28,15,Snack,TRUE,TRUE,Global
+Hummus and veggie wrap,200,7,25,10,Snack,FALSE,TRUE,Global
+Protein shake,200,20,10,5,Snack,FALSE,FALSE,Global
+Cottage cheese with fruit,160,14,12,5,Snack,TRUE,TRUE,Global
+Energy bar,220,10,25,8,Snack,FALSE,FALSE,Global
+Fruit and veggie sticks,100,2,20,1,Snack,TRUE,TRUE,Global
+Trail mix with nuts and seeds,350,10,40,25,Snack,TRUE,TRUE,Global
+Fruit salad with yogurt,150,4,25,7,Snack,TRUE,TRUE,Global
+Popcorn,100,3,15,5,Snack,FALSE,FALSE,Global
+Smoothie with protein powder,200,20,30,2,Snack,FALSE,FALSE,Global
+Fruit and nuts,180,6,30,8,Snack,TRUE,TRUE,Global
+Protein bar,250,8,30,12,Snack,FALSE,FALSE,Global
+Apple with peanut butter,180,4,30,8,Snack,TRUE,TRUE,Global
+Trail mix with nuts and dried fruit,350,10,40,25,Snack,TRUE,TRUE,Global
+Greek yogurt with fruit and granola,200,12,30,6,Snack,TRUE,TRUE,Global
+Banana with almond butter,210,5,30,9,Snack,FALSE,FALSE,Global
+Mixed nuts and seeds,200,6,20,15,Snack,TRUE,TRUE,Global
+Apple slices with peanut butter,180,4,30,8,Snack,TRUE,TRUE,Global
+Fruit smoothie,150,2,35,1,Snack,TRUE,TRUE,Global
+Apple slices with almond butter,180,6,30,8,Snack,FALSE,FALSE,Global
+Fruit and cheese,200,10,15,10,Snack,TRUE,TRUE,Global
+Fruit and yogurt,150,10,20,5,Snack,TRUE,TRUE,Global
+Fruit salad with nuts,150,4,25,7,Snack,TRUE,TRUE,Global
+Protein shake with banana,200,20,30,2,Snack,FALSE,FALSE,Global
+Energy bar with nuts and seeds,250,8,30,12,Snack,TRUE,TRUE,Global
+Smoothie with protein powder and fruit,180,6,30,8,Snack,TRUE,TRUE,Global
+Mixed nuts,180,6,30,8,Snack,TRUE,TRUE,Global
+Greek yogurt with nuts and seeds,180,6,30,8,Snack,TRUE,TRUE,Global
+Trail mix with almonds and dried fruit,350,10,40,25,Snack,TRUE,TRUE,Global
+Fruit salad with nuts and seeds,150,4,25,7,Snack,TRUE,TRUE,Global
+Protein shake with fruit,200,20,10,5,Snack,TRUE,TRUE,Global
+Trail mix with dried fruit and nuts,180,6,30,8,Snack,TRUE,TRUE,Global
+Vegetable sticks with hummus,180,6,30,8,Snack,TRUE,TRUE,Global
+Greek yogurt with fruit and nuts,180,6,30,8,Snack,TRUE,TRUE,Global
+Hummus with vegetables,180,6,30,8,Snack,TRUE,TRUE,Global
+Trail mix with nuts and dried fruits,180,6,30,8,Snack,TRUE,TRUE,Global
+Greek yogurt with berries,150,10,20,5,Snack,FALSE,TRUE,Global
+Low-fat Greek yogurt with berries,180,6,30,8,Snack,FALSE,TRUE,Global
+Raw vegetables and hummus,180,6,30,8,Snack,TRUE,TRUE,Global
+Celery sticks with peanut butter,180,6,30,8,Snack,TRUE,TRUE,Global
+Fruit salad,150,4,25,7,Snack,TRUE,TRUE,Global
+Trail mix with almonds and dried cranberries,180,6,30,8,Snack,FALSE,FALSE,Global
+Protein bar with nuts,180,6,30,8,Snack,TRUE,TRUE,Global
+Carrot sticks with hummus,180,6,30,8,Snack,FALSE,FALSE,Global
+Greek yogurt with berries and granola,180,6,30,8,Snack,FALSE,TRUE,Global
+String cheese with crackers,180,6,30,8,Snack,FALSE,TRUE,Global
+Protein shake with milk and banana,180,6,30,8,Snack,FALSE,FALSE,Global
+Fruit smoothie with almond milk,180,6,30,8,Snack,TRUE,TRUE,Global
+Greek yogurt with granola,180,6,30,8,Snack,FALSE,TRUE,Global
+Protein shake with almond butter,180,6,30,8,Snack,FALSE,FALSE,Global
+Peanut butter and banana sandwich,180,6,30,8,Snack,TRUE,TRUE,Global
+Popcorn with a sprinkle of cinnamon,180,6,30,8,Snack,FALSE,FALSE,Global
+Fruit and nut smoothie,200,8,35,5,Snack,TRUE,TRUE,Global
+Protein shake with fruit and spinach,180,6,30,8,Snack,TRUE,TRUE,Global
+Protein smoothie with almond milk and banana,200,20,30,2,Snack,FALSE,FALSE,Global
+Nuts and seeds,180,6,30,8,Snack,TRUE,TRUE,Global
+Mixed nuts and dried fruit,180,6,30,8,Snack,TRUE,TRUE,Global
+Fruit and vegetable smoothie,180,6,30,8,Snack,TRUE,TRUE,Global
+Whole-grain crackers with hummus,180,6,30,8,Snack,FALSE,FALSE,Global
+Hummus with carrots and cucumber,180,6,30,8,Snack,FALSE,FALSE,Global
+Fruit smoothie with plant-based milk,180,6,30,8,Snack,TRUE,TRUE,Global
+Fruit with yogurt,150,10,20,5,Snack,TRUE,TRUE,Global
+Almonds,180,6,30,8,Snack,FALSE,FALSE,Global
+Yogurt with fruit and granola,180,6,30,8,Snack,TRUE,TRUE,Global
+Fruit and vegetable salad,180,6,30,8,Snack,TRUE,TRUE,Global
+Fruit with nut butter,180,4,30,8,Snack,TRUE,TRUE,Global
+Banana,180,6,30,8,Snack,FALSE,FALSE,Global
+Rice cakes with peanut butter,180,6,30,8,Snack,TRUE,TRUE,Global
+Trail mix ,180,6,30,8,Snack,FALSE,FALSE,Global
+Popcorn with a touch of olive oil,180,6,30,8,Snack,FALSE,FALSE,Global
+Almond milk with banana and chia seeds,180,6,30,8,Snack,FALSE,FALSE,Global
+Hummus with wholegrain crackers,180,6,30,8,Snack,FALSE,FALSE,Global
+Yogurt with fruit,180,6,30,8,Snack,TRUE,TRUE,Global
+Yogurt parfait with granola,180,6,30,8,Snack,FALSE,TRUE,Global
+Fruit with nuts,180,6,30,8,Snack,TRUE,TRUE,Global
+Fruit with cottage cheese,160,14,12,5,Snack,TRUE,TRUE,Global
+Almonds with dried fruit,180,6,30,8,Snack,TRUE,TRUE,Global
+Protein shake with fruit and greens,180,6,30,8,Snack,TRUE,TRUE,Global
+Dark chocolate with almonds,180,6,30,8,Snack,FALSE,FALSE,Global
+Yogurt with granola,180,6,30,8,Snack,FALSE,TRUE,Global
+Protein smoothie,180,6,30,8,Snack,FALSE,FALSE,Global
+Protein smoothie with fruit,180,6,30,8,Snack,TRUE,TRUE,Global
+Fruit with almonds,200,6,20,15,Snack,TRUE,TRUE,Global
+Popcorn with a sprinkle of parmesan cheese,180,6,30,8,Snack,FALSE,TRUE,Global
+Protein shake with fruit ,180,6,30,8,Snack,TRUE,TRUE,Global
+Fruit and yogurt ,180,6,30,8,Snack,TRUE,TRUE,Global
+Protein shake with fruit and nuts,180,6,30,8,Snack,TRUE,TRUE,Global
+Protein shake with fruit and nuts ,180,6,30,8,Snack,TRUE,TRUE,Global
+Popcorn with nutritional yeast,180,6,30,8,Snack,TRUE,TRUE,Global
+Greek yogurt with protein powder,180,6,30,8,Snack,FALSE,TRUE,Global
+Protein smoothie with banana and spinach,180,6,30,8,Snack,FALSE,FALSE,Global
+Hummus and veggie wraps,180,6,30,8,Snack,FALSE,TRUE,Global
+Fruit and vegetables,180,6,30,8,Snack,TRUE,TRUE,Global
+Fruit salad with Greek yogurt,180,6,30,8,Snack,TRUE,TRUE,Global
+Fruit with almond butter,180,6,30,8,Snack,TRUE,TRUE,Global
+Fruit with nuts and seeds,200,6,20,15,Snack,TRUE,TRUE,Global
+Popcorn with a sprinkle of nutritional yeast,100,3,15,5,Snack,TRUE,TRUE,Global
+Apple with Peanut Butter,180,6,30,8,Snack,TRUE,TRUE,Global
+Mixed Nuts and Dried Fruits,180,6,30,8,Snack,TRUE,TRUE,Global
+Yogurt Parfait with Granola,180,6,30,8,Snack,FALSE,TRUE,Global
+Fruit Salad with Coconut Yogurt,180,6,30,8,Snack,TRUE,TRUE,Global
+Protein Shake with Banana,180,6,30,8,Snack,FALSE,FALSE,Global
+Greek yogurt with almonds and fruit,180,6,30,8,Snack,TRUE,TRUE,Global
+Hummus and veggie sticks,180,6,30,8,Snack,FALSE,TRUE,Global
+Trail mix with dried fruit,180,6,30,8,Snack,TRUE,TRUE,Global
+Hummus and vegetable sticks,180,6,30,8,Snack,TRUE,TRUE,Global
+Hummus and veggies,180,6,30,8,Snack,FALSE,TRUE,Global
+Greek yogurt with nuts,180,6,30,8,Snack,TRUE,TRUE,Global
+Capati,300,9,46.6,8.6,Breakfast,TRUE,FALSE,Malay
+Dosai,147,4.8,27.36,2.08,Breakfast,TRUE,FALSE,Malay
+Kuih-Teow Bandung,540,17.1,57.6,27,Breakfast,FALSE,FALSE,Malay
+Kuih-Teow Goreng,321,9.35,36.21,15.47,Breakfast,FALSE,TRUE,Malay
+Mee Bandung,549,20.25,54.45,27.9,Breakfast,FALSE,FALSE,Malay
+Mee Kari,529,11.89,36.9,36.9,Breakfast,FALSE,FALSE,Malay
+Mee Goreng,281,9.31,40.63,9.01,Breakfast,FALSE,TRUE,Malay
+Mee Sup,383,20.27,42.23,14.64,Breakfast,FALSE,FALSE,Malay
+Mee-Hoon Bandung,491,13.95,56.7,22.95,Breakfast,FALSE,FALSE,Malay
+Mee-Hoon Goreng,294,7.31,40.63,11.39,Breakfast,FALSE,TRUE,Malay
+Nasi Ayam,278,16.1,46,3.22,Lunch,FALSE,FALSE,Malay
+Nasi Lemak,389,9.66,58.19,13.11,Breakfast,FALSE,FALSE,Malay
+Nasi Dagang,507,8,91.5,12.25,Breakfast,FALSE,FALSE,Malay
+Nasi Goreng,637,16.17,86.79,25.08,Breakfast,FALSE,FALSE,Malay
+Nasi Minyak,436,7.6,73.75,12.25,Lunch,FALSE,FALSE,Malay
+Roti Canai,307,6.65,45.5,10.26,Breakfast,FALSE,TRUE,Malay
+Roti Telur,356,12.42,46.17,13.5,Breakfast,FALSE,TRUE,Malay
+Goreng Daging Lembu (4 pcs),576,52.87,31.96,26.35,Dinner,FALSE,FALSE,Malay
+Daging Lembu Masak Merah (4pcs),265,17.34,23.8,11.22,Dinner,FALSE,FALSE,Malay
+Kari Daging Lembu,259,26.28,15.48,10.26,Dinner,FALSE,FALSE,Malay
+Rendang Daging Lembu,253,18.2,7.8,16.5,Dinner,FALSE,FALSE,Malay
+Satay Daging Lembu (10 stick),360,30.6,33.15,11.7,Dinner,FALSE,FALSE,Malay
+Ayam Goreng,283,22.4,3.6,19.9,Lunch,FALSE,FALSE,Malay
+Kari Ayam,203,17,2.9,13.7,Lunch,FALSE,FALSE,Malay
+Ayam Kurma,175,12.4,1.2,13.4,Lunch,FALSE,FALSE,Malay
+Satay Ayam (10 stick),365,28.35,19.05,19.35,Dinner,FALSE,FALSE,Malay
+Kari Kambing,185,15.5,0.6,13.4,Lunch,FALSE,FALSE,Malay
+Ikan Tilapia Goreng Berlada,294,23.9,9,18,Lunch,FALSE,FALSE,Malay
+Ikan Tilapia Masak Lemak,190,14.5,0.9,14.3,Lunch,FALSE,FALSE,Malay
+Ikan Bawal Hitam Goreng,225,31.5,1.6,10.3,Lunch,FALSE,FALSE,Malay
+Ikan Bawal Hitam Goreng Berlada,242,24.3,3.4,14.6,Lunch,FALSE,FALSE,Malay
+Ikan Sembilang Goreng,254,28.7,2.8,14.2,Lunch,FALSE,FALSE,Malay
+Sotong Kecil Sambal,148,13.3,6.3,7.7,Lunch,FALSE,FALSE,Malay
+Ikan Cincaru Masak Cuka,193,26.3,1.4,9.1,Lunch,FALSE,FALSE,Malay
+Ikan Cincaru Goreng Berlada,215,18.3,7.1,12.6,Lunch,FALSE,FALSE,Malay
+Ikan Kembong Goreng,274,31,5.4,14.3,Breakfast,FALSE,FALSE,Malay
+Ikan Kembong Masak Kicap,261,17.8,10.6,16.4,Lunch,FALSE,FALSE,Malay
+Ikan Kembong Goreng Berlada,336,19.4,1.2,28.2,Lunch,FALSE,FALSE,Malay
+Ikan Merah Masak Asam,230,21,8,12.7,Lunch,FALSE,FALSE,Malay
+Ikan Merah Goreng Berlada,260,33.5,1.2,13.5,Dinner,FALSE,FALSE,Malay
+Ikan Merah Masak Lemak,251,19,2.8,18.2,Dinner,FALSE,FALSE,Malay
+Udang Kecil Sambal,200,16.2,1.1,14.5,Dinner,FALSE,FALSE,Malay
+Ikan Haruan Kering Goreng,408,46.4,25.4,13.4,Dinner,FALSE,FALSE,Malay
+Ikan Tenggiri Goreng,331,39.3,3.5,17.7,Dinner,FALSE,FALSE,Malay
+Ikan tenggiri Goreng Berlada,286,22.4,1.4,21.2,Dinner,FALSE,FALSE,Malay
+Ikan Pari Masak Asam Pedas,245,26.6,3.6,13.8,Dinner,FALSE,FALSE,Malay
+Ikan Kerisi Goreng Berlada,339,26.5,5.3,23.5,Dinner,FALSE,FALSE,Malay
+Ikan Kerisi Masak Kicap,231,25.2,3.6,12.9,Dinner,FALSE,FALSE,Malay
+Ikan Tongkol Masak Lemak,119,15.7,6.1,3.5,Dinner,FALSE,FALSE,Malay
+Ikan Selar Kuning Masak Asam Pedas,265,18.6,6.3,18.4,Dinner,FALSE,FALSE,Malay

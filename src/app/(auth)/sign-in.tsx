@@ -92,7 +92,7 @@ export default function SignInScreen() {
         <Animated.View entering={FadeInDown.duration(800).delay(100)} style={styles.brandContent}>
 
           <View>
-            <Image  source={require("../../../assets/images/logo5.png")} style = {styles.logoImage} />
+            <Image  source={require("../../../assets/images/logo6.png")} style = {styles.logoImage} />
           </View>
           
         </Animated.View>

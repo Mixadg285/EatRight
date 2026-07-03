@@ -22,7 +22,7 @@ export default function TabsLayout() {
   return (
     <MealPlanProvider>
       <NativeTabs tintColor = {tabTintColor}>
-          <NativeTabs.Trigger name="index">
+          <NativeTabs.Trigger name="home">
           <Label>Home</Label>
           <Icon 
           sf={{

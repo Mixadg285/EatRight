@@ -1,3 +1,4 @@
+import { useUser } from "@clerk/expo";
 import { FontAwesome } from "@expo/vector-icons";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
@@ -17,6 +18,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useMealPlan } from '../../contexts/MealPlanContext';
 
 const BASE_URL = "http://192.168.100.137:8000";
+const PROFILE_BACKEND_URL = Platform.OS === "android" ? "http://10.0.2.2:5000" : "http://192.168.100.137:5000";
 const { width } = Dimensions.get("window");
 
 type PlannerSearchParams = {
@@ -27,6 +29,7 @@ type PlannerSearchParams = {
   activity_level: string;
   dietary_preference: string;
   weight_goal: string;
+  prefer_local_food?: boolean;
 };
 
 const defaultPlannerParams: PlannerSearchParams = {
@@ -35,8 +38,9 @@ const defaultPlannerParams: PlannerSearchParams = {
   height_cm: 175,
   weight_kg: 60,
   activity_level: 'moderate',
-  dietary_preference: 'omnivore',
+  dietary_preference: 'Normal',
   weight_goal: 'maintain',
+  prefer_local_food: false,
 };
 
 const parseSearchParams = (params: Record<string, string | string[] | undefined>): Partial<PlannerSearchParams> => ({
@@ -47,10 +51,22 @@ const parseSearchParams = (params: Record<string, string | string[] | undefined>
   activity_level: params.activity_level ? (params.activity_level as string) : undefined,
   dietary_preference: params.dietary_preference ? (params.dietary_preference as string) : undefined,
   weight_goal: params.weight_goal ? (params.weight_goal as string) : undefined,
+  prefer_local_food: params.prefer_local_food ? (params.prefer_local_food as string) === 'true' : undefined,
 });
 
 const hasSearchParams = (params: Partial<PlannerSearchParams>) =>
   Object.values(params).some((value) => value !== undefined);
+
+const normalizeProfileToPlannerParams = (profile: any): PlannerSearchParams => ({
+  age: Number(profile?.age ?? 22),
+  gender: profile?.gender ?? "male",
+  height_cm: Number(profile?.height_cm ?? 175),
+  weight_kg: Number(profile?.weight_kg ?? 60),
+  activity_level: profile?.activity_level ?? "moderate",
+  dietary_preference: profile?.dietary_preference ?? "Normal",
+  weight_goal: profile?.weight_goal ?? "maintain",
+  prefer_local_food: Boolean(profile?.prefer_local_food),
+});
 
 // Premium Emerald & Slate Palette
 const COLORS = {
@@ -77,8 +93,10 @@ const FONTS = {
 
 export default function TestModelsPage() {
   const params = useLocalSearchParams();
-  const [calories, setCalories] = useState<number | null>(null);
-  const [mealPlan, setMealPlan] = useState<any>({});
+  const { user } = useUser();
+  const [caloriesArr, setCaloriesArr] = useState<number[]>([]);
+  const [mealPlans, setMealPlans] = useState<any[]>([]);
+  const [currentDayIndex, setCurrentDayIndex] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [plannerParams, setPlannerParams] = useState<PlannerSearchParams>(defaultPlannerParams);
@@ -103,30 +121,73 @@ export default function TestModelsPage() {
       activity_level: parsedParams.activity_level ?? current.activity_level,
       dietary_preference: parsedParams.dietary_preference ?? current.dietary_preference,
       weight_goal: parsedParams.weight_goal ?? current.weight_goal,
+      prefer_local_food: parsedParams.prefer_local_food ?? current.prefer_local_food ?? false,
     }));
     setHasGeneratedParams(true);
   }, [parsedParams]);
 
-  async function testModels(paramsToUse: PlannerSearchParams) {
+  useEffect(() => {
+    const loadSavedProfile = async () => {
+      if (hasSearchParams(parsedParams)) {
+        return;
+      }
+
+      const userEmail = user?.primaryEmailAddress?.emailAddress;
+      if (!userEmail) {
+        setPlannerParams(defaultPlannerParams);
+        setHasGeneratedParams(true);
+        return;
+      }
+
+      try {
+        const response = await fetch(`${PROFILE_BACKEND_URL}/api/user-profile/${userEmail}`);
+        const result = await response.json();
+
+        if (response.ok && result?.success && result?.exists) {
+          const nextParams = normalizeProfileToPlannerParams(result.data);
+          setPlannerParams(nextParams);
+          setHasGeneratedParams(true);
+          return;
+        }
+      } catch (error) {
+        console.error("Error loading saved profile for planner:", error);
+      }
+
+      setPlannerParams(defaultPlannerParams);
+      setHasGeneratedParams(true);
+    };
+
+    loadSavedProfile();
+  }, [parsedParams, user?.primaryEmailAddress?.emailAddress]);
+
+  async function fetchSinglePlan(paramsToUse: PlannerSearchParams) {
+    const res = await fetch(`${BASE_URL}/predict_and_recommend`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(paramsToUse),
+    });
+    return res.json();
+  }
+
+  async function generateMultiDay(paramsToUse: PlannerSearchParams, days = 3) {
     try {
       setLoading(true);
       setError(null);
 
-      const mealPlanResult = await fetch(`${BASE_URL}/predict_and_recommend`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(paramsToUse),
-      }).then((r) => r.json());
+      const requests = Array.from({ length: days }, () => fetchSinglePlan(paramsToUse));
+      const results = await Promise.all(requests);
 
-      console.log("mealPlanResult", mealPlanResult);
-      const newCalories = mealPlanResult?.predicted_calories ?? null;
-      const newMealPlan = mealPlanResult?.meal_plan ?? {};
-      
-      setCalories(newCalories);
-      setMealPlan(newMealPlan);
-      
-      // Save to context for insights tab
-      setMealPlanData(newMealPlan, newCalories, paramsToUse);
+      const plans = results.map((r) => r?.meal_plan ?? {});
+      const cals = results.map((r) => (r?.predicted_calories ?? null));
+
+      setMealPlans(plans);
+      setCaloriesArr(cals as number[]);
+      setCurrentDayIndex(0);
+
+      // Save first day to context for insights tab
+      if (plans.length > 0) {
+        setMealPlanData(plans[0], cals[0] ?? null, paramsToUse);
+      }
     } catch (err) {
       console.error(err);
       setError("Unable to connect to the ML model engine server.");
@@ -140,7 +201,8 @@ export default function TestModelsPage() {
       return;
     }
 
-    testModels(plannerParams);
+    // Automatically generate a 3-day plan when params are ready
+    generateMultiDay(plannerParams, 3);
   }, [plannerParams, hasGeneratedParams]);
 
   // Utility to clean up and structure meal titles
@@ -164,7 +226,7 @@ export default function TestModelsPage() {
           </View>
           <View style={styles.engineBadge}>
             <FontAwesome name="bolt" size={12} color={COLORS.emeraldDeep} />
-            <Text style={styles.engineText}>AI ACTIVE</Text>
+            <Text style={styles.engineText}>PLANNER</Text>
           </View>
         </Animated.View>
 
@@ -181,7 +243,7 @@ export default function TestModelsPage() {
               <View style={styles.heroDecorCircle} />
               <Text style={styles.heroLabel}>PREDICTED CALORIES</Text>
               <Text style={styles.heroValue}>
-                {calories === null ? "—" : calories.toFixed(0)}
+                {(!caloriesArr || caloriesArr.length === 0 || caloriesArr[currentDayIndex] == null) ? "—" : caloriesArr[currentDayIndex].toFixed(0)}
                 <Text style={styles.heroUnit}> kcal/day</Text>
               </Text>
               <Text style={styles.heroDescription}>
@@ -198,51 +260,82 @@ export default function TestModelsPage() {
             ) : null}
 
             {/* Empty Context State */}
-            {Object.keys(mealPlan).length === 0 && !error ? (
+            {mealPlans.length === 0 && !error ? (
               <View style={styles.emptyCard}>
                 <FontAwesome name="folder-open-o" size={28} color={COLORS.textMuted} />
                 <Text style={styles.emptyText}>No recommendations generated yet.</Text>
               </View>
             ) : (
-              /* Meal Segment Cards Iteration */
-              Object.entries(mealPlan).map(([mealType, items]: [string, any], sectionIdx) => (
-                <Animated.View 
-                  entering={FadeInDown.duration(600).delay(200 + sectionIdx * 100)} 
-                  key={mealType} 
-                  style={styles.mealCard}
-                >
-                  <View style={styles.mealHeader}>
-                    <FontAwesome name="cutlery" size={14} color={COLORS.emerald} />
-                    <Text style={styles.mealTypeTitle}>{formatMealTitle(mealType)}</Text>
-                  </View>
+              /* 3-Day Carousel: horizontal paging between each day's meal plan */
+              <View style ={{
+                
+              }}>
+                <View style={styles.dayHeaderRow}>
+                  <Text style={styles.dayHeaderText}>Day {currentDayIndex + 1} of {mealPlans.length}</Text>
+                  <Text style={styles.dayCalText}>{caloriesArr[currentDayIndex] ? `${caloriesArr[currentDayIndex].toFixed(0)} kcal/day` : '—'}</Text>
+                </View>
 
-                  {Array.isArray(items) && items.length > 0 ? (
-                    items.map((item: any, idx: number) => (
-                      <View key={idx} style={[styles.mealItem, idx === items.length - 1 && styles.lastMealItem]}>
-                        <Text style={styles.foodName}>{item.Food_name}</Text>
-                        
-                        {/* Interactive Row Badge Architecture */}
-                        <View style={styles.macroBadgeRow}>
-                          <View style={[styles.macroBadge, { backgroundColor: '#EEF2F6' }]}>
-                            <Text style={styles.macroBadgeText}>{item.Calories.toFixed(0)} kcal</Text>
+                <ScrollView
+                  horizontal
+                  pagingEnabled
+                  showsHorizontalScrollIndicator={false}
+                  onMomentumScrollEnd={(e) => {
+                    const idx = Math.round(e.nativeEvent.contentOffset.x / width);
+                    setCurrentDayIndex(idx);
+                  }}
+                >
+                  {mealPlans.map((plan, dayIdx) => (
+                    <View key={`day-${dayIdx}`} style={[styles.dayPage, { width: width - 48 }]}> 
+                      {Object.entries(plan).map(([mealType, items]: [string, any], sectionIdx) => (
+                        <Animated.View
+                          entering={FadeInDown.duration(600).delay(200 + sectionIdx * 100)}
+                          key={`${dayIdx}-${mealType}`}
+                          style={styles.mealCard}
+                        >
+                          <View style={styles.mealHeader}>
+                            <FontAwesome name="cutlery" size={14} color={COLORS.emerald} />
+                            <Text style={styles.mealTypeTitle}>{formatMealTitle(mealType)}</Text>
                           </View>
-                          <View style={[styles.macroBadge, styles.proteinTint]}>
-                            <Text style={[styles.macroBadgeText, styles.proteinText]}>P: {item.Protein.toFixed(1)}g</Text>
-                          </View>
-                          <View style={[styles.macroBadge, styles.carbsTint]}>
-                            <Text style={[styles.macroBadgeText, styles.carbsText]}>C: {item.Carbohydrates.toFixed(1)}g</Text>
-                          </View>
-                          <View style={[styles.macroBadge, styles.fatsTint]}>
-                            <Text style={[styles.macroBadgeText, styles.fatsText]}>F: {item.Fats.toFixed(1)}g</Text>
-                          </View>
-                        </View>
-                      </View>
-                    ))
-                  ) : (
-                    <Text style={styles.noFood}>No customized options targeted for this timeline.</Text>
-                  )}
-                </Animated.View>
-              ))
+
+                          {Array.isArray(items) && items.length > 0 ? (
+                            items.map((item: any, idx: number) => (
+                              <View key={idx} style={[styles.mealItem, idx === items.length - 1 && styles.lastMealItem]}>
+                                {item.Food_type && (
+                                    <View style={[styles.foodTypeBadge, item.Food_type === 'Local' ? styles.malayBadge : styles.globalBadge]}>
+                                      <Text style={[styles.foodTypeText, item.Food_type === 'Local' ? styles.malayText : styles.globalText]}>
+                                        {item.Food_type}
+                                      </Text>
+                                    </View>
+                                  )}
+                                <View style={styles.foodHeaderRow}>
+                                  <Text style={styles.foodName}>{item.Food_name}</Text>
+                                </View>
+
+                                <View style={styles.macroBadgeRow}>
+                                  <View style={[styles.macroBadge, { backgroundColor: '#EEF2F6' }]}>
+                                    <Text style={styles.macroBadgeText}>{item.Calories.toFixed(0)} kcal</Text>
+                                  </View>
+                                  <View style={[styles.macroBadge, styles.proteinTint]}>
+                                    <Text style={[styles.macroBadgeText, styles.proteinText]}>P: {item.Protein.toFixed(1)}g</Text>
+                                  </View>
+                                  <View style={[styles.macroBadge, styles.carbsTint]}>
+                                    <Text style={[styles.macroBadgeText, styles.carbsText]}>C: {item.Carbohydrates.toFixed(1)}g</Text>
+                                  </View>
+                                  <View style={[styles.macroBadge, styles.fatsTint]}>
+                                    <Text style={[styles.macroBadgeText, styles.fatsText]}>F: {item.Fats.toFixed(1)}g</Text>
+                                  </View>
+                                </View>
+                              </View>
+                            ))
+                          ) : (
+                            <Text style={styles.noFood}>No customized options targeted for this timeline.</Text>
+                          )}
+                        </Animated.View>
+                      ))}
+                    </View>
+                  ))}
+                </ScrollView>
+              </View>
             )}
           </>
         )}
@@ -255,10 +348,10 @@ export default function TestModelsPage() {
             pressed && styles.buttonPressed,
             loading && styles.buttonDisabled
           ]} 
-          onPress={() => testModels(plannerParams)}
+          onPress={() => generateMultiDay(plannerParams, 3)}
         >
           <FontAwesome name="refresh" size={16} color={COLORS.white} style={styles.buttonIcon} />
-          <Text style={styles.buttonText}>Recompute Matrix Plan</Text>
+          <Text style={styles.buttonText}>Generate 3-Day Meal Plan</Text>
         </Pressable>
       </View>
       </ScrollView>
@@ -291,7 +384,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: FONTS.black,
     fontSize: 26,
-    fontWeight: "900",
+    fontWeight: "700",
     color: COLORS.textMain,
     letterSpacing: -0.5,
   },
@@ -315,7 +408,7 @@ const styles = StyleSheet.create({
   engineText: {
     fontFamily: FONTS.bold,
     fontSize: 10,
-    fontWeight: '700',
+    fontWeight: '800',
     color: COLORS.emeraldDeep,
   },
   heroCard: {
@@ -351,7 +444,7 @@ const styles = StyleSheet.create({
   heroValue: {
     fontFamily: FONTS.black,
     fontSize: 38,
-    fontWeight: '900',
+    fontWeight: '600',
     color: COLORS.white,
     marginTop: 6,
     letterSpacing: -1,
@@ -378,6 +471,26 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.medium,
     fontSize: 14,
     color: COLORS.textMuted,
+  },
+  dayHeaderRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 12,
+    paddingHorizontal: 6,
+  },
+  dayHeaderText: {
+    fontFamily: FONTS.bold,
+    fontSize: 15,
+    color: COLORS.textMain,
+  },
+  dayCalText: {
+    fontFamily: FONTS.medium,
+    fontSize: 13,
+    color: COLORS.textMuted,
+  },
+  dayPage: {
+    paddingRight: 0,
   },
   errorContainer: {
     flexDirection: 'row',
@@ -451,6 +564,34 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "700",
     color: COLORS.textMain,
+  },
+  foodHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 4,
+  },
+  foodTypeBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: 6,
+  },
+  malayBadge: {
+    backgroundColor: '#FEE2E2',
+  },
+  globalBadge: {
+    backgroundColor: '#DBEAFE',
+  },
+  foodTypeText: {
+    fontFamily: FONTS.medium,
+    fontSize: 10,
+    fontWeight: '600',
+  },
+  malayText: {
+    color: '#DC2626',
+  },
+  globalText: {
+    color: '#0284C7',
   },
   macroBadgeRow: {
     flexDirection: 'row',

@@ -11,6 +11,7 @@ type MealPlanContextType = {
     activity_level: string;
     dietary_preference: string;
     weight_goal: string;
+    prefer_local_food: boolean;
   } | null;
   setMealPlanData: (mealPlan: any, calories: number | null, userParams: any) => void;
 };

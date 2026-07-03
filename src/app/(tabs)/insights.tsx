@@ -1,8 +1,12 @@
+import { useUser } from '@clerk/expo';
 import { FontAwesome } from '@expo/vector-icons';
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Svg, { Circle } from 'react-native-svg'; // <-- Added SVG imports
 import { useMealPlan } from '../../contexts/MealPlanContext';
+
+const PROFILE_BACKEND_URL = Platform.OS === 'android' ? 'http://10.0.2.2:5000' : 'http://192.168.100.137:5000';
 
 const COLORS = {
   bg: '#F4F7F6',
@@ -85,8 +89,101 @@ const extractMealHighlights = (mealPlan: any) => {
   });
 };
 
+interface MacroItem {
+  label: string;
+  value: number;
+  color: string;
+  tint: string;
+}
+
+// Custom Reusable Donut Chart Component
+const MacroDonutChart = ({ data }: { data: MacroItem[] }) => {
+  const totalGrams = data.reduce((sum, item) => sum + item.value, 0);
+  
+  const radius = 38;
+  const strokeWidth = 10;
+  const size = (radius + strokeWidth) * 2;
+  const circumference = 2 * Math.PI * radius;
+
+  let accumulatedGrams = 0;
+
+  return (
+    <View style={styles.donutWrapper}>
+      <Svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={styles.donutSvg}>
+        {/* Placeholder background circle if empty */}
+        {totalGrams === 0 ? (
+          <Circle cx={size / 2} cy={size / 2} r={radius} stroke={COLORS.border} strokeWidth={strokeWidth} fill="transparent" />
+        ) : (
+          data.map((item) => {
+            if (item.value === 0) return null;
+            
+            const percentage = (item.value / totalGrams) * 100;
+            const strokeDashoffset = circumference - (percentage / 100) * circumference;
+            const rotation = (accumulatedGrams / totalGrams) * 360;
+            
+            accumulatedGrams += item.value;
+
+            return (
+              <Circle
+                key={item.label}
+                cx={size / 2}
+                cy={size / 2}
+                r={radius}
+                stroke={item.color}
+                strokeWidth={strokeWidth}
+                strokeDasharray={circumference}
+                strokeDashoffset={strokeDashoffset}
+                fill="transparent"
+                origin={`${size / 2}, ${size / 2}`}
+                rotation={rotation}
+              />
+            );
+          })
+        )}
+      </Svg>
+      {/* Absolute Central Text Label */}
+      <View style={styles.donutCenterText}>
+        <Text style={styles.donutCenterValue}>{totalGrams}g</Text>
+        <Text style={styles.donutCenterLabel}>Total</Text>
+      </View>
+    </View>
+  );
+};
+
 const InsightsScreen = () => {
-  const { mealPlan, calories, userParams } = useMealPlan();
+  const { user } = useUser();
+  const { mealPlan, calories, userParams, setMealPlanData } = useMealPlan();
+
+  useEffect(() => {
+    const loadSavedProfile = async () => {
+      if (userParams || !user?.primaryEmailAddress?.emailAddress) {
+        return;
+      }
+
+      try {
+        const response = await fetch(`${PROFILE_BACKEND_URL}/api/user-profile/${user.primaryEmailAddress.emailAddress}`);
+        const result = await response.json();
+
+        if (response.ok && result?.success && result?.exists) {
+          const profile = result.data;
+          setMealPlanData(mealPlan, calories, {
+            age: Number(profile.age),
+            gender: profile.gender,
+            height_cm: Number(profile.height_cm),
+            weight_kg: Number(profile.weight_kg),
+            activity_level: profile.activity_level,
+            dietary_preference: profile.dietary_preference,
+            weight_goal: profile.weight_goal,
+            prefer_local_food: Boolean(profile.prefer_local_food),
+          });
+        }
+      } catch (error) {
+        console.error('Error loading saved profile for insights:', error);
+      }
+    };
+
+    loadSavedProfile();
+  }, [user?.primaryEmailAddress?.emailAddress, userParams, setMealPlanData]);
   
   const macroData = useMemo(() => extractMacros(mealPlan), [mealPlan]);
   const mealHighlights = useMemo(() => extractMealHighlights(mealPlan), [mealPlan]);
@@ -122,7 +219,7 @@ const InsightsScreen = () => {
           </View>
           <View style={styles.badge}>
             <FontAwesome name="pie-chart" size={12} color={COLORS.emeraldDeep} />
-            <Text style={styles.badgeText}>LIVE</Text>
+            <Text style={styles.badgeText}>ANALYSIS</Text>
           </View>
         </View>
 
@@ -150,24 +247,28 @@ const InsightsScreen = () => {
           </View>
         </View>
 
+        {/* Updated Macro Card */}
         <View style={styles.card}>
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Macro balance</Text>
             <Text style={styles.sectionHint}>Daily targets</Text>
           </View>
 
-          {macroData.map((item) => (
-            <View key={item.label} style={styles.macroRow}>
-              <View style={styles.macroHead}>
-                <View style={[styles.dot, { backgroundColor: item.color }]} />
-                <Text style={styles.macroLabel}>{item.label}</Text>
-              </View>
-              <Text style={styles.macroValue}>{item.value}g</Text>
-              <View style={[styles.barTrack, { backgroundColor: item.tint }]}>
-                <View style={[styles.barFill, { width: `${Math.min(item.value, 100)}%`, backgroundColor: item.color }]} />
-              </View>
+          <View style={styles.macroContentRow}>
+            <MacroDonutChart data={macroData} />
+            
+            <View style={styles.legendContainer}>
+              {macroData.map((item) => (
+                <View key={item.label} style={styles.legendRow}>
+                  <View style={styles.macroHead}>
+                    <View style={[styles.dot, { backgroundColor: item.color }]} />
+                    <Text style={styles.macroLabel}>{item.label}</Text>
+                  </View>
+                  <Text style={styles.macroValueText}>{item.value}g</Text>
+                </View>
+              ))}
             </View>
-          ))}
+          </View>
         </View>
 
         <View style={styles.card}>
@@ -228,6 +329,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: FONTS.black,
     fontSize: 28,
+    fontWeight: "700",
     color: COLORS.textMain,
     letterSpacing: -0.6,
     marginBottom: 4,
@@ -338,7 +440,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 16,
   },
   sectionTitle: {
     fontFamily: FONTS.bold,
@@ -350,14 +452,50 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: COLORS.textMuted,
   },
-  macroRow: {
-    marginBottom: 10,
+  macroContentRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 4,
+  },
+  donutWrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  donutSvg: {
+    transform: [{ rotate: '-90deg' }], // Starts rendering from the top center
+  },
+  donutCenterText: {
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  donutCenterValue: {
+    fontFamily: FONTS.black,
+    fontSize: 16,
+    fontWeight: '700',
+    color: COLORS.textMain,
+  },
+  donutCenterLabel: {
+    fontFamily: FONTS.regular,
+    fontSize: 10,
+    color: COLORS.textMuted,
+    marginTop: -2,
+  },
+  legendContainer: {
+    flex: 1,
+    marginLeft: 24,
+    gap: 12,
+  },
+  legendRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   macroHead: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    marginBottom: 4,
   },
   dot: {
     width: 10,
@@ -366,23 +504,13 @@ const styles = StyleSheet.create({
   },
   macroLabel: {
     fontFamily: FONTS.bold,
-    fontSize: 13,
+    fontSize: 14,
     color: COLORS.textMain,
   },
-  macroValue: {
+  macroValueText: {
     fontFamily: FONTS.medium,
-    fontSize: 12,
+    fontSize: 14,
     color: COLORS.textMuted,
-    marginBottom: 4,
-  },
-  barTrack: {
-    height: 8,
-    borderRadius: 999,
-    overflow: 'hidden',
-  },
-  barFill: {
-    height: '100%',
-    borderRadius: 999,
   },
   mealItem: {
     borderTopWidth: 1,
