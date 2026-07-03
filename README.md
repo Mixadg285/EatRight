@@ -36,9 +36,9 @@ npm run reset-project
 This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
 ## ONBOARDING SCREENS
-<img width="295" height="640" alt="on1" src="https://github.com/user-attachments/assets/cf26ecb4-ed16-4623-b3a9-7bba47c04bf9" />
-<img width="295" height="640" alt="on2" src="https://github.com/user-attachments/assets/5f6f478a-d81c-481c-9504-c8e948fb9d80" />
-<img width="295" height="640" alt="on3" src="https://github.com/user-attachments/assets/467f6f26-f0ef-4f7a-ae8e-cc2c878b0c26" />
+<img width="240" height="600" alt="on1" src="https://github.com/user-attachments/assets/cf26ecb4-ed16-4623-b3a9-7bba47c04bf9" />
+<img width="240" height="600" alt="on2" src="https://github.com/user-attachments/assets/5f6f478a-d81c-481c-9504-c8e948fb9d80" />
+<img width="240" height="600" alt="on3" src="https://github.com/user-attachments/assets/467f6f26-f0ef-4f7a-ae8e-cc2c878b0c26" />
 
 
 
