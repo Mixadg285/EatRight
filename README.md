@@ -1,6 +1,6 @@
-# Welcome to MY EatRight App
+# Welcome to EatRight App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a mobile-based application that recommends meal for the user based on their demographic profiles.
 
 ## Get started
 
