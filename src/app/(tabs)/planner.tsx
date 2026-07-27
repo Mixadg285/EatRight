@@ -17,8 +17,8 @@ import Animated, { FadeIn, FadeInDown } from "react-native-reanimated";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useMealPlan } from '../../contexts/MealPlanContext';
 
-const BASE_URL = "http://192.168.100.137:8000";
-const PROFILE_BACKEND_URL = Platform.OS === "android" ? "http://10.0.2.2:5000" : "http://192.168.100.137:5000";
+const BASE_URL = "http://172.20.10.10:8000";
+const PROFILE_BACKEND_URL = Platform.OS === "android" ? "http://10.0.2.2:5000" : "http://172.20.10.10:5000";
 const { width } = Dimensions.get("window");
 
 type PlannerSearchParams = {
@@ -224,10 +224,7 @@ export default function TestModelsPage() {
             <Text style={styles.title}>Daily Diet Scope</Text>
             <Text style={styles.subtitle}>Predictive ML Recommendation Engine</Text>
           </View>
-          <View style={styles.engineBadge}>
-            <FontAwesome name="bolt" size={12} color={COLORS.emeraldDeep} />
-            <Text style={styles.engineText}>PLANNER</Text>
-          </View>
+          
         </Animated.View>
 
         {/* Global States Wrapper */}
@@ -240,7 +237,7 @@ export default function TestModelsPage() {
           <>
             {/* Calorie Goal Summary Card */}
             <Animated.View entering={FadeInDown.duration(600).delay(150)} style={styles.heroCard}>
-              <View style={styles.heroDecorCircle} />
+              <View  />
               <Text style={styles.heroLabel}>PREDICTED CALORIES</Text>
               <Text style={styles.heroValue}>
                 {(!caloriesArr || caloriesArr.length === 0 || caloriesArr[currentDayIndex] == null) ? "—" : caloriesArr[currentDayIndex].toFixed(0)}
@@ -272,7 +269,16 @@ export default function TestModelsPage() {
               }}>
                 <View style={styles.dayHeaderRow}>
                   <Text style={styles.dayHeaderText}>Day {currentDayIndex + 1} of {mealPlans.length}</Text>
-                  <Text style={styles.dayCalText}>{caloriesArr[currentDayIndex] ? `${caloriesArr[currentDayIndex].toFixed(0)} kcal/day` : '—'}</Text>
+                  <View style={styles.macroLegendItem}>
+                     <View style={[styles.legendDot, { backgroundColor: '#EA580C' }]} />
+                         <Text style={styles.legendText}>Local</Text>
+                      <View style={[styles.legendDot, { backgroundColor: '#2563EB' }]} />
+                         <Text style={styles.legendText}>Global</Text>
+                      
+                     </View>
+                     
+                     
+                  
                 </View>
 
                 <ScrollView
@@ -299,16 +305,21 @@ export default function TestModelsPage() {
 
                           {Array.isArray(items) && items.length > 0 ? (
                             items.map((item: any, idx: number) => (
-                              <View key={idx} style={[styles.mealItem, idx === items.length - 1 && styles.lastMealItem]}>
-                                {item.Food_type && (
-                                    <View style={[styles.foodTypeBadge, item.Food_type === 'Local' ? styles.malayBadge : styles.globalBadge]}>
-                                      <Text style={[styles.foodTypeText, item.Food_type === 'Local' ? styles.malayText : styles.globalText]}>
-                                        {item.Food_type}
-                                      </Text>
-                                    </View>
-                                  )}
+                              <View
+                                key={idx}
+                                style={[
+                                  styles.mealItem,
+                                  idx === items.length - 1 && styles.lastMealItem,
+                                  item.Food_type === 'Local' ? styles.localFoodItem : styles.globalFoodItem,
+                                ]}
+                              >
                                 <View style={styles.foodHeaderRow}>
                                   <Text style={styles.foodName}>{item.Food_name}</Text>
+                                  {item.Food_type && (
+                                    <View style={[styles.foodTypeBadge ]}>
+                                      
+                                    </View>
+                                  )}
                                 </View>
 
                                 <View style={styles.macroBadgeRow}>
@@ -564,6 +575,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "700",
     color: COLORS.textMain,
+    marginLeft: 10
   },
   foodHeaderRow: {
     flexDirection: 'row',
@@ -572,32 +584,61 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   foodTypeBadge: {
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 6,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: 'transparent',
   },
   malayBadge: {
-    backgroundColor: '#FEE2E2',
+    backgroundColor: 'rgba(254, 226, 226, 0.45)',
+    borderColor: '#FCA5A5',
   },
   globalBadge: {
-    backgroundColor: '#DBEAFE',
+    backgroundColor: 'rgba(219, 234, 254, 0.55)',
+    borderColor: '#93C5FD',
+  },
+  foodTypeDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    marginRight: 6,
+  },
+  malayDot: {
+    backgroundColor: '#DC2626',
+  },
+  globalDot: {
+    backgroundColor: '#0284C7',
   },
   foodTypeText: {
     fontFamily: FONTS.medium,
-    fontSize: 10,
-    fontWeight: '600',
+    fontSize: 11,
+    fontWeight: '700',
   },
   malayText: {
-    color: '#DC2626',
+    color: '#B91C1C',
   },
   globalText: {
-    color: '#0284C7',
+    color: '#1D4ED8',
+  },
+  localFoodItem: {
+    borderLeftWidth: 3,
+    borderLeftColor: '#DC2626',
+    backgroundColor: 'rgba(254, 226, 226, 0.12)',
+  },
+  globalFoodItem: {
+    borderLeftWidth: 3,
+    borderLeftColor: '#0284C7',
+    backgroundColor: 'rgba(219, 234, 254, 0.12)',
   },
   macroBadgeRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 6,
     marginTop: 8,
+    marginLeft: 8,
   },
   macroBadge: {
     paddingHorizontal: 8,
@@ -663,5 +704,25 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 16,
     letterSpacing: 0.3,
+  },
+  legendItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  legendDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+  },
+  legendText: {
+    fontFamily: FONTS.regular,
+    fontSize: 11,
+    color: COLORS.textMuted,
+  },
+  macroLegendItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
   },
 });

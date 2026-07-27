@@ -1,12 +1,14 @@
-import { useUser } from '@clerk/expo';
+import { useClerk, useUser } from '@clerk/expo';
 import { FontAwesome } from '@expo/vector-icons';
-import React, { useEffect, useMemo } from 'react';
-import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
+import { router } from 'expo-router';
+import React, { useEffect, useMemo, useState } from 'react';
+import { ActivityIndicator, Alert, Image, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Svg, { Circle } from 'react-native-svg'; // <-- Added SVG imports
+import Svg, { Circle, G } from 'react-native-svg';
 import { useMealPlan } from '../../contexts/MealPlanContext';
 
-const PROFILE_BACKEND_URL = Platform.OS === 'android' ? 'http://10.0.2.2:5000' : 'http://192.168.100.137:5000';
+const PROFILE_BACKEND_URL = Platform.OS === 'android' ? 'http://10.0.2.2:5000' : 'http://172.20.10.10:5000';
 
 const COLORS = {
   bg: '#F4F7F6',
@@ -17,6 +19,9 @@ const COLORS = {
   emeraldDeep: '#047857',
   emeraldLight: '#ECFDF5',
   border: '#E5E7EB',
+  danger: '#EF4444',
+  dangerLight: '#FEF2F2',
+  warning: '#F59E0B',
 };
 
 const FONTS = {
@@ -34,129 +39,88 @@ const calculateBMI = (weightKg: number, heightCm: number): number => {
 
 // Calculate BMR using Mifflin-St Jeor formula
 const calculateBMR = (weightKg: number, heightCm: number, age: number, gender: string): number => {
-  if (gender === 'male') {
+  if (gender.toLowerCase() === 'male') {
     return Math.round(10 * weightKg + 6.25 * heightCm - 5 * age + 5);
   } else {
     return Math.round(10 * weightKg + 6.25 * heightCm - 5 * age - 161);
   }
 };
 
-// Extract macros from meal plan data
-const extractMacros = (mealPlan: any) => {
-  let totalProtein = 0;
-  let totalCarbs = 0;
-  let totalFats = 0;
-
-  Object.entries(mealPlan).forEach(([_, items]: [string, any]) => {
-    if (Array.isArray(items)) {
-      items.forEach((item: any) => {
-        totalProtein += item.Protein || 0;
-        totalCarbs += item.Carbohydrates || 0;
-        totalFats += item.Fats || 0;
-      });
-    }
-  });
-
-  return [
-    { label: 'Protein', value: Math.round(totalProtein), color: '#2563EB', tint: '#EFF6FF' },
-    { label: 'Carbs', value: Math.round(totalCarbs), color: '#F59E0B', tint: '#FFF7ED' },
-    { label: 'Fats', value: Math.round(totalFats), color: '#A855F7', tint: '#F5F3FF' },
-  ];
+const formatText = (text: string) => {
+  if (!text) return 'N/A';
+  return text.replace(/_/g, ' ').charAt(0).toUpperCase() + text.replace(/_/g, ' ').slice(1);
 };
 
-// Extract meal highlights from meal plan data
-const extractMealHighlights = (mealPlan: any) => {
-  const mealNotes: { [key: string]: string } = {
-    breakfast: 'Balanced start with fiber and protein',
-    lunch: 'Higher energy meal for mid-day focus',
-    dinner: 'Light but satisfying evening plate',
-    snack: 'Quick bite to keep momentum steady',
+const WEEK_DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+const buildWeeklyActivityData = (baseTarget: number, activityLevel?: string) => {
+  const normalizedActivityLevel = (activityLevel || 'moderate').toLowerCase();
+  const activityMultiplier: Record<string, number> = {
+    sedentary: 0.92,
+    lightly_active: 1.0,
+    moderate: 1.08,
+    active: 1.16,
+    very_active: 1.24,
   };
 
-  return Object.entries(mealPlan).map(([mealType, items]: [string, any]) => {
-    let totalKcal = 0;
-    if (Array.isArray(items)) {
-      items.forEach((item: any) => {
-        totalKcal += item.Calories || 0;
-      });
-    }
-    const displayMealName = mealType.replace(/_/g, ' ').charAt(0).toUpperCase() + mealType.replace(/_/g, ' ').slice(1);
-    return {
-      name: displayMealName,
-      kcal: `${Math.round(totalKcal)} kcal`,
-      note: mealNotes[mealType.toLowerCase()] || 'Well balanced meal',
-    };
-  });
-};
+  const target = Math.max(1800, Math.round(baseTarget * (activityMultiplier[normalizedActivityLevel] || 1.08)));
+  const pattern = [0.9, 1.02, 0.95, 1.12, 0.98, 1.18, 0.94];
 
-interface MacroItem {
-  label: string;
-  value: number;
-  color: string;
-  tint: string;
-}
-
-// Custom Reusable Donut Chart Component
-const MacroDonutChart = ({ data }: { data: MacroItem[] }) => {
-  const totalGrams = data.reduce((sum, item) => sum + item.value, 0);
-  
-  const radius = 38;
-  const strokeWidth = 10;
-  const size = (radius + strokeWidth) * 2;
-  const circumference = 2 * Math.PI * radius;
-
-  let accumulatedGrams = 0;
-
-  return (
-    <View style={styles.donutWrapper}>
-      <Svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={styles.donutSvg}>
-        {/* Placeholder background circle if empty */}
-        {totalGrams === 0 ? (
-          <Circle cx={size / 2} cy={size / 2} r={radius} stroke={COLORS.border} strokeWidth={strokeWidth} fill="transparent" />
-        ) : (
-          data.map((item) => {
-            if (item.value === 0) return null;
-            
-            const percentage = (item.value / totalGrams) * 100;
-            const strokeDashoffset = circumference - (percentage / 100) * circumference;
-            const rotation = (accumulatedGrams / totalGrams) * 360;
-            
-            accumulatedGrams += item.value;
-
-            return (
-              <Circle
-                key={item.label}
-                cx={size / 2}
-                cy={size / 2}
-                r={radius}
-                stroke={item.color}
-                strokeWidth={strokeWidth}
-                strokeDasharray={circumference}
-                strokeDashoffset={strokeDashoffset}
-                fill="transparent"
-                origin={`${size / 2}, ${size / 2}`}
-                rotation={rotation}
-              />
-            );
-          })
-        )}
-      </Svg>
-      {/* Absolute Central Text Label */}
-      <View style={styles.donutCenterText}>
-        <Text style={styles.donutCenterValue}>{totalGrams}g</Text>
-        <Text style={styles.donutCenterLabel}>Total</Text>
-      </View>
-    </View>
-  );
+  return WEEK_DAYS.map((day, index) => ({
+    day,
+    target,
+    calories: Math.round(target * pattern[index] + (index === 3 ? 60 : 0)),
+  }));
 };
 
 const InsightsScreen = () => {
   const { user } = useUser();
-  const { mealPlan, calories, userParams, setMealPlanData } = useMealPlan();
+  const { signOut } = useClerk();
+  const [profileData, setProfileData] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const { calories: predictedCalories, mealPlan } = useMealPlan();
+
+  const handleUpdateProfilePicture = async () => {
+    try {
+      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== 'granted') {
+        Alert.alert('Permission needed', 'We need access to your photos to update your avatar.');
+        return;
+      }
+      
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        allowsEditing: true,
+        aspect: [1, 1],
+        quality: 0.2,
+        base64: true,
+      });
+
+      if (result.canceled || !result.assets[0].base64) {
+        return; 
+      }
+
+      setIsUploadingImage(true);
+
+      const base64Image = `data:image/jpeg;base64,${result.assets[0].base64}`;
+      
+      await user?.setProfileImage({
+        file: base64Image,
+      });
+
+    } catch (error) {
+      console.error('Error uploading image:', error);
+      Alert.alert('Upload Failed', 'There was an error updating your profile picture.');
+    } finally {
+      setIsUploadingImage(false);
+    }
+  };
 
   useEffect(() => {
     const loadSavedProfile = async () => {
-      if (userParams || !user?.primaryEmailAddress?.emailAddress) {
+      if (!user?.primaryEmailAddress?.emailAddress) {
+        setIsLoading(false);
         return;
       }
 
@@ -165,38 +129,32 @@ const InsightsScreen = () => {
         const result = await response.json();
 
         if (response.ok && result?.success && result?.exists) {
-          const profile = result.data;
-          setMealPlanData(mealPlan, calories, {
-            age: Number(profile.age),
-            gender: profile.gender,
-            height_cm: Number(profile.height_cm),
-            weight_kg: Number(profile.weight_kg),
-            activity_level: profile.activity_level,
-            dietary_preference: profile.dietary_preference,
-            weight_goal: profile.weight_goal,
-            prefer_local_food: Boolean(profile.prefer_local_food),
-          });
+          setProfileData(result.data);
         }
       } catch (error) {
-        console.error('Error loading saved profile for insights:', error);
+        console.error('Error loading saved profile:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     loadSavedProfile();
-  }, [user?.primaryEmailAddress?.emailAddress, userParams, setMealPlanData]);
-  
-  const macroData = useMemo(() => extractMacros(mealPlan), [mealPlan]);
-  const mealHighlights = useMemo(() => extractMealHighlights(mealPlan), [mealPlan]);
-  
+  }, [user?.primaryEmailAddress?.emailAddress]);
+
   const bmi = useMemo(() => {
-    if (!userParams) return null;
-    return calculateBMI(userParams.weight_kg, userParams.height_cm);
-  }, [userParams]);
+    if (!profileData?.weight_kg || !profileData?.height_cm) return null;
+    return calculateBMI(Number(profileData.weight_kg), Number(profileData.height_cm));
+  }, [profileData]);
 
   const bmr = useMemo(() => {
-    if (!userParams) return null;
-    return calculateBMR(userParams.weight_kg, userParams.height_cm, userParams.age, userParams.gender);
-  }, [userParams]);
+    if (!profileData) return null;
+    return calculateBMR(
+      Number(profileData.weight_kg),
+      Number(profileData.height_cm),
+      Number(profileData.age),
+      profileData.gender
+    );
+  }, [profileData]);
 
   const getBMIStatus = (bmi: number | null) => {
     if (!bmi) return 'Unknown';
@@ -206,94 +164,214 @@ const InsightsScreen = () => {
     return 'Obese';
   };
 
-  const displayCalories = calories ?? 1800;
+  const predictedCaloriesRounded = predictedCalories != null ? Math.ceil(predictedCalories) : null;
+
+  const macroTotals = useMemo(() => {
+    const sections = Object.values(mealPlan || {});
+    const macros = sections.flatMap((section: any) => (Array.isArray(section) ? section : []));
+
+    const totals = macros.reduce(
+      (acc: { protein: number; carbs: number; fats: number }, item: any) => ({
+        protein: acc.protein + Number(item?.Protein ?? 0),
+        carbs: acc.carbs + Number(item?.Carbohydrates ?? item?.Carbs ?? 0),
+        fats: acc.fats + Number(item?.Fats ?? 0),
+      }),
+      { protein: 0, carbs: 0, fats: 0 }
+    );
+
+    const total = totals.protein + totals.carbs + totals.fats;
+    return {
+      protein: Math.round(totals.protein * 10) / 10,
+      carbs: Math.round(totals.carbs * 10) / 10,
+      fats: Math.round(totals.fats * 10) / 10,
+      total: Math.round(total * 10) / 10,
+    };
+  }, [mealPlan]);
+
+  const macroSegments = useMemo(() => {
+    const base = macroTotals.total || 1;
+    return [
+      { label: 'Protein', value: macroTotals.protein, color: '#2563EB' },
+      { label: 'Carbs', value: macroTotals.carbs, color: '#EA580C' },
+      { label: 'Fats', value: macroTotals.fats, color: '#C084FC' },
+    ].map((segment) => ({
+      ...segment,
+      percentage: (segment.value / base) * 100,
+    }));
+  }, [macroTotals]);
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      router.push('/(auth)/sign-in');
+    } catch (error) {
+      console.error('Error signing out:', error);
+      Alert.alert('Sign out failed', 'Please try again.');
+    }
+  };
+
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView style={styles.container} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-        <View style={styles.headerRow}>
-          <View style={{ flex: 1 }}>
-            <Text style={styles.eyebrow}>Nutrition Overview</Text>
-            <Text style={styles.title}>Your food insights</Text>
-            <Text style={styles.subtitle}>A quick summary of your daily nutrition profile and meal balance.</Text>
-          </View>
-          <View style={styles.badge}>
-            <FontAwesome name="pie-chart" size={12} color={COLORS.emeraldDeep} />
-            <Text style={styles.badgeText}>ANALYSIS</Text>
-          </View>
-        </View>
-
-        <View style={styles.heroCard}>
-          <Text style={styles.heroLabel}>PREDICTED DAILY CALORIES</Text>
-          <Text style={styles.heroValue}>{Math.round(displayCalories).toLocaleString()}<Text style={styles.heroUnit}> kcal</Text></Text>
-          <Text style={styles.heroDescription}>This estimate is based on your profile and should help guide your meal choices.</Text>
-        </View>
-
-        <View style={styles.statsGrid}>
-          <View style={styles.statCard}>
-            <Text style={styles.statLabel}>BMI</Text>
-            <Text style={styles.statValue}>{bmi ?? 'N/A'}</Text>
-            <Text style={styles.statMeta}>{bmi ? getBMIStatus(bmi) : 'No data'}</Text>
-          </View>
-          <View style={styles.statCard}>
-            <Text style={styles.statLabel}>BMR</Text>
-            <Text style={styles.statValue}>{bmr ?? 'N/A'}</Text>
-            <Text style={styles.statMeta}>Calories at rest</Text>
-          </View>
-          <View style={styles.statCard}>
-            <Text style={styles.statLabel}>Goal</Text>
-            <Text style={styles.statValue}>{userParams?.activity_level?.replace('_', ' ').charAt(0).toUpperCase() + (userParams?.activity_level?.replace('_', ' ').slice(1) || '')}</Text>
-            <Text style={styles.statMeta}>Activity level</Text>
-          </View>
-        </View>
-
-        {/* Updated Macro Card */}
-        <View style={styles.card}>
-          <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>Macro balance</Text>
-            <Text style={styles.sectionHint}>Daily targets</Text>
-          </View>
-
-          <View style={styles.macroContentRow}>
-            <MacroDonutChart data={macroData} />
-            
-            <View style={styles.legendContainer}>
-              {macroData.map((item) => (
-                <View key={item.label} style={styles.legendRow}>
-                  <View style={styles.macroHead}>
-                    <View style={[styles.dot, { backgroundColor: item.color }]} />
-                    <Text style={styles.macroLabel}>{item.label}</Text>
-                  </View>
-                  <Text style={styles.macroValueText}>{item.value}g</Text>
-                </View>
-              ))}
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.card}>
-          <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>Meal highlights</Text>
-            <Text style={styles.sectionHint}>Suggested split</Text>
-          </View>
-          {mealHighlights.map((meal) => (
-            <View key={meal.name} style={styles.mealItem}>
-              <View style={styles.mealRow}>
-                <Text style={styles.mealName}>{meal.name}</Text>
-                <Text style={styles.mealKcal}>{meal.kcal}</Text>
+        
+        {/* Header Section */}
+        <View style={styles.headerContainer}>
+          <TouchableOpacity 
+            style={styles.avatarContainer} 
+            onPress={handleUpdateProfilePicture}
+            disabled={isUploadingImage}
+          >
+            {user?.imageUrl ? (
+              <Image source={{ uri: user.imageUrl }} style={styles.avatar} />
+            ) : (
+              <View style={[styles.avatar, styles.avatarPlaceholder]}>
+                <FontAwesome name="user" size={32} color="#047857" />
               </View>
-              <Text style={styles.mealNote}>{meal.note}</Text>
+            )}
+            
+            {isUploadingImage && (
+              <View style={styles.avatarLoadingOverlay}>
+                <ActivityIndicator size="small" color="#FFFFFF" />
+              </View>
+            )}
+
+            <View style={styles.editBadge}>
+              <FontAwesome name="camera" size={12} color="#FFFFFF" />
             </View>
-          ))}
+          </TouchableOpacity>
+          
+          <Text style={styles.userName}>{user?.fullName || 'User Profile'}</Text>
+          <Text style={styles.userEmail}>{user?.primaryEmailAddress?.emailAddress}</Text>
         </View>
 
-        <View style={styles.tipCard}>
-          <FontAwesome name="lightbulb-o" size={16} color={COLORS.emeraldDeep} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.tipTitle}>Tip of the day</Text>
-            <Text style={styles.tipText}>Keep protein steady across meals to support fullness and energy throughout the day.</Text>
-          </View>
-        </View>
+        {isLoading ? (
+          <ActivityIndicator size="large" color={COLORS.emeraldDeep} style={{ marginTop: 40 }} />
+        ) : (
+          <>
+            {/* Main Goal Hero Card */}
+            <View style={styles.heroCard}>
+              <Text style={styles.heroLabel}>CURRENT GOAL</Text>
+              <Text style={styles.heroValue}>{formatText(profileData?.weight_goal || 'Maintain Weight')}</Text>
+              <Text style={styles.heroDescription}>
+                Based on your preference, we tailor your daily calories and meal suggestions to help you achieve this.
+              </Text>
+            </View>
+
+            {/* Health Stats Grid */}
+            <View style={styles.statsGrid}>
+              <View style={styles.statCard}>
+                <Text style={styles.statLabel}>Weight</Text>
+                <Text style={styles.statValue}>{profileData?.weight_kg ?? '--'}<Text style={styles.statUnit}> kg</Text></Text>
+              </View>
+              <View style={styles.statCard}>
+                <Text style={styles.statLabel}>Height</Text>
+                <Text style={styles.statValue}>{profileData?.height_cm ?? '--'}<Text style={styles.statUnit}> cm</Text></Text>
+              </View>
+              <View style={styles.statCard}>
+                <Text style={styles.statLabel}>BMI</Text>
+                <Text style={styles.statValue}>{bmi ?? '--'}</Text>
+                <Text style={styles.statMeta}>{bmi ? getBMIStatus(bmi) : 'No data'}</Text>
+              </View>
+              <View style={styles.statCard}>
+                <Text style={styles.statLabel}>Daily Calorie Target</Text>
+                <Text style={styles.statValue}>{predictedCaloriesRounded ?? '--'}</Text>
+                
+              </View>
+            </View>
+            <View style={styles.card}>
+              <View style={styles.sectionHeader}>
+                <View>
+                  <Text style={styles.sectionTitle}>Daily Macronutrients</Text>
+                  <Text style={styles.sectionSubtitle}>Protein, Carbs, and Fat distribution</Text>
+                </View>
+                <FontAwesome name="pie-chart" size={16} color={COLORS.emeraldDeep} />
+              </View>
+
+              <View style={styles.macroChartWrapper}>
+                <View style={styles.macroChartContainer}>
+                  <Svg width={180} height={180} viewBox="0 0 180 180">
+                    <G rotation="-90" origin="90, 90">
+                      {(() => {
+                        let accumulatedOffset = 0;
+                        return macroSegments.map((segment) => {
+                          const radius = 60;
+                          const circumference = 2 * Math.PI * radius;
+                          const length = (segment.percentage / 100) * circumference;
+                          const circle = (
+                            <Circle
+                              key={segment.label}
+                              cx="90"
+                              cy="90"
+                              r={radius}
+                              fill="none"
+                              stroke={segment.color}
+                              strokeWidth="24"
+                              strokeLinecap="round"
+                              strokeDasharray={`${length} ${circumference}`}
+                              strokeDashoffset={-accumulatedOffset}
+                            />
+                          );
+                          accumulatedOffset += length;
+                          return circle;
+                        });
+                      })()}
+                    </G>
+                  </Svg>
+
+                  <View style={styles.macroCenterLabel}>
+                    <Text style={styles.macroCenterValue}>{macroTotals.total.toFixed(0)}</Text>
+                    <Text style={styles.macroCenterUnit}>g macros</Text>
+                  </View>
+                </View>
+
+                <View style={styles.macroLegend}>
+                  <View style={styles.macroLegendItem}>
+                    <View style={[styles.legendDot, { backgroundColor: '#2563EB' }]} />
+                    <Text style={styles.legendText}>Protein {macroTotals.protein.toFixed(1)}g</Text>
+                  </View>
+                  <View style={styles.macroLegendItem}>
+                    <View style={[styles.legendDot, { backgroundColor: '#EA580C' }]} />
+                    <Text style={styles.legendText}>Carbs {macroTotals.carbs.toFixed(1)}g</Text>
+                  </View>
+                  <View style={styles.macroLegendItem}>
+                    <View style={[styles.legendDot, { backgroundColor: '#C084FC' }]} />
+                    <Text style={styles.legendText}>Fats {macroTotals.fats.toFixed(1)}g</Text>
+                  </View>
+
+                </View>
+              </View>
+            </View>
+            {/* Preferences Details Card */}
+            <View style={styles.card}>
+              <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>Diet & Lifestyle</Text>
+                <FontAwesome name="sliders" size={16} color={COLORS.textMuted} />
+              </View>
+
+              <View style={styles.detailRow}>
+                <Text style={styles.detailLabel}>Activity Level</Text>
+                <Text style={styles.detailValue}>{formatText(profileData?.activity_level)}</Text>
+              </View>
+              <View style={styles.divider} />
+              
+              <View style={styles.detailRow}>
+                <Text style={styles.detailLabel}>Dietary Preference</Text>
+                <Text style={styles.detailValue}>{formatText(profileData?.dietary_preference)}</Text>
+              </View>
+              <View style={styles.divider} />
+
+              <View style={styles.detailRow}>
+                <Text style={styles.detailLabel}>Prefer Local Food</Text>
+                <Text style={styles.detailValue}>{profileData?.prefer_local_food ? 'Yes' : 'No'}</Text>
+              </View>
+            </View>
+            
+
+
+           
+          </>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -312,51 +390,42 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === 'ios' ? 18 : 12,
     paddingBottom: 32,
   },
-  headerRow: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between',
-    marginBottom: 18,
-  },
-  eyebrow: {
-    fontFamily: FONTS.bold,
-    fontSize: 12,
-    color: COLORS.emeraldDeep,
-    textTransform: 'uppercase',
-    letterSpacing: 1.4,
-    marginBottom: 4,
-  },
-  title: {
-    fontFamily: FONTS.black,
-    fontSize: 28,
-    fontWeight: "700",
-    color: COLORS.textMain,
-    letterSpacing: -0.6,
-    marginBottom: 4,
-  },
-  subtitle: {
-    fontFamily: FONTS.regular,
-    fontSize: 13,
-    color: COLORS.textMuted,
-    lineHeight: 18,
-    maxWidth: 320,
-  },
-  badge: {
-    flexDirection: 'row',
+  headerContainer: {
     alignItems: 'center',
-    gap: 6,
-    backgroundColor: COLORS.emeraldLight,
-    borderColor: 'rgba(16, 185, 129, 0.16)',
-    borderWidth: 1,
-    borderRadius: 999,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
+    marginBottom: 24,
   },
-  badgeText: {
-    fontFamily: FONTS.bold,
-    fontSize: 10,
-    color: COLORS.emeraldDeep,
-    fontWeight: '800',
+  avatarContainer: {
+    shadowColor: '#0F172A',
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 4,
+    marginBottom: 12,
+  },
+  avatar: {
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    backgroundColor: COLORS.card,
+  },
+  avatarPlaceholder: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 2,
+    borderColor: COLORS.emeraldLight,
+  },
+  userName: {
+    fontFamily: FONTS.black,
+    fontSize: 22,
+    fontWeight: '700',
+    color: COLORS.textMain,
+    marginBottom: 4,
+  },
+  userEmail: {
+    fontFamily: FONTS.regular,
+    fontSize: 14,
+    color: COLORS.textMuted,
+    marginBottom: 16,
   },
   heroCard: {
     backgroundColor: COLORS.emeraldDeep,
@@ -377,15 +446,10 @@ const styles = StyleSheet.create({
   },
   heroValue: {
     fontFamily: FONTS.black,
-    fontSize: 34,
+    fontSize: 28,
     color: '#FFFFFF',
-    letterSpacing: -1,
+    letterSpacing: -0.5,
     marginTop: 6,
-  },
-  heroUnit: {
-    fontSize: 16,
-    color: COLORS.emeraldLight,
-    fontWeight: '500',
   },
   heroDescription: {
     fontFamily: FONTS.regular,
@@ -422,6 +486,11 @@ const styles = StyleSheet.create({
     marginTop: 4,
     letterSpacing: -0.4,
   },
+  statUnit: {
+    fontSize: 14,
+    fontFamily: FONTS.medium,
+    color: COLORS.textMuted,
+  },
   statMeta: {
     fontFamily: FONTS.regular,
     fontSize: 12,
@@ -434,7 +503,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.border,
     padding: 16,
-    marginBottom: 16,
+    marginBottom: 20,
   },
   sectionHeader: {
     flexDirection: 'row',
@@ -444,123 +513,202 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontFamily: FONTS.bold,
-    fontSize: 15,
+    fontSize: 16,
     color: COLORS.textMain,
   },
-  sectionHint: {
-    fontFamily: FONTS.medium,
-    fontSize: 11,
+  sectionSubtitle: {
+    fontFamily: FONTS.regular,
+    fontSize: 12,
+    color: COLORS.textMuted,
+    marginTop: 2,
+  },
+  detailRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  detailLabel: {
+    fontFamily: FONTS.regular,
+    fontSize: 14,
     color: COLORS.textMuted,
   },
-  macroContentRow: {
+  detailValue: {
+    fontFamily: FONTS.bold,
+    fontSize: 14,
+    color: COLORS.textMain,
+  },
+  divider: {
+    height: 1,
+    backgroundColor: '#F3F4F6',
+    marginVertical: 4,
+  },
+  
+  // Chart Styles
+  chartSummary: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 12,
+    paddingHorizontal: 4,
+  },
+  chartSummaryText: {
+    fontFamily: FONTS.medium,
+    fontSize: 12,
+    color: COLORS.textMuted,
+  },
+  chartContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    height: 150,
+    marginTop: 4,
+    paddingHorizontal: 2,
+  },
+  macroChartWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: 4,
+    gap: 16,
+    marginTop: 4,
   },
-  donutWrapper: {
-    justifyContent: 'center',
+  macroChartContainer: {
+    width: 180,
+    height: 180,
     alignItems: 'center',
+    justifyContent: 'center',
   },
-  donutSvg: {
-    transform: [{ rotate: '-90deg' }], // Starts rendering from the top center
-  },
-  donutCenterText: {
+  macroCenterLabel: {
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  donutCenterValue: {
+  macroCenterValue: {
     fontFamily: FONTS.black,
-    fontSize: 16,
-    fontWeight: '700',
+    fontSize: 22,
     color: COLORS.textMain,
   },
-  donutCenterLabel: {
+  macroCenterUnit: {
     fontFamily: FONTS.regular,
-    fontSize: 10,
+    fontSize: 12,
     color: COLORS.textMuted,
-    marginTop: -2,
   },
-  legendContainer: {
+  macroLegend: {
     flex: 1,
-    marginLeft: 24,
-    gap: 12,
+    justifyContent: 'center',
+    gap: 10,
   },
-  legendRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  macroHead: {
+  macroLegendItem: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
   },
-  dot: {
-    width: 10,
-    height: 10,
-    borderRadius: 999,
+  barColumn: {
+    alignItems: 'center',
+    width: 30,
   },
-  macroLabel: {
-    fontFamily: FONTS.bold,
-    fontSize: 14,
-    color: COLORS.textMain,
+  barTrack: {
+    width: 14,
+    height: 110,
+    backgroundColor: '#F3F4F6',
+    borderRadius: 8,
+    justifyContent: 'flex-end',
+    position: 'relative',
+    overflow: 'hidden',
   },
-  macroValueText: {
+  barFill: {
+    width: '100%',
+    borderRadius: 8,
+    minHeight: 6,
+  },
+  targetLine: {
+    position: 'absolute',
+    width: 24,
+    height: 2,
+    backgroundColor: COLORS.textMuted,
+    left: -5,
+    zIndex: 10,
+    borderRadius: 1,
+  },
+  barLabel: {
     fontFamily: FONTS.medium,
-    fontSize: 14,
+    fontSize: 11,
     color: COLORS.textMuted,
+    marginTop: 8,
   },
-  mealItem: {
+  barValue: {
+    fontFamily: FONTS.bold,
+    fontSize: 10,
+    color: COLORS.textMain,
+    marginTop: 2,
+  },
+  chartLegend: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 16,
+    marginTop: 20,
+    paddingTop: 16,
     borderTopWidth: 1,
     borderTopColor: '#F3F4F6',
-    paddingTop: 10,
-    marginTop: 10,
   },
-  mealRow: {
+  legendItem: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: 6,
+  },
+  legendDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+  },
+  legendLine: {
+    width: 12,
+    height: 2,
+    backgroundColor: COLORS.textMuted,
+  },
+  legendText: {
+    fontFamily: FONTS.regular,
+    fontSize: 11,
+    color: COLORS.textMuted,
+  },
+
+  // Auth and Overlay Styles
+  signOutButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    backgroundColor: COLORS.dangerLight,
+    paddingVertical: 14,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(239, 68, 68, 0.2)',
+    marginBottom: 20,
+  },
+  signOutText: {
+    fontFamily: FONTS.bold,
+    fontSize: 15,
+    color: COLORS.danger,
+  },
+  avatarLoadingOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    borderRadius: 45,
+    justifyContent: 'center',
     alignItems: 'center',
   },
-  mealName: {
-    fontFamily: FONTS.bold,
-    fontSize: 14,
-    color: COLORS.textMain,
-  },
-  mealKcal: {
-    fontFamily: FONTS.bold,
-    fontSize: 12,
-    color: COLORS.emeraldDeep,
-  },
-  mealNote: {
-    fontFamily: FONTS.regular,
-    fontSize: 12,
-    color: COLORS.textMuted,
-    marginTop: 4,
-    lineHeight: 17,
-  },
-  tipCard: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    gap: 10,
-    backgroundColor: COLORS.emeraldLight,
-    borderRadius: 18,
-    borderWidth: 1,
-    borderColor: 'rgba(16, 185, 129, 0.18)',
-    padding: 14,
-  },
-  tipTitle: {
-    fontFamily: FONTS.bold,
-    fontSize: 13,
-    color: COLORS.textMain,
-    marginBottom: 2,
-  },
-  tipText: {
-    fontFamily: FONTS.regular,
-    fontSize: 12,
-    color: COLORS.textMuted,
-    lineHeight: 17,
+  editBadge: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    backgroundColor: '#047857',
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#FFFFFF',
   },
 });
 

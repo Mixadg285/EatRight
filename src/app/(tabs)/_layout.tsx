@@ -43,10 +43,10 @@ export default function TabsLayout() {
 
         <NativeTabs.Trigger name="insights">
           <Icon sf={{
-            default: "chart.bar",
-            selected: "chart.bar.fill"
+            default: "person",
+            selected: "person.fill"
           }} drawable="add" />
-          <Label>Insights</Label>
+          <Label>Profile</Label>
         </NativeTabs.Trigger>
 
       </NativeTabs>
