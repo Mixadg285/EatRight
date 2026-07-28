@@ -36,11 +36,12 @@ This is a mobile-based application that recommends meal for the user based on th
 <img width="280" height="630" alt="result2" src="https://github.com/user-attachments/assets/a9d7f11d-f228-4648-a92c-e969efdfd51d" />
 <img width="280" height="630" alt="result3" src="https://github.com/user-attachments/assets/d7a541ee-b264-4715-826e-e6414c5cdeed" />
 
-## INSIGHT PAGE
+## PROFILE PAGE
 
 <img width="280" height="630" alt="in1" src="https://github.com/user-attachments/assets/0d4b57b3-843e-4629-bc4b-2d9802bd3b2f" />
 
-
+Video Demonstration
+https://drive.google.com/file/d/15REw8aW26HD81JsSTKEIp5awOft0sdvx/view?usp=drive_link
 
 
 
